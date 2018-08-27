@@ -2,6 +2,10 @@
   "name": "page",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "url": "http://github.com/MatheusDosReis/MatheusDosReis.github.io"
+  },
+  "homepage": "http://MatheusDosReis.github.io/",
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
