@@ -1,12 +1,17 @@
 {
-  "name": "page",
+  "name": "matheusdosreis.github.io",
   "version": "0.1.0",
   "private": true,
+  "author": "Matheus dos Reis de Jesus <matheusdrdj@gmail.com",
   "repository": {
-    "url": "http://github.com/MatheusDosReis/MatheusDosReis.github.io"
+    "url": "http://github.com/MatheusDosReis/"
   },
-  "homepage": "http://MatheusDosReis.github.io/",
+  "homepage": "https://MatheusDosReis.github.io/",
   "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.14.4",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5"
@@ -17,7 +22,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "devDependencies": {
     "gh-pages": "^1.2.0"
