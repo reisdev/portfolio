@@ -1,7 +1,12 @@
 {
-  "main.css": "static/css/main.c17080f1.css",
-  "main.css.map": "static/css/main.c17080f1.css.map",
-  "main.js": "static/js/main.fe7491fe.js",
-  "main.js.map": "static/js/main.fe7491fe.js.map",
-  "static\\media\\logo.svg": "static/media/logo.5d5d9eef.svg"
+  "main.css": "static/css/main.05d7ed37.css",
+  "main.css.map": "static/css/main.05d7ed37.css.map",
+  "main.js": "static/js/main.f1c34e35.js",
+  "main.js.map": "static/js/main.f1c34e35.js.map",
+  "static\\media\\laravel.png": "static/media/laravel.a3838e72.png",
+  "static\\media\\node.png": "static/media/node.36700bee.png",
+  "static\\media\\quasar.png": "static/media/quasar.dd13b45d.png",
+  "static\\media\\react.png": "static/media/react.8ef5af1c.png",
+  "static\\media\\scrapy.png": "static/media/scrapy.494a656c.png",
+  "static\\media\\vue.png": "static/media/vue.94e5ae37.png"
 }
