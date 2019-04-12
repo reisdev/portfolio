@@ -1,0 +1,104 @@
+@import "./App.css";
+
+.personal {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-flex;
+}
+
+.box {
+  position: relative;
+  text-align: left;
+  float: left;
+  background-color: white;
+  height: fit-content;
+  padding: 20px;
+}
+
+/* Texts */
+
+span.muted {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  padding-left: 10px;
+  word-break: break-word;
+}
+
+/* Profile */
+
+.profile {
+  width: 50vw;
+}
+
+.profile .name {
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.profile .details .image {
+  display: inline-block;
+  width: 100%;
+  margin: 10px;
+}
+
+.profile .details .info {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+/* Projects */
+
+.projects {
+  margin-left: 5%;
+  width: 20vw;
+}
+
+.projects .title {
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.tiles {
+  margin: 5px;
+}
+
+.tile {
+  padding: 10px 5px 10px 5px;  
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.tiles .tile:nth-child(2n) {
+    border-top: 0;
+}
+
+.tile .name::before {
+  content: "#";
+  margin-right: 5px;
+}
+
+.tile .tecnologies {
+    margin-top: 10px;
+}
+
+.tile .more {
+    padding-top: 5px;
+}
+
+/* Screens */
+
+@media screen and (max-width: 976px) {
+  .personal {
+    display: block;
+    width: 80vw;
+  }
+  .profile,
+  .projects {
+    width: 90%;
+  }
+
+  .projects {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+}

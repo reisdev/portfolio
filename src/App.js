@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './css/App.css';
+
+import './css/style.css';
+
+import Personal from "./components/personal"
 
 class App extends Component {
+  componentWillMount(){
+    document.title="Matheus Reis - CV"
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Matheus dos Reis</h1>
-        </header>
+      <head><title>Matheus Reis - CV</title></head>
+          <Personal/>
       </div>
     );
   }

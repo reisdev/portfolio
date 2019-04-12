@@ -1,28 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Muli");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Muli";
+  background-color: #8288bd;
+}
+
 .App {
   text-align: center;
+  height: 100%;
+  width: 100%;
+  padding-top: 5vh;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.column {
+  float: left;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.App-title {
-  font-size: 1.5em;
+.column.one.wide {
+  width: 8.3333%;
 }
 
-.App-intro {
-  font-size: large;
+.column.two.wide {
+  width: 16.6666%;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.column.three.wide {
+  width: 25%;
+}
+
+.column.four.wide {
+  width: 33.33%;
+}
+
+.column.five.wide {
+  width: 41.66%;
+}
+
+.column.six.wide {
+  width: 50%;
+}
+
+.column.seven.wide {
+  width: 58.33%;
+}
+
+.column.eight.wide {
+  width: 66.66%;
+}
+
+.column.nine.wide {
+  width: 75%;
+}
+
+.column.ten.wide {
+  width: 83.33%;
+}
+
+.column.eleven.wide {
+  width: 91%;
+}
+
+.column.twelve.wide {
+  width: 100%;
 }
