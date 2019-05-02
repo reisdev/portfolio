@@ -1,9 +1,7 @@
 @import "./App.css";
 
 .personal {
-  margin-left: auto;
-  margin-right: auto;
-  display: inline-flex;
+  display: block;
 }
 
 .box {
@@ -24,15 +22,22 @@ span.muted {
   word-break: break-word;
 }
 
-/* Profile */
-
-.profile {
-  width: 50vw;
+.box .title {
+  font-size: 1.5rem;
+  padding: 5px 10px;
 }
 
 .profile .name {
   font-size: 1.5rem;
   padding: 10px;
+}
+
+/* Profile */
+
+.profile,
+.career {
+  width: 50vw;
+  left: 10vw;
 }
 
 .profile .details .image {
@@ -46,16 +51,17 @@ span.muted {
   margin-top: 2%;
 }
 
+.info span {
+  display: block;
+}
+
 /* Projects */
 
 .projects {
   margin-left: 5%;
+  position: absolute;
+  right: 10vw;
   width: 20vw;
-}
-
-.projects .title {
-  font-size: 1.5rem;
-  padding: 10px;
 }
 
 .tiles {
@@ -63,13 +69,12 @@ span.muted {
 }
 
 .tile {
-  padding: 10px 5px 10px 5px;  
-  border-top: solid 1px black;
-  border-bottom: solid 1px black;
-}
-
-.tiles .tile:nth-child(2n) {
-    border-top: 0;
+  padding: 10px 10px 10px 10px;
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .tile .name::before {
@@ -78,22 +83,38 @@ span.muted {
 }
 
 .tile .tecnologies {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .tile .more {
-    padding-top: 5px;
+  margin: 15px 0px 10px 0px;
+}
+
+.tile .more a {
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  color: black;
+}
+
+.career {
+  margin-top: 20px;
 }
 
 /* Screens */
 
 @media screen and (max-width: 976px) {
   .personal {
-    display: block;
+    display: inline-block;
     width: 80vw;
   }
   .profile,
-  .projects {
+  .projects,
+  .career {
+    position: relative;
+    left: auto;
+    right: auto;
     width: 90%;
   }
 
