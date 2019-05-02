@@ -1,7 +1,7 @@
 {
-  "name": "github",
+  "name": "mthrsj.github.io",
   "version": "0.1.0",
-  "homepage": "https://MatheusDosReis.github.io/cv",
+  "homepage": "https://mthrsj.github.io",
   "private": true,
   "dependencies": {
     "react": "^16.5.2",
