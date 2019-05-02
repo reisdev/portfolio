@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 class Personal extends Component {
   state = {
-    img: "https://scontent-gru2-2.xx.fbcdn.net/v/t1.0-9/46521720_2503871296308715_1703695689600466944_n.jpg?_nc_cat=110&_nc_ht=scontent-gru2-2.xx&oh=087af2ea5a625d54b032b07ca84c3ebb&oe=5D35781E",
+    img:
+      "https://scontent-gru2-2.xx.fbcdn.net/v/t1.0-9/46521720_2503871296308715_1703695689600466944_n.jpg?_nc_cat=110&_nc_ht=scontent-gru2-2.xx&oh=087af2ea5a625d54b032b07ca84c3ebb&oe=5D35781E",
     projects: [
       {
         name: "Jornal Pelicano",
@@ -33,11 +34,17 @@ class Personal extends Component {
                 <img
                   className="image"
                   src={this.state.img}
-                  alt="Personal picture"
+                  alt=""
                 />
               </div>
               <div className="eight wide column info">
                 <span>Age: 20</span>
+                <span>
+                  E-mail:{" "}
+                  <a href="mailto:matheusdrdj@gmail.com">
+                    matheusdrdj@gmail.com
+                  </a>
+                </span>
               </div>
             </div>
           </div>
@@ -49,7 +56,6 @@ class Personal extends Component {
               <div className="tile">
                 <div className="name">
                   {project.name}
-
                   <span className="muted">{project.date}</span>
                 </div>
                 <div className="tecnologies">
@@ -59,11 +65,20 @@ class Personal extends Component {
                   </span>
                 </div>
                 <div className="more">
-                    <a href={project.link} target="_blank">> Go to</a>
+                  <a
+                    href={project.link}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Go to
+                  </a>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+        <div className="box career">
+          <div className="title">Career History</div>
         </div>
       </div>
     );
