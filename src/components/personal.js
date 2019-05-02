@@ -22,63 +22,65 @@ class Personal extends Component {
   };
   render() {
     return (
-      <>
-        <div className="personal">
-          <div className="box profile">
-            <div className="name">
-              Matheus dos Reis de Jesus
-              <span className="muted">Web and Mobile Developer</span>
-            </div>
-            <div className="details">
-              <div className="row">
-                <div className="two wide column">
-                  <img
-                    className="image"
-                    src={this.state.img}
-                    alt="Personal picture"
-                  />
-                </div>
-                <div className="eight wide column info">
-                  <span>Age: 20</span>
-                  <span>
-                    E-mail:{" "}
-                    <a href="mailto:matheusdrdj@gmail.com">
-                      matheusdrdj@gmail.com
-                    </a>
-                  </span>
-                </div>
+      <div className="personal">
+        <div className="box profile">
+          <div className="name">
+            Matheus dos Reis de Jesus
+            <span className="muted">Web and Mobile Developer</span>
+          </div>
+          <div className="details">
+            <div className="row">
+              <div className="two wide column">
+                <img
+                  className="image"
+                  src={this.state.img}
+                  alt=""
+                />
+              </div>
+              <div className="eight wide column info">
+                <span>Age: 20</span>
+                <span>
+                  E-mail:{" "}
+                  <a href="mailto:matheusdrdj@gmail.com">
+                    matheusdrdj@gmail.com
+                  </a>
+                </span>
               </div>
             </div>
           </div>
-          <div className="box projects">
-            <div className="title">Projects</div>
-            <div className="tiles">
-              {this.state.projects.map(project => (
-                <div className="tile">
-                  <div className="name">
-                    {project.name}
-                    <span className="muted">{project.date}</span>
-                  </div>
-                  <div className="tecnologies">
-                    Tecnologies:
-                    <span className="muted">
-                      {project.tecnologies.join(", ")}
-                    </span>
-                  </div>
-                  <div className="more">
-                    <a href={project.link} target="_blank">
-                      Go to
-                    </a>
-                  </div>
+        </div>
+        <div className="box projects">
+          <div className="title">Projects</div>
+          <div className="tiles">
+            {this.state.projects.map(project => (
+              <div className="tile">
+                <div className="name">
+                  {project.name}
+                  <span className="muted">{project.date}</span>
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="box career">
-            <div className="title">Career History</div>
+                <div className="tecnologies">
+                  Tecnologies:
+                  <span className="muted">
+                    {project.tecnologies.join(", ")}
+                  </span>
+                </div>
+                <div className="more">
+                  <a
+                    href={project.link}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Go to
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </>
+        <div className="box career">
+          <div className="title">Career History</div>
+        </div>
+      </div>
     );
   }
 }
