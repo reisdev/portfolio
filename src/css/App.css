@@ -1,24 +1,49 @@
-@import url("https://fonts.googleapis.com/css?family=Muli");
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin|Bitter&display=swap");
 
-body {
+html,body, #root {
+  height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Muli";
-  background-color: #8288bd;
+  font-family: "Libre Franklin", serif;
 }
 
-.App {
-  text-align: center;
-  height: 100%;
-  width: 100%;
-  padding-top: 5vh;
+h1 {
+  font-family: "Bitter",serif;
+  font-weight: 200;
+  font-size: 3rem;
+  /* text-transform: uppercase; */
 }
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 100;
+}
+
+
+.App {
+  height: 100%;
+  text-align: center;
+  width: 100;
+  background-color: white;
+}
+
+ .App.dark {
+  background-color: black;
+  color: white;
+ }
 
 .column {
   float: left;
 }
 
+.page {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Clear floats after the columns */
+
 .row:after {
   content: "";
   display: table;
@@ -69,6 +94,16 @@ body {
   width: 91%;
 }
 
-.column.twelve.wide {
+.column.twelve.wide, .full.wide {
   width: 100%;
+}
+
+/* */
+
+.left.floated {
+  float: left !important;
+}
+
+.right.floated {
+  float: right !important;
 }

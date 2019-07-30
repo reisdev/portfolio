@@ -1,25 +1,84 @@
 @import "./App.css";
 
-.personal {
-  display: block;
+a:not(.item) {
+  text-decoration: none;
+  color: #1c5cb1;
 }
+
+a:not(.item):hover {
+  text-decoration: underline;
+}
+
+
 
 .box {
   position: relative;
   text-align: left;
   float: left;
-  background-color: white;
+  color: black;
   height: fit-content;
   padding: 20px;
 }
 
+.App.dark .box {
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+.menu {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  color: white !important;
+  background: linear-gradient(to right, #1c5cb1, #4173b6,#064aa3);
+  height: 40px;
+}
+
+.App.dark .menu {
+  color: white;
+  background: linear-gradient(to right, #111, #222, #111);
+}
+
+.menu .links {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu .links a {
+  background-color: transparent;
+  text-transform: uppercase;
+  width: fit-content;
+  float: left;
+  padding: 10px;
+}
+
+.menu .links a img {
+  vertical-align: middle;
+  align-self: center;
+  margin-top: -5px;
+  height: 16px;
+  width: auto;
+}
+
+.menu .links a:hover {
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.App.dark .menu .links a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 /* Texts */
 
-span.muted {
+.muted {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 1rem;
-  padding-left: 10px;
   word-break: break-word;
+}
+
+.App.dark .muted {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .box .title {
@@ -27,32 +86,14 @@ span.muted {
   padding: 5px 10px;
 }
 
-.profile .name {
-  font-size: 1.5rem;
-  padding: 10px;
-}
-
-/* Profile */
-
-.profile,
-.career {
-  width: 50vw;
-  left: 10vw;
-}
-
-.profile .details .image {
-  display: inline-block;
-  width: 100%;
-  margin: 10px;
-}
-
-.profile .details .info {
-  margin-left: 5%;
-  margin-top: 2%;
-}
-
 .info span {
   display: block;
+}
+
+/* Profile */ 
+
+.profile .header {
+  margin: 30px auto;
 }
 
 /* Projects */
@@ -77,8 +118,18 @@ span.muted {
   margin-bottom: 10px;
 }
 
+.App.dark .tile {
+  padding: 10px 10px 10px 10px;
+  background-color: rgb(59, 59, 59);
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 .tile .name::before {
   content: "#";
+  font-weight: bold;
   margin-right: 5px;
 }
 
@@ -98,28 +149,33 @@ span.muted {
   color: black;
 }
 
-.career {
-  margin-top: 20px;
+.App.dark .tile .more a {
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  color: white;
 }
+
+.profile h2 {
+  margin-top: -40px;
+}
+
 
 /* Screens */
 
-@media screen and (max-width: 976px) {
-  .personal {
-    display: inline-block;
-    width: 80vw;
+@media screen and (max-width: 800px) {
+  .page {
+    padding: 0px 1.0875rem 1.45rem
   }
-  .profile,
-  .projects,
-  .career {
-    position: relative;
-    left: auto;
-    right: auto;
-    width: 90%;
+  .name, .job {
+    margin: auto auto;
   }
-
-  .projects {
-    margin-top: 20px;
-    margin-left: 0;
+  h1.name {
+    font-size: 2rem;
+  }
+  .profile h2 {
+    font-size: 1.5rem;
+    margin: auto;
   }
 }
