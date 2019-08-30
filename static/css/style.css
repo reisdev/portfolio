@@ -9,8 +9,6 @@ a:not(.item):hover {
   text-decoration: underline;
 }
 
-
-
 .box {
   position: relative;
   text-align: left;
@@ -30,8 +28,16 @@ a:not(.item):hover {
   margin-right: auto;
   width: 100%;
   color: white !important;
-  background: linear-gradient(to right, #1c5cb1, #4173b6,#064aa3);
+  background: linear-gradient(to right, #1c5cb1, #4173b6, #064aa3);
+  transition: height 0.2s ease-in;
+  height: 150px;
+  position: fixed;
+  top: 0px;
+}
+
+.big.menu {
   height: 40px;
+  transition: height 0.2s ease-out;
 }
 
 .App.dark .menu {
@@ -90,7 +96,7 @@ a:not(.item):hover {
   display: block;
 }
 
-/* Profile */ 
+/* Profile */
 
 .profile .header {
   margin: 30px auto;
@@ -161,14 +167,14 @@ a:not(.item):hover {
   margin-top: -40px;
 }
 
-
 /* Screens */
 
 @media screen and (max-width: 800px) {
   .page {
-    padding: 0px 1.0875rem 1.45rem
+    padding: 0px 1.0875rem 1.45rem;
   }
-  .name, .job {
+  .name,
+  .job {
     margin: auto auto;
   }
   h1.name {

@@ -3,16 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://reisdev.github.io",
   "private": true,
-  "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-i18next": "^10.7.0",
-    "react-redux": "^7.1.0",
-    "react-router": "^4.3.1",
-    "react-scripts": "^2.1.2",
-    "redux": "^4.0.4",
-    "semantic-ui-react": "^0.82.5"
-  },
+  "dependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -26,5 +17,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
