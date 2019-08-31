@@ -2,19 +2,6 @@
 @import "./icons.css";
 @import "./all.min.css";
 
-a:not(.item) {
-  text-decoration: none;
-  color: #1c5cb1;
-}
-
-a:not(.item):hover {
-  text-decoration: underline;
-}
-
-a .icon {
-  color: white;
-}
-
 .box {
   position: relative;
   text-align: left;
@@ -29,6 +16,21 @@ a .icon {
   color: white;
 }
 
+/* Content */
+
+section,
+.menu .content {
+  display: flex;
+  margin: auto auto;
+  max-width: 960px;
+}
+
+body>section {
+  padding: 20px;
+}
+
+/* Menu */
+
 .menu {
   margin-left: auto;
   margin-right: auto;
@@ -38,8 +40,6 @@ a .icon {
   color: white !important;
   background: linear-gradient(to right, #1c5cb1, #4173b6, #064aa3);
   transition: height 0.2s ease-in;
-  position: fixed;
-  top: 0px;
 }
 
 .big.menu {
@@ -53,10 +53,9 @@ a .icon {
   background: linear-gradient(to right, #111, #222, #111);
 }
 
-.menu .content {
-  margin: auto auto;
-  display: flex;
-  max-width: 960px;
+.floating.menu {
+  position: fixed;
+  top: 0px;
 }
 
 .big.menu .content {
@@ -88,18 +87,31 @@ a .icon {
   font-size: 2.2rem;
 }
 
+a:not(.item) {
+  text-decoration: none;
+  color: #1c5cb1;
+}
+
+a:not(.item):hover {
+  text-decoration: underline;
+}
+
+a .icon {
+  color: white;
+}
+
 .menu .group.item a {
   display: block;
 }
 
 .menu .item span {
   opacity: 0;
-  transition: opacity .00001s;
+  transition: opacity 0.00001s;
 }
 
 .big.menu .item span {
   opacity: 1;
-  transition: opacity .5s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 
 .menu .item:not(:has(img)):hover {
@@ -124,12 +136,12 @@ img.profile {
   object-fit: cover;
   vertical-align: middle;
   transform: scale(1);
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 
 .big.menu img.profile {
   transform: scale(3);
-  transition: transform .4s ease-out;
+  transition: transform 0.4s ease-out;
 }
 
 .menu:not(.big) .content>.item:nth-child(2) {
@@ -141,22 +153,18 @@ img.profile {
   font-size: 1.2rem;
   padding-left: 10px;
   margin: auto;
-  transition: font-size .1s ease-in;
+  transition: font-size 0.1s ease-in;
 }
 
 .big.menu h1 {
   font-size: 2rem;
   padding-top: 0px;
   padding-left: 0px;
-  transition: font-size .2s ease-in;
+  transition: font-size 0.2s ease-in;
 }
 
 .big.menu h1::after {
   content: " dos Reis de Jesus";
-}
-
-.App.dark .menu .content .item:hover {
-  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Texts */
@@ -188,7 +196,7 @@ img.profile {
   border: none;
   outline: none;
   opacity: 0;
-  transition: opacity .2s ease-out;
+  transition: opacity 0.2s ease-out;
   color: #064aa3;
   position: fixed;
   bottom: 40px;
@@ -198,7 +206,7 @@ img.profile {
 
 .scroll-to-top.visible {
   opacity: 1;
-  transition: opacity .2s ease-in;
+  transition: opacity 0.2s ease-in;
 }
 
 .scroll-to-top.visible:hover {
@@ -305,7 +313,7 @@ img.profile {
 
   .big.menu img.profile {
     transform: scale(2.5) translateX(7px);
-    transition: transform .17s ease-out;
+    transition: transform 0.17s ease-out;
     margin-top: 0px;
   }
 
@@ -323,12 +331,16 @@ img.profile {
     font-size: 1.5rem;
     margin: auto;
   }
+
+  .scroll-to-top {
+    font-size: 1.6rem;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .content {
     max-width: unset;
-    transition: max-width .5s;
+    transition: max-width 0.5s;
   }
 
   .menu h1::after {

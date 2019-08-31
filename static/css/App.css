@@ -1,19 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Libre+Franklin|Bitter&display=swap");
 
-html,body, #root {
+html,
+body,
+#root {
   height: 2000px;
   margin: 0;
   padding: 0;
   font-family: "Libre Franklin", serif;
 }
 
-h1,h2,h3,h4,h5 {
-  font-family: "Bitter",serif;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Bitter", serif;
   font-weight: 200;
   margin: 0px;
 }
 
-h1{ 
+h1 {
   font-size: 2rem;
 }
 
@@ -30,10 +36,10 @@ h2 {
   background-color: white;
 }
 
- .App.dark {
+.App.dark {
   background-color: black;
   color: white;
- }
+}
 
 .column {
   float: left;
@@ -97,7 +103,8 @@ h2 {
   width: 91%;
 }
 
-.column.twelve.wide, .full.wide {
+.column.twelve.wide,
+.full.wide {
   width: 100%;
 }
 
@@ -109,4 +116,8 @@ h2 {
 
 .right.floated {
   float: right !important;
+}
+
+.pt-20 {
+  padding-top: 20px;
 }
