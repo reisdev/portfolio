@@ -1,0 +1,16 @@
+.icon {
+    height: 30px;
+    width: 30px;
+}
+
+.react.icon {
+    content: url(../icons/react.svg);
+}
+
+.arrow-up.icon {
+    content: url(../icons/arrow-up.svg);
+}
+
+.git.icon {
+    content: url(../icons/git.svg);
+}
