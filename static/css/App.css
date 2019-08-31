@@ -7,15 +7,18 @@ html,body, #root {
   font-family: "Libre Franklin", serif;
 }
 
-h1 {
+h1,h2,h3,h4,h5 {
   font-family: "Bitter",serif;
   font-weight: 200;
-  font-size: 3rem;
-  /* text-transform: uppercase; */
+  margin: 0px;
+}
+
+h1{ 
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 100;
 }
 

@@ -1,14 +1,17 @@
-function load() {
-  console.log("Called Setup");
-  window.addEventListener("scroll", function(event) {
-    this.console.log("Called scroll");
+function toggleMenu(event){
     const offset = this.scrollY;
-    if (offset < 50) {
-      $(".menu").removeClass("big");
-    } else {
+    if (offset < 100) {
       $(".menu").addClass("big");
+      $(".scroll-to-top").removeClass("visible")
+    } else {
+      $(".menu").removeClass("big");
+      $(".scroll-to-top").addClass("visible")
     }
-  });
+}
+
+function load() {
+  window.addEventListener("scroll",toggleMenu);
+  toggleMenu();
 }
 
 function menu() {

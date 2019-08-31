@@ -1,4 +1,6 @@
 @import "./App.css";
+@import "./icons.css";
+@import "./all.min.css";
 
 a:not(.item) {
   text-decoration: none;
@@ -7,6 +9,10 @@ a:not(.item) {
 
 a:not(.item):hover {
   text-decoration: underline;
+}
+
+a .icon {
+  color: white;
 }
 
 .box {
@@ -26,17 +32,19 @@ a:not(.item):hover {
 .menu {
   margin-left: auto;
   margin-right: auto;
+  display: flex;
   width: 100%;
+  height: 55px;
   color: white !important;
   background: linear-gradient(to right, #1c5cb1, #4173b6, #064aa3);
   transition: height 0.2s ease-in;
-  height: 150px;
   position: fixed;
   top: 0px;
 }
 
 .big.menu {
-  height: 40px;
+  height: 150px;
+  max-height: 150px;
   transition: height 0.2s ease-out;
 }
 
@@ -45,13 +53,61 @@ a:not(.item):hover {
   background: linear-gradient(to right, #111, #222, #111);
 }
 
-.menu .links {
+.menu .content {
+  margin: auto auto;
+  display: flex;
   max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.menu .links a {
+.big.menu .content {
+  width: 100%;
+  align-self: center;
+}
+
+.menu h2.name {
+  margin: 0px !important;
+}
+
+.big.menu .item {
+  display: block;
+  float: left;
+  margin: auto;
+  width: auto;
+}
+
+.menu .group.item {
+  float: unset;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.big.menu .group.item {
+  display: grid;
+  font-size: 2.2rem;
+}
+
+.menu .group.item a {
+  display: block;
+}
+
+.menu .item span {
+  opacity: 0;
+  transition: opacity .00001s;
+}
+
+.big.menu .item span {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.menu .item:not(:has(img)):hover {
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu .item:not(:has(img)) {
   background-color: transparent;
   text-transform: uppercase;
   width: fit-content;
@@ -59,20 +115,47 @@ a:not(.item):hover {
   padding: 10px;
 }
 
-.menu .links a img {
+img.profile {
   vertical-align: middle;
-  align-self: center;
-  margin-top: -5px;
-  height: 16px;
-  width: auto;
+  padding: 8px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+  transform: scale(1);
+  transition: transform .3s;
 }
 
-.menu .links a:hover {
-  user-select: none;
-  background-color: rgba(0, 0, 0, 0.1);
+.big.menu img.profile {
+  transform: scale(3);
+  transition: transform .4s ease-out;
 }
 
-.App.dark .menu .links a:hover {
+.menu:not(.big) .content>.item:nth-child(2) {
+  display: flex;
+  margin-right: 8px;
+}
+
+.menu h1 {
+  font-size: 1.2rem;
+  padding-left: 10px;
+  margin: auto;
+  transition: font-size .1s ease-in;
+}
+
+.big.menu h1 {
+  font-size: 2rem;
+  padding-top: 0px;
+  padding-left: 0px;
+  transition: font-size .2s ease-in;
+}
+
+.big.menu h1::after {
+  content: " dos Reis de Jesus";
+}
+
+.App.dark .menu .content .item:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -94,6 +177,32 @@ a:not(.item):hover {
 
 .info span {
   display: block;
+}
+
+/* Buttons */
+
+.scroll-to-top {
+  cursor: pointer;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+  color: #064aa3;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  font-size: 1.8rem;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  transition: opacity .2s ease-in;
+}
+
+.scroll-to-top.visible:hover {
+  transform: translateZ(20px);
 }
 
 /* Profile */
@@ -173,15 +282,56 @@ a:not(.item):hover {
   .page {
     padding: 0px 1.0875rem 1.45rem;
   }
+
   .name,
   .job {
     margin: auto auto;
   }
-  h1.name {
-    font-size: 2rem;
+
+  .big.menu h1.name {
+    font-size: 1.3rem;
+    float: right;
+    text-align: right;
+    margin-bottom: 10px;
   }
+
+  .big.menu .item span {
+    float: right;
+  }
+
+  .big.menu .content>.item:nth-child(2) {
+    max-width: 46%;
+  }
+
+  .big.menu img.profile {
+    transform: scale(2.5) translateX(7px);
+    transition: transform .17s ease-out;
+    margin-top: 0px;
+  }
+
+  .menu:not(.big) .content {
+    margin: unset;
+    width: 100%;
+  }
+
+  .menu:not(.big) .group.item {
+    float: right;
+    margin-right: 10px;
+  }
+
   .profile h2 {
     font-size: 1.5rem;
     margin: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .content {
+    max-width: unset;
+    transition: max-width .5s;
+  }
+
+  .menu h1::after {
+    content: " dos Reis de Jesus";
   }
 }
