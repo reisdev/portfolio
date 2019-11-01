@@ -82,6 +82,10 @@ section .header:hover::before {
   margin: auto;
 }
 
+.menu .name::after {
+  content: " dos Reis de Jesus";
+}
+
 .menu ul {
   display: flex;
 }
@@ -108,7 +112,7 @@ section .header:hover::before {
   padding: 0px;
 }
 
-.menu .group.item {
+.menu .social {
   float: unset;
   font-size: 1.5rem;
   display: flex;
@@ -116,12 +120,12 @@ section .header:hover::before {
   margin-left: 10px;
 }
 
-.group.items {
+.topics {
   width: fit-content;
   margin: 15px auto;
 }
 
-.group.items .item {
+.topics .item {
   text-decoration: none;
   margin: 10px 20px;
   color: white;
@@ -144,7 +148,7 @@ a .icon {
   margin: 7px 10px;
 }
 
-.menu .group.item a {
+.menu .social a {
   display: block;
 }
 
@@ -306,7 +310,16 @@ img.profile {
 /* Screens */
 
 @media screen and (max-width: 425px) {
-  .group.items {
+
+  .menu img.profile {
+    margin-left: 8px;
+  }
+
+  .menu .name::after {
+    content: " Reis";
+  }
+
+  .topics {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -316,23 +329,23 @@ img.profile {
     transition: height .5s ease-in;
   }
 
-  .group.items.active {
+  .topics.active {
     margin: 10px auto;
     height: 160px;
   }
 
-  .group.items li {
+  .topics li {
     opacity: 0;
     transition: opacity .2s ease-in;
   }
 
-  .group.items.active li {
+  .topics.active li {
     margin: 10px;
     opacity: 1;
     text-align: center;
   }
 
-  .group.items .item {
+  .topics .item {
     font-size: 1rem;
   }
 }
@@ -352,11 +365,11 @@ img.profile {
     width: 100%;
   }
 
-  .menu .group.item {
-    display: none;
+  .menu .social {
+    margin: 10px;
   }
 
-  .menu .hamburguer {
+  .menu .group .menu .hamburguer {
     display: flex;
   }
 
