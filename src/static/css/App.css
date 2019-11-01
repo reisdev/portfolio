@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin|Bitter&display=swap");
+
+html,
+body,
+#root {
+  height: 2000px;
+  margin: 0;
+  padding: 0;
+  font-family: "Libre Franklin", serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Bitter", serif;
+  font-weight: 200;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+
+
+.App {
+  height: 100%;
+  text-align: center;
+  width: 100;
+  background-color: white;
+}
+
+.App.dark {
+  background-color: black;
+  color: white;
+}
+
+.column {
+  float: left;
+}
+
+.page {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column.one.wide {
+  width: 8.3333%;
+}
+
+.column.two.wide {
+  width: 16.6666%;
+}
+
+.column.three.wide {
+  width: 25%;
+}
+
+.column.four.wide {
+  width: 33.33%;
+}
+
+.column.five.wide {
+  width: 41.66%;
+}
+
+.column.six.wide {
+  width: 50%;
+}
+
+.column.seven.wide {
+  width: 58.33%;
+}
+
+.column.eight.wide {
+  width: 66.66%;
+}
+
+.column.nine.wide {
+  width: 75%;
+}
+
+.column.ten.wide {
+  width: 83.33%;
+}
+
+.column.eleven.wide {
+  width: 91%;
+}
+
+.column.twelve.wide,
+.full.wide {
+  width: 100%;
+}
+
+/* */
+
+.left.floated {
+  float: left !important;
+}
+
+.right.floated {
+  float: right !important;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
