@@ -2,9 +2,25 @@ const gulp = require("gulp");
 const babel = require("gulp-babel");
 const useref = require("gulp-useref");
 const uglify = require("gulp-uglify");
-const cssnano = require("gulp-cssnano");
-const rename = require("gulp-rename");
+const postcss = require("gulp-postcss");
 const image = require("gulp-image");
+const replace = require("gulp-replace-image-src");
+const clean = require("gulp-clean");
+const htmlmin = require("gulp-htmlmin");
+
+gulp.task("html", function() {
+  return gulp
+    .src("src/index.html")
+    .pipe(
+      replace({
+        prependSrc: "img/",
+        keepOrigin: false
+      })
+    )
+    .pipe(useref())
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("tmp"));
+});
 
 gulp.task("image", function() {
   return gulp
@@ -14,35 +30,41 @@ gulp.task("image", function() {
 });
 
 gulp.task("js", function() {
-  return (
-    gulp
-      .src("src/static/js/*.js")
-      .pipe(
-        babel({
-          presets: ["@babel/env"]
-        })
-      )
-      // Minifies only if it's a JavaScript file
-      .pipe(uglify())
-      .pipe(rename({ suffix: ".min" }))
-      .pipe(gulp.dest("dist/js"))
-  ); // Outputs the file in the destination folder
+  return gulp
+    .src("tmp/js/*.js")
+    .pipe(
+      babel({
+        presets: ["@babel/env"]
+      })
+    )
+    .pipe(uglify())
+    .pipe(gulp.dest("dist/js"));
 });
 
 gulp.task("css", function() {
   return gulp
-    .src("src/static/css/*style.css")
-    .pipe(cssnano())
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest("dist/css")); // Outputs the file in the destination folder
+    .src("tmp/css/*.css")
+    .pipe(postcss())
+    .pipe(gulp.dest("dist/css"));
+});
+
+gulp.task("font", function() {
+  return gulp
+    .src("src/static/webfonts/*.{woff,woff2,eot,ttf,svg}")
+    .pipe(gulp.dest("dist/webfonts"));
+});
+
+gulp.task("manifest", function() {
+  return gulp.src("manifest.json").pipe(gulp.dest("dist"));
 });
 
 gulp.task(
-  "build",
-  gulp.series(["image", "js", "css"], function() {
-    return gulp
-      .src("src/index.html")
-      .pipe(useref())
-      .pipe(gulp.dest("dist")); // Outputs the file in the destination folder
-  })
+  "transfer",
+  gulp.series(["html", "image", "js", "css", "font", "manifest"])
 );
+
+gulp.task("cleanup", function() {
+  return gulp.src("tmp", { read: false }).pipe(clean());
+});
+
+gulp.task("build", gulp.series(["transfer", "cleanup"]));
