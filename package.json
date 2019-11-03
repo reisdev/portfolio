@@ -24,7 +24,7 @@
   "scripts": {
     "build": "gulp build",
     "predeploy": "gulp build",
-    "deploy": "gh-pages -d src"
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": [
     ">0.2%",
