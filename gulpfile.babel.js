@@ -9,7 +9,11 @@ const clean = require("gulp-clean");
 const htmlmin = require("gulp-htmlmin");
 const connect = require("gulp-connect");
 
-gulp.task("html", function() {
+gulp.task("init", function() {
+  return gulp.src("dist", { read: false }).pipe(clean());
+});
+
+gulp.task("refer", function() {
   return gulp
     .src("src/index.html")
     .pipe(
@@ -21,6 +25,10 @@ gulp.task("html", function() {
     .pipe(useref())
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("tmp"));
+});
+
+gulp.task("html", function() {
+  return gulp.src("tmp/index.html").pipe(gulp.dest("dist"));
 });
 
 gulp.task("image", function() {
@@ -61,7 +69,16 @@ gulp.task("manifest", function() {
 
 gulp.task(
   "transfer",
-  gulp.series(["html", "image", "js", "css", "font", "manifest"])
+  gulp.series([
+    "init",
+    "refer",
+    "html",
+    "image",
+    "js",
+    "css",
+    "font",
+    "manifest"
+  ])
 );
 
 gulp.task("cleanup", function() {
