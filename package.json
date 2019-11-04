@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "homepage": "https://reisdev.github.io",
   "private": true,
+  "scripts": {
+    "dev": "gulp serve",
+    "build": "gulp build",
+    "predeploy": "gulp build",
+    "deploy": "gh-pages -d dist"
+  },
   "dependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
@@ -11,6 +17,7 @@
     "del": "^5.1.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
+    "gulp-connect": "^5.7.0",
     "gulp-font": "^1.0.4",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
@@ -20,11 +27,6 @@
     "gulp-replace-image-src": "^1.0.1",
     "gulp-uglify": "^3.0.2",
     "gulp-useref": "^4.0.0"
-  },
-  "scripts": {
-    "build": "gulp build",
-    "predeploy": "gulp build",
-    "deploy": "gh-pages -d dist"
   },
   "browserslist": [
     ">0.2%",

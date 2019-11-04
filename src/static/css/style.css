@@ -12,37 +12,6 @@
   color: white;
 }
 
-main {
-  max-width: 960px;
-  margin: auto auto;
-  padding: 10px 25px;
-}
-
-main section {
-  margin-bottom: 55px;
-}
-
-section .header {
-  cursor: pointer;
-}
-
-section .header::before {
-  font-family: 'Font Awesome\ 5 Free';
-  content: "\f054";
-  font-weight: 900;
-  margin-right: 12px;
-  cursor: pointer;
-}
-
-section .header:hover::before {
-  font-family: 'Font Awesome\ 5 Free';
-  font-weight: normal;
-  font-size: 1.5rem;
-  content: "\f0c1";
-  font-weight: 900;
-  margin-right: 8px;
-  cursor: pointer;
-}
 
 /* Menu */
 
@@ -55,8 +24,11 @@ section .header:hover::before {
   height: fit-content;
   color: white !important;
   background: linear-gradient(to right, #1c5cb1, #4173b6, #064aa3);
+  background-size: cover;
   transition: height 0.2s ease-in;
 }
+
+.menu .background {}
 
 .hamburguer {
   -webkit-appearance: none;
@@ -197,6 +169,48 @@ img.profile {
   transition: font-size 0.1s ease-in;
 }
 
+/* Content */
+
+main {
+  margin: auto auto;
+}
+
+main section {
+  margin-bottom: 10px;
+  padding: 10px 25px;
+}
+
+main section section.content {
+  max-width: 960px;
+}
+
+main section:nth-child(even) {
+  background: linear-gradient(to right, #3a3a3a, #2c2c2c, #4d4d4d);
+  color: white
+}
+
+section .header {
+  cursor: pointer;
+}
+
+section .header::before {
+  font-family: 'Font Awesome\ 5 Free';
+  content: "\f054";
+  font-weight: 900;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+section .header:hover::before {
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: normal;
+  font-size: 1.5rem;
+  content: "\f0c1";
+  font-weight: 900;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
 /* Texts */
 
 .muted {
@@ -333,7 +347,7 @@ img.profile {
     height: 0px;
     margin: 0px;
     overflow: hidden;
-    transition: height .5s ease-in;
+    transition: height .2s ease-in;
   }
 
   .menu .hamburguer {
@@ -347,7 +361,7 @@ img.profile {
 
   .topics li {
     opacity: 0;
-    transition: opacity .2s ease-in;
+    transition: opacity .1s ease-in;
   }
 
   .topics.active li {

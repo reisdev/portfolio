@@ -7,6 +7,7 @@ const image = require("gulp-image");
 const replace = require("gulp-replace-image-src");
 const clean = require("gulp-clean");
 const htmlmin = require("gulp-htmlmin");
+const connect = require("gulp-connect");
 
 gulp.task("html", function() {
   return gulp
@@ -68,3 +69,10 @@ gulp.task("cleanup", function() {
 });
 
 gulp.task("build", gulp.series(["transfer", "cleanup"]));
+
+gulp.task("serve", function() {
+  connect.server({
+    root: "src",
+    livereload: true
+  });
+});
