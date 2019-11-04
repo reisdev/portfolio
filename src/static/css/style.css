@@ -28,8 +28,6 @@
   transition: height 0.2s ease-in;
 }
 
-.menu .background {}
-
 .hamburguer {
   -webkit-appearance: none;
   border: none;
