@@ -12,7 +12,6 @@
   color: white;
 }
 
-
 /* Menu */
 
 .menu {
@@ -23,9 +22,32 @@
   width: 100%;
   height: fit-content;
   color: white !important;
-  background: linear-gradient(to right, #1c5cb1, #4173b6, #064aa3);
+  background: linear-gradient(to right, #3a3a3a, #2c2c2c, #4d4d4d);
   background-size: cover;
   transition: height 0.2s ease-in;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  flex-direction: column;
+}
+
+.sticky.menu {
+  justify-content: space-between;
+}
+
+.sticky.menu .avatar {
+  margin: 0px;
+}
+
+.sticky.menu .avatar img {
+  height: 32px;
+  width: 32px;
+}
+
+.menu section {
+  display: flex;
 }
 
 .hamburguer {
@@ -37,10 +59,8 @@
   padding: 12px;
 }
 
-
 .hamburguer .icon {
   font-size: 25px;
-  margin: auto auto;
 }
 
 .menu li {
@@ -52,15 +72,11 @@
   display: flex;
   max-width: 960px;
   width: fit-content;
-  margin: auto auto
+  margin: auto auto;
 }
 
 .menu .avatar {
   margin: auto;
-}
-
-.menu .name::after {
-  content: " dos Reis de Jesus";
 }
 
 .menu ul {
@@ -90,23 +106,31 @@
 }
 
 .menu .social {
-  float: unset;
+  float: right;
   font-size: 1.5rem;
   display: flex;
-  flex-direction: column;
-  margin-left: 10px;
+  flex-direction: row;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.menu section:has(.social) {
+  float: right;
+  right: 0;
+  position: absolute;
+  margin: 9px;
 }
 
 .topics {
   width: fit-content;
-  margin: 15px auto;
+  margin: 20px auto;
 }
 
 .topics .item {
   text-decoration: none;
   margin: 10px 20px;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -121,8 +145,9 @@ a:not(.item):hover {
 
 a .icon {
   color: white;
-  font-size: 2rem;
-  margin: 7px 10px;
+  font-size: 1.6rem;
+  margin: auto 3px;
+  padding: 3px;
 }
 
 .menu .social a {
@@ -173,18 +198,19 @@ main {
   margin: auto auto;
 }
 
-main section {
+main > section {
   margin-bottom: 10px;
   padding: 10px 25px;
 }
 
-main section section.content {
+main > section section.content {
   max-width: 960px;
+  margin: auto auto;
 }
 
-main section:nth-child(even) {
+main > section:nth-child(even) {
   background: linear-gradient(to right, #3a3a3a, #2c2c2c, #4d4d4d);
-  color: white
+  color: white;
 }
 
 section .header {
@@ -192,7 +218,7 @@ section .header {
 }
 
 section .header::before {
-  font-family: 'Font Awesome\ 5 Free';
+  font-family: "Font Awesome\ 5 Free";
   content: "\f054";
   font-weight: 900;
   margin-right: 12px;
@@ -200,7 +226,7 @@ section .header::before {
 }
 
 section .header:hover::before {
-  font-family: 'Font Awesome\ 5 Free';
+  font-family: "Font Awesome\ 5 Free";
   font-weight: normal;
   font-size: 1.5rem;
   content: "\f0c1";
@@ -322,20 +348,25 @@ section .header:hover::before {
   color: white;
 }
 
-.profile h2 {
-  margin-top: -40px;
+h1.name {
+  font-weight: 200;
+}
+
+h2.age {
+  opacity: 0.6;
+  font-weight: lighter;
+  font-family: "Libre Franklin";
+  font-size: 1.5rem;
+  margin-top: -6px;
 }
 
 /* Screens */
 
 @media screen and (max-width: 425px) {
-
-  .menu img.profile {
-    margin-left: 8px;
-  }
-
-  .menu .name::after {
-    content: " Reis";
+  main img.profile {
+    height: 60px;
+    width: 60px;
+    margin-top: 20px;
   }
 
   .topics {
@@ -345,11 +376,22 @@ section .header:hover::before {
     height: 0px;
     margin: 0px;
     overflow: hidden;
-    transition: height .2s ease-in;
+    transition: height 0.2s ease-in;
   }
 
   .menu .hamburguer {
     display: flex;
+  }
+
+  .menu > .content > .navigation {
+    display: none !important;
+  }
+
+  .menu .social {
+    float: right;
+    right: 0;
+    position: absolute;
+    margin: 10px;
   }
 
   .topics.active {
@@ -359,7 +401,7 @@ section .header:hover::before {
 
   .topics li {
     opacity: 0;
-    transition: opacity .1s ease-in;
+    transition: opacity 0.1s ease-in;
   }
 
   .topics.active li {
@@ -373,23 +415,20 @@ section .header:hover::before {
   }
 }
 
+@media screen and (min-width: 426px) {
+  .menu > .navigation{
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .page {
     padding: 0px 1.0875rem 1.45rem;
   }
 
-  .name,
-  .job {
-    margin: auto auto;
-  }
-
   .menu .content {
     margin: unset;
     width: 100%;
-  }
-
-  .menu .social {
-    margin: 10px;
   }
 
   .profile h2 {

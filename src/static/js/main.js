@@ -14,7 +14,7 @@ function copyToClipboard(id) {
 }
 
 function toggleMenu() {
-  const menu = $(".topics")[0];
+  const menu = $(".menu > section:not(.content) > .topics")[0];
   if (menu.classList.contains("active")) {
     menu.classList.remove("active");
   } else {

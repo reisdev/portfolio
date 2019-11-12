@@ -8,7 +8,7 @@
     />
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="manifest.json" />
-    <title>Matheus Reis</title>
+    <title>reisdev - Desenvolvedor Web</title>
     <script
       async
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -21,8 +21,11 @@
     <noscript
       >Você precisa ativar o JavaScript para executar essa aplicação.</noscript
     >
-    <nav class="menu">
+    <nav class="sticky menu">
       <section class="content">
+        <button class="hamburguer" onclick="toggleMenu()">
+          <i class="fas fa-bars icon"></i>
+        </button>
         <section class="avatar">
           <img
             class="profile"
@@ -30,59 +33,94 @@
             alt="Profile picture of the developer of this page"
           />
         </section>
-        <section style="margin: auto auto;">
-          <div>
-            <h1 class="name">Matheus</h1>
-            <h2>21 anos</h2>
-          </div>
-        </section>
-        <section>
-          <ul class="social">
-            <li>
-              <a
-                class="item"
-                href="https://github.com/reisdev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="icon fab fa-github"></i
-              ></a>
+        <section class="navigation">
+          <ul class="topics">
+            <li onclick="toggleMenu()">
+              <a class="item" href="#about">Sobre mim</a>
             </li>
-            <li>
-              <a
-                class="item"
-                href="https://www.linkedin.com/in/matheus-dos-reis-de-jesus-40a59570"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="icon fab fa-linkedin"></i
-              ></a>
+            <li onclick="toggleMenu()">
+              <a class="item" href="#carreer">Carreira</a>
             </li>
-            <li>
-              <a
-                class="item"
-                href="https://gitlab.com/reisdev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="icon fab fa-gitlab"></i
-              ></a>
+            <li onclick="toggleMenu()">
+              <a class="item" href="#experience">Experiência</a>
+            </li>
+            <li onclick="toggleMenu()">
+              <a class="item" href="#skills">Habilidades</a>
             </li>
           </ul>
         </section>
+        <ul class="social">
+          <li>
+            <a
+              class="item"
+              href="https://github.com/reisdev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="icon fab fa-github"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              class="item"
+              href="https://www.linkedin.com/in/matheus-dos-reis-de-jesus-40a59570"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="icon fab fa-linkedin"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              class="item"
+              href="https://gitlab.com/reisdev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="icon fab fa-gitlab"></i
+            ></a>
+          </li>
+        </ul>
       </section>
-      <ul class="topics">
-        <li><a class="item" href="#about">Sobre mim</a></li>
-        <li><a class="item" href="#carreer">Carreira</a></li>
-        <li><a class="item" href="#experience">Experiência</a></li>
-        <li><a class="item" href="#skills">Habilidades</a></li>
-      </ul>
-      <button class="hamburguer" onclick="toggleMenu()">
-        <i class="fas fa-bars icon"></i>
-      </button>
+      <section class="navigation">
+        <ul class="topics">
+          <li onclick="toggleMenu()">
+            <a class="item" href="#about">Sobre mim</a>
+          </li>
+          <li onclick="toggleMenu()">
+            <a class="item" href="#carreer">Carreira</a>
+          </li>
+          <li onclick="toggleMenu()">
+            <a class="item" href="#experience">Experiência</a>
+          </li>
+          <li onclick="toggleMenu()">
+            <a class="item" href="#skills">Habilidades</a>
+          </li>
+        </ul>
+      </section>
     </nav>
     <main>
       <section>
-        <section class="content">
-          <span style="display: none"></span>
-          <p></p>
+        <section class="content" style="display: flex;">
+          <section class="avatar" style="flex: 1">
+            <img
+              class="profile"
+              src="static/img/profile.jpg"
+              alt="Profile picture of the developer of this page"
+            />
+          </section>
+          <section
+            style="flex: 5; display:flex; flex-direction: column; margin-left: 10px;"
+          >
+            <section style="margin-top: 20px">
+              <h1 class="name">Matheus dos Reis de Jesus</h1>
+              <h2 class="age">21 anos</h2>
+            </section>
+            <section style="margin-top: 10px;">
+              Com mais de 5 anos de experiência na área de desenvolvimento web,
+              Matheus(de codinome <i>reisdev</i> ) é um amante da tecnologia
+              desde que se entende por gente. Já experimentou de tudo um pouco,
+              e está sempre testando as novas tecnologias, para "não ficar pra
+              trás"!
+            </section>
+          </section>
         </section>
       </section>
       <section>
@@ -104,7 +142,7 @@
         </section>
       </section>
     </main>
-    <footer>
+    <footer style="position: fixed; bottom: 0; right: 0">
       <button class="scroll-to-top" onclick="window.scrollTo(0,0)">
         <i class="fas fa-arrow-up"></i>
       </button>
