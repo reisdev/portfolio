@@ -7,7 +7,7 @@
     "dev": "gulp serve",
     "build": "gulp build",
     "predeploy": "gulp build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -b gh-pages -d dist"
   },
   "dependencies": {
     "@babel/core": "^7.6.4",
@@ -15,6 +15,7 @@
     "@babel/register": "^7.6.2",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
+    "gh-pages": "^2.1.1",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-connect": "^5.7.0",

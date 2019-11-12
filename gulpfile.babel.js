@@ -10,7 +10,7 @@ const htmlmin = require("gulp-htmlmin");
 const connect = require("gulp-connect");
 
 gulp.task("init", function() {
-  return gulp.src("dist", { read: false }).pipe(clean());
+  return gulp.src("dist", { read: false, allowEmpty: true }).pipe(clean());
 });
 
 gulp.task("refer", function() {
