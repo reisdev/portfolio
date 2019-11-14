@@ -64,7 +64,9 @@ gulp.task("font", function() {
 });
 
 gulp.task("manifest", function() {
-  return gulp.src("manifest.json").pipe(gulp.dest("dist"));
+  return gulp
+    .src(["src/manifest.json", "src/favicon.ico"])
+    .pipe(gulp.dest("dist"));
 });
 
 gulp.task(

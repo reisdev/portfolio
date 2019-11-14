@@ -4,7 +4,7 @@
   "homepage": "https://reisdev.github.io",
   "private": true,
   "scripts": {
-    "dev": "gulp serve",
+    "dev": "gulp start",
     "build": "gulp build",
     "predeploy": "gulp build",
     "deploy": "gh-pages -b gh-pages -d dist"
@@ -27,7 +27,8 @@
     "gulp-rename": "^1.4.0",
     "gulp-replace-image-src": "^1.0.1",
     "gulp-uglify": "^3.0.2",
-    "gulp-useref": "^4.0.0"
+    "gulp-useref": "^4.0.0",
+    "gulp-watch": "^5.0.1"
   },
   "browserslist": [
     ">0.2%",

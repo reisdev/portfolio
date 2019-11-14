@@ -46,6 +46,11 @@
   width: 32px;
 }
 
+.logo {
+  max-height: 32px;
+  margin: auto auto;
+}
+
 .menu section {
   display: flex;
 }
@@ -198,17 +203,17 @@ main {
   margin: auto auto;
 }
 
-main > section {
+main>section {
   margin-bottom: 10px;
   padding: 10px 25px;
 }
 
-main > section section.content {
+main>section section.content {
   max-width: 960px;
   margin: auto auto;
 }
 
-main > section:nth-child(even) {
+main>section:nth-child(even) {
   background: linear-gradient(to right, #3a3a3a, #2c2c2c, #4d4d4d);
   color: white;
 }
@@ -353,7 +358,7 @@ h1.name {
 }
 
 h2.age {
-  opacity: 0.6;
+  color: dimgray;
   font-weight: lighter;
   font-family: "Libre Franklin";
   font-size: 1.5rem;
@@ -383,7 +388,7 @@ h2.age {
     display: flex;
   }
 
-  .menu > .content > .navigation {
+  .menu>.content>.navigation {
     display: none !important;
   }
 
@@ -416,7 +421,7 @@ h2.age {
 }
 
 @media screen and (min-width: 426px) {
-  .menu > .navigation{
+  .menu>.navigation {
     display: none !important;
   }
 }
