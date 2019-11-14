@@ -7,7 +7,7 @@
     "dev": "gulp start",
     "build": "gulp build",
     "predeploy": "gulp build",
-    "deploy": "gh-pages -b gh-pages -d dist"
+    "deploy": "gh-pages -b master -d dist"
   },
   "dependencies": {
     "@babel/core": "^7.6.4",
