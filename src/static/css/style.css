@@ -205,12 +205,23 @@ main {
 
 main>section {
   margin-bottom: 10px;
-  padding: 10px 25px;
 }
 
 main>section section.content {
   max-width: 960px;
+  width: 100%;
   margin: auto auto;
+  display: flex;
+  flex-direction: row;
+}
+
+main>section>section.content>section {
+  padding: 10px 25px;
+}
+
+main>section>section.content>img {
+  max-height: 300px;
+  width: auto;
 }
 
 main>section:nth-child(even) {
@@ -399,6 +410,14 @@ h2.age {
     margin: 10px;
   }
 
+  main>section>section.content {
+    flex-direction: column;
+  }
+
+  main>section>section.content>img {
+    max-width: 100%
+  }
+
   .topics.active {
     margin: 10px auto;
     height: 160px;
@@ -426,7 +445,7 @@ h2.age {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 767px) {
   .page {
     padding: 0px 1.0875rem 1.45rem;
   }
