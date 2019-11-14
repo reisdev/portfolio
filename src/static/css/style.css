@@ -180,7 +180,7 @@ img.profile {
   border-radius: 50%;
   object-fit: cover;
   vertical-align: middle;
-  margin: auto auto;
+  margin: 10px;
 }
 
 .menu h1 {
@@ -215,7 +215,7 @@ main>section section.content {
   flex-direction: row;
 }
 
-main>section>section.content>section {
+main>section:nth-child(2n)>section.content>section {
   padding: 10px 25px;
 }
 
