@@ -23,7 +23,12 @@ gulp.task("refer", function() {
       })
     )
     .pipe(useref())
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+        ignoreCustomFragments: [/(<|>)/]
+      })
+    )
     .pipe(gulp.dest("tmp"));
 });
 
