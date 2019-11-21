@@ -1,6 +1,7 @@
 function load() {
-  $("section .header").click(el => {
-    copyToClipboard($(el.target).data("target"));
+  document.addEventListener("scroll", e => {
+    if (window.scrollY >= 363) $(".menu")[0].classList.add("colored");
+    else $(".menu")[0].classList.remove("colored");
   });
 }
 
@@ -17,7 +18,9 @@ function toggleMenu() {
   const menu = $(".menu > section:not(.content) > .topics")[0];
   if (menu.classList.contains("active")) {
     menu.classList.remove("active");
+    $(".menu")[0].classList.remove("colored");
   } else {
     menu.classList.add("active");
+    $(".menu")[0].classList.add("colored");
   }
 }

@@ -22,7 +22,7 @@
     <noscript
       >Você precisa ativar o JavaScript para executar essa aplicação.</noscript
     >
-    <nav class="sticky menu">
+    <nav class="fixed menu">
       <section class="content">
         <button class="hamburguer" onclick="toggleMenu()">
           <i class="fas fa-bars icon"></i>
@@ -98,6 +98,17 @@
       </section>
     </nav>
     <main>
+      <section class="merchan content" style="display: table;">
+        <div class="middle-align">
+          <h1>
+            Desenvolvimento de soluções <br />
+            para o seu negócio
+          </h1>
+          <h2 class="small">
+            Serviço personalizado e de qualidade, que cabe no seu bolso!
+          </h2>
+        </div>
+      </section>
       <section>
         <section class="content">
           <section class="avatar" style="flex: 1; text-align: center;">
@@ -118,21 +129,11 @@
               Com mais de 5 anos de experiência na área de desenvolvimento web,
               Matheus(<i>reisdev</i> ) é um amante da tecnologia desde que se
               entende por gente. Já experimentou de tudo um pouco, e está sempre
-              testando as novas tecnologias, para "não ficar pra trás"!
+              procura aprender as novas tecnologias e frameworks, para "não
+              ficar pra trás"!
             </section>
           </section>
         </section>
-      </section>
-      <section class="merchan content" style="display: table;">
-        <div class="middle-align">
-          <h1>
-            Desenvolvimento de Aplicativos,<br />
-            Sites e Sistemas para <br />o seu negócio
-          </h1>
-          <h2 class="small">
-            Serviço personalizado e de qualidade, que cabe no seu bolso!
-          </h2>
-        </div>
       </section>
     </main>
     <footer style="position: fixed; bottom: 0; right: 0">
@@ -144,8 +145,8 @@
     <script src="static/js/main.js" lang="javascript"></script>
     <!-- endbuild -->
     <!-- build:css css/style.min.css -->
-    <link href="static/css/App.css" rel="stylesheet" />
     <link href="static/css/style.css" rel="stylesheet" />
+    <link href="static/css/components.css" rel="stylesheet" />
     <link href="static/css/icons.css" rel="stylesheet" />
     <!-- endbuild -->
     <!-- build:css css/all.min.css -->
