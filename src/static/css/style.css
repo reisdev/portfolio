@@ -205,50 +205,48 @@ main {
 
 main>section {
   margin-bottom: 10px;
+  padding: 20px 0px;
+  width: 100%;
 }
 
 main>section section.content {
   max-width: 960px;
-  width: 100%;
   margin: auto auto;
   display: flex;
-  flex-direction: row;
 }
 
-main>section:nth-child(2n)>section.content>section {
+main section.content .title {
+  margin: auto;
+  text-align: center;
+}
+
+main section:nth-child(2n)>section.content>section {
   padding: 10px 25px;
 }
 
-main>section>section.content>img {
-  max-height: 300px;
-  width: auto;
-}
-
-main>section:nth-child(even) {
-  background: linear-gradient(to right, #3a3a3a, #2c2c2c, #4d4d4d);
+section.merchan {
   color: white;
+  height: 332px;
+  background-image: url(../img/parallax-1.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-section .header {
-  cursor: pointer;
+section.merchan h1 {
+  max-width: 600px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: auto;
 }
 
-section .header::before {
-  font-family: "Font Awesome\ 5 Free";
-  content: "\f054";
-  font-weight: 900;
-  margin-right: 12px;
-  cursor: pointer;
-}
-
-section .header:hover::before {
-  font-family: "Font Awesome\ 5 Free";
-  font-weight: normal;
-  font-size: 1.5rem;
-  content: "\f0c1";
-  font-weight: 900;
-  margin-right: 8px;
-  cursor: pointer;
+section.merchan h2 {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
 }
 
 /* Texts */
@@ -373,16 +371,21 @@ h2.age {
   font-weight: lighter;
   font-family: "Libre Franklin";
   font-size: 1.5rem;
-  margin-top: -6px;
+  margin-top: -2px;
 }
 
 /* Screens */
 
 @media screen and (max-width: 425px) {
   main img.profile {
-    height: 60px;
-    width: 60px;
+    height: 120px;
+    width: 120px;
+    margin: auto;
     margin-top: 20px;
+  }
+
+  section.merchan h1 {
+    font-size: 1.6rem;
   }
 
   .topics {
@@ -410,11 +413,12 @@ h2.age {
     margin: 10px;
   }
 
-  main>section>section.content {
+  main section.content {
+    width: 100%;
     flex-direction: column;
   }
 
-  main>section>section.content>img {
+  main section.content img {
     max-width: 100%
   }
 
