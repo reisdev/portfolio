@@ -1,6 +1,6 @@
 function load() {
   document.addEventListener("scroll", e => {
-    if (window.scrollY >= 363) $(".menu")[0].classList.add("colored");
+    if (window.scrollY >= 60) $(".menu")[0].classList.add("colored");
     else $(".menu")[0].classList.remove("colored");
   });
 }
@@ -22,12 +22,12 @@ function toggleMenu() {
   const scrollY = window.scrollY;
   if (topics.classList.contains("active")) {
     topics.classList.remove("active");
-    if (scrollY < 363) {
+    if (scrollY < 60) {
       menu.classList.remove("colored");
     }
   } else {
     topics.classList.add("active");
-    if (scrollY < 363) {
+    if (scrollY < 60) {
       menu.classList.add("colored");
     }
   }
