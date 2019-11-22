@@ -22,12 +22,12 @@ function toggleMenu() {
   const scrollY = window.scrollY;
   if (topics.classList.contains("active")) {
     topics.classList.remove("active");
-    if (scrollY < 60) {
+    if (scrollY < 60 && window.innerWidth <= 425) {
       menu.classList.remove("colored");
     }
   } else {
     topics.classList.add("active");
-    if (scrollY < 60) {
+    if (scrollY < 60 && window.innerWidth <= 425) {
       menu.classList.add("colored");
     }
   }

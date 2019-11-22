@@ -182,8 +182,8 @@ a .icon {
 img.profile {
   vertical-align: middle;
   padding: 8px;
-  height: 120px;
-  width: 120px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   object-fit: cover;
   vertical-align: middle;
@@ -212,7 +212,7 @@ main {
 
 main>section {
   margin-bottom: 10px;
-  padding: 20px 0px;
+  padding: 10px 0px;
   width: 100%;
 }
 
@@ -228,7 +228,7 @@ main section.content .title {
 }
 
 main section:nth-child(2n)>section.content>section {
-  padding: 10px 25px;
+  padding: 10px 15px;
 }
 
 section.merchan {
@@ -255,6 +255,20 @@ section.merchan h2 {
   margin-top: 20px;
   text-align: center;
 }
+
+section.personal {
+  margin-top: 45px;
+}
+
+section.skills .title::after {
+  position: absolute;
+  content: "";
+  top: 11px;
+  width: 40px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
 
 /* Texts */
 
@@ -385,14 +399,22 @@ h2.age {
 
 @media screen and (max-width: 425px) {
   main img.profile {
-    height: 120px;
-    width: 120px;
+    height: 150px;
+    width: 150px;
     margin: auto;
     margin-top: 20px;
   }
 
+  section.merchan {
+    margin-top: 0;
+  }
+
   section.merchan h1 {
     font-size: 1.6rem;
+  }
+
+  section.personal {
+    margin-top: 0px;
   }
 
   .topics {
@@ -473,6 +495,10 @@ h2.age {
 
   .scroll-to-top {
     font-size: 1.6rem;
+  }
+
+  section.merchan h2 {
+    padding: 0px 20px;
   }
 }
 
