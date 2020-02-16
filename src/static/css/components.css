@@ -260,6 +260,7 @@ section.personal {
   margin-top: 45px;
 }
 
+/*
 section.skills .title::after {
   position: absolute;
   content: "";
@@ -267,7 +268,7 @@ section.skills .title::after {
   width: 40px;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.6);
-}
+}*/
 
 
 /* Texts */
