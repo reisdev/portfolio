@@ -110,32 +110,6 @@ section.personal {
   display: block;
 }
 
-/* Buttons */
-
-.scroll-to-top {
-  cursor: pointer;
-  -webkit-appearance: none;
-  background: transparent;
-  border: none;
-  outline: none;
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
-  color: #064aa3;
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  font-size: 1.8rem;
-}
-
-.scroll-to-top.visible {
-  opacity: 1;
-  transition: opacity 0.2s ease-in;
-}
-
-.scroll-to-top.visible:hover {
-  transform: translateZ(20px);
-}
-
 /* Profile */
 
 .profile .header {
@@ -218,12 +192,6 @@ i.pandas {
 
   main section.content img {
     max-width: 100%
-  }
-}
-
-@media screen and (min-width: 426px) {
-  .menu>.navigation {
-    display: none !important;
   }
 }
 

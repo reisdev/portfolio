@@ -221,6 +221,13 @@ a .icon {
     }
 }
 
+@media screen and (min-width: 426px) {
+    .menu>.navigation {
+        display: none !important;
+    }
+}
+
+
 @media screen and (max-width: 767px) {
     .menu .content {
         margin: unset;

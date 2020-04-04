@@ -2,11 +2,34 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 
 import logo from "../../static/img/logo-white.png";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+
+const Navigation = ({ toggle, active }: { toggle: any; active: boolean }) => {
+  return (
+    <section className="navigation">
+      <ul className={`topics ${active ? "active" : ""}`}>
+        <li onClick={toggle}>
+          <Link className="item" to={"/"}>
+            Sobre mim
+          </Link>
+        </li>
+        <li onClick={toggle}>
+          <Link className="item" to={"/blog"}>
+            Blog
+          </Link>
+        </li>
+      </ul>
+    </section>
+  );
+};
 
 export default function Menu(props: any) {
   const [colored, setColored] = useState(false);
   const [active, setActive] = useState(false);
   const [scroll, setScroll] = useState(0);
+  const history = useHistory();
+
   const toggleMenu = () => {
     if (active) {
       setActive(false);
@@ -21,19 +44,37 @@ export default function Menu(props: any) {
   };
 
   useEffect(() => {
-    if (window.scrollY >= 60) setColored(true);
-    document.addEventListener("scroll", onScroll);
-  }, []);
+    function setup() {
+      if (window.scrollY >= 60 || history.location.pathname !== "/")
+        setColored(true);
+      document.addEventListener("scroll", onScroll);
+    }
+    setup();
+    return () => {
+      document.removeEventListener("scroll", onScroll);
+    };
+  }, [history.location.pathname]);
 
   useEffect(() => {
+    if (history.location.pathname !== "/") {
+      if (!colored) setColored(true);
+      return;
+    } else {
+      setColored(false);
+    }
     if (scroll >= 60) setColored(true);
     else {
       if (!active) setColored(false);
     }
-  }, [scroll, active]);
+  }, [scroll, active, history.location.pathname, colored]);
 
+  const home = history.location.pathname === "/";
   return (
-    <nav className={`fixed menu ${colored ? "colored" : ""}`}>
+    <nav
+      className={`${home ? "fixed" : "sticky"} menu ${
+        colored ? "colored" : ""
+      }`}
+    >
       <section className="content">
         <button className="hamburguer" onClick={toggleMenu}>
           <i className="fas fa-bars icon"></i>
@@ -41,30 +82,7 @@ export default function Menu(props: any) {
         <section>
           <img className="logo" src={logo} alt="Developer of this page" />
         </section>
-        <section className="navigation">
-          <ul className={`topics ${active ? "active" : ""}`}>
-            <li onClick={toggleMenu}>
-              <a className="item" href="#about">
-                Sobre mim
-              </a>
-            </li>
-            <li onClick={toggleMenu}>
-              <a className="item" href="#carreer">
-                Carreira
-              </a>
-            </li>
-            <li onClick={toggleMenu}>
-              <a className="item" href="#experience">
-                Experiência
-              </a>
-            </li>
-            <li onClick={toggleMenu}>
-              <a className="item" href="#skills">
-                Habilidades
-              </a>
-            </li>
-          </ul>
-        </section>
+        <Navigation toggle={toggleMenu} active={active} />
         <ul className="social">
           <li>
             <a
@@ -98,30 +116,7 @@ export default function Menu(props: any) {
           </li>
         </ul>
       </section>
-      <section className="navigation">
-        <ul className={`topics ${active ? "active" : ""}`}>
-          <li onClick={toggleMenu}>
-            <a className="item" href="#about">
-              Sobre mim
-            </a>
-          </li>
-          <li onClick={toggleMenu}>
-            <a className="item" href="#skills">
-              Habilidades
-            </a>
-          </li>
-          <li onClick={toggleMenu}>
-            <a className="item" href="#carreer">
-              Carreira
-            </a>
-          </li>
-          <li onClick={toggleMenu}>
-            <a className="item" href="#experience">
-              Experiência
-            </a>
-          </li>
-        </ul>
-      </section>
+      <Navigation toggle={toggleMenu} active={active} />
     </nav>
   );
 }

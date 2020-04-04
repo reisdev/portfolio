@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./style.css";
 import ProfilePic from "../../static/img/profile.jpg";
 import Pandas from "../../components/svg/pandas";
