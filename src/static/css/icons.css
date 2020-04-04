@@ -1,16 +1,16 @@
-.icon {
-    height: 30px;
-    width: 30px;
+.icons i {
+    flex: 1;
+    margin: 0px 8px;
+    color: grey;
 }
 
-.react.icon {
-    content: url(../icons/react.svg);
+.icons i:hover {
+    color: #3D5D85;
 }
 
-.arrow-up.icon {
-    content: url(../icons/arrow-up.svg);
-}
-
-.git.icon {
-    content: url(../icons/git.svg);
+.icons {
+    width: fit-content;
+    font-size: 3rem;
+    margin: 20px 10px;
+    display: flex;
 }

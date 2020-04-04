@@ -7,11 +7,6 @@
   padding: 20px;
 }
 
-.App.dark .box {
-  background-color: rgb(43, 43, 43);
-  color: white;
-}
-
 /* Menu */
 
 .menu {
@@ -101,11 +96,6 @@
 
 .top.fixed {
   top: 0;
-}
-
-.App.dark .menu {
-  color: white;
-  background: linear-gradient(to right, #111, #222, #111);
 }
 
 .floating.menu {
@@ -222,9 +212,21 @@ main>section section.content {
   display: flex;
 }
 
-main section.content .title {
+section.content .title {
   margin: auto;
   text-align: center;
+}
+
+section.content .category {
+  text-align: center;
+  display: flex;
+  margin: auto auto;
+  flex: 1;
+}
+
+.category h3 {
+  margin: auto 0px;
+  margin-right: 10px
 }
 
 main section:nth-child(2n)>section.content>section {
@@ -234,11 +236,16 @@ main section:nth-child(2n)>section.content>section {
 section.merchan {
   color: white;
   height: 356px;
-  background-image: url(../img/parallax-1.png);
-  background-attachment: fixed;
-  background-position: center;
+  background-image: url(../img/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+section.merchan>div {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 section.merchan h1 {
@@ -260,26 +267,11 @@ section.personal {
   margin-top: 45px;
 }
 
-/*
-section.skills .title::after {
-  position: absolute;
-  content: "";
-  top: 11px;
-  width: 40px;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.6);
-}*/
-
-
 /* Texts */
 
 .muted {
   color: rgba(0, 0, 0, 0.5);
   word-break: break-word;
-}
-
-.App.dark .muted {
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .box .title {
@@ -321,67 +313,6 @@ section.skills .title::after {
 
 .profile .header {
   margin: 30px auto;
-}
-
-/* Projects */
-
-.projects {
-  margin-left: 5%;
-  position: absolute;
-  right: 10vw;
-  width: 20vw;
-}
-
-.tiles {
-  margin: 5px;
-}
-
-.tile {
-  padding: 10px 10px 10px 10px;
-  background-color: rgb(255, 255, 255);
-  border: 0.5px solid grey;
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.App.dark .tile {
-  padding: 10px 10px 10px 10px;
-  background-color: rgb(59, 59, 59);
-  border: 0.5px solid grey;
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.tile .name::before {
-  content: "#";
-  font-weight: bold;
-  margin-right: 5px;
-}
-
-.tile .tecnologies {
-  margin-top: 10px;
-}
-
-.tile .more {
-  margin: 15px 0px 10px 0px;
-}
-
-.tile .more a {
-  text-decoration: none;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid grey;
-  color: black;
-}
-
-.App.dark .tile .more a {
-  text-decoration: none;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid grey;
-  color: white;
 }
 
 h1.name {
