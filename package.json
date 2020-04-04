@@ -1,41 +1,47 @@
 {
-  "name": "reisdev.github.io",
-  "version": "0.1.0",
+  "name": "curriculum",
   "homepage": "https://reisdev.github.io",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "gulp start",
-    "build": "gulp build",
-    "predeploy": "gulp build",
-    "deploy": "gh-pages -d dist -b master"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -b master"
   },
-  "dependencies": {},
-  "browserslist": [
-    ">0.2%",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "@babel/register": "^7.9.0",
-    "babel-preset-es2015": "^6.24.1",
-    "cssnano": "^4.1.10",
-    "del": "^5.1.0",
-    "gh-pages": "^2.2.0",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean": "^0.4.0",
-    "gulp-connect": "^5.7.0",
-    "gulp-font": "^1.0.4",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-if": "^3.0.0",
-    "gulp-image": "^5.1.0",
-    "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-replace-image-src": "^1.0.1",
-    "gulp-uglify": "^3.0.2",
-    "gulp-useref": "^4.0.1",
-    "gulp-watch": "^5.0.1"
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router": "^5.1.5",
+    "@types/react-router-dom": "^5.1.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "typescript": "~3.7.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
