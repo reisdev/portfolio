@@ -199,6 +199,7 @@ img.profile {
 main {
   margin: auto auto;
   width: fit-content;
+  min-width: 100%;
 }
 
 main>section {
