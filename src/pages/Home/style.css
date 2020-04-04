@@ -158,7 +158,7 @@ h2.age {
 
 .icons i {
   flex: 1;
-  margin: 0px 8px;
+  margin: auto 10px;
 }
 
 .icons i:hover {
@@ -181,6 +181,7 @@ i.pandas {
 }
 
 #pandas {
+  margin-top: 10px;
   fill: grey;
 }
 
