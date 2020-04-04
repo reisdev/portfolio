@@ -236,6 +236,7 @@ main section:nth-child(2n)>section.content>section {
 section.merchan {
   color: white;
   height: 356px;
+  background-color: black;
   background-image: url(../img/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
