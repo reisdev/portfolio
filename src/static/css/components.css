@@ -435,6 +435,10 @@ h2.age {
   section.merchan h2 {
     padding: 0px 20px;
   }
+
+  .category {
+    flex-direction: column;
+  }
 }
 
 @media screen and (min-width: 1200px) {
