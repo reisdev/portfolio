@@ -1,0 +1,226 @@
+.box {
+  position: relative;
+  text-align: left;
+  float: left;
+  color: black;
+  height: fit-content;
+  padding: 20px;
+}
+
+img.profile {
+  vertical-align: middle;
+  padding: 8px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+/* Content */
+
+main {
+  margin: auto auto;
+  width: fit-content;
+  min-width: 100%;
+}
+
+main>section {
+  margin-bottom: 10px;
+  padding: 10px 0px;
+  width: 100%;
+}
+
+main>section section.content {
+  max-width: 960px;
+  margin: auto auto;
+  display: flex;
+}
+
+section.content .title {
+  margin: auto;
+  text-align: center;
+}
+
+section.content .category {
+  text-align: center;
+  display: flex;
+  margin: auto auto;
+  flex: 1;
+}
+
+.category h3 {
+  margin: auto 0px;
+  margin-right: 10px
+}
+
+main section:nth-child(2n)>section.content>section {
+  padding: 10px 15px;
+}
+
+section.merchan {
+  color: white;
+  height: 356px;
+  background-color: black;
+  background-image: url(../../static/img/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+section.merchan>div {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+section.merchan h1 {
+  max-width: 600px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+section.merchan h2 {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+section.personal {
+  margin-top: 45px;
+}
+
+/* Texts */
+
+.muted {
+  color: rgba(0, 0, 0, 0.5);
+  word-break: break-word;
+}
+
+.box .title {
+  font-size: 1.5rem;
+  padding: 5px 10px;
+}
+
+.info span {
+  display: block;
+}
+
+/* Profile */
+
+.profile .header {
+  margin: 30px auto;
+}
+
+h1.name {
+  font-weight: 200;
+}
+
+h2.age {
+  color: dimgray;
+  font-weight: lighter;
+  font-family: "Libre Franklin";
+  font-size: 1.5rem;
+  margin-top: -2px;
+}
+
+/* Icons */
+
+.icons i {
+  flex: 1;
+  margin: auto 10px;
+}
+
+.icons i:hover {
+  color: #3D5D85;
+}
+
+.icons {
+  color: grey;
+  width: fit-content;
+  font-size: 3rem;
+  margin: 20px 10px;
+  display: flex;
+}
+
+i.pandas {
+  content: url(../../static/img/pandas.svg);
+  max-height: 50px;
+  fill: grey !important;
+  color: grey;
+}
+
+#pandas {
+  margin-top: 10px;
+  fill: grey;
+}
+
+#pandas:hover {
+  fill: #3D5D85;
+}
+
+/* Screens */
+
+@media screen and (max-width: 425px) {
+  main img.profile {
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  section.merchan {
+    margin-top: 0;
+  }
+
+  section.merchan h1 {
+    font-size: 1.6rem;
+  }
+
+  section.personal {
+    margin-top: 0px;
+  }
+
+  main section.content {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  main section.content img {
+    max-width: 100%
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .page {
+    padding: 0px 1.0875rem 1.45rem;
+  }
+
+  .profile h2 {
+    font-size: 1.5rem;
+    margin: auto;
+  }
+
+  .scroll-to-top {
+    font-size: 1.6rem;
+  }
+
+  section.merchan h2 {
+    padding: 0px 20px;
+  }
+
+  .category {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .content {
+    max-width: unset;
+    transition: max-width 0.5s;
+  }
+}

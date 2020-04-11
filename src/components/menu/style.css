@@ -1,0 +1,236 @@
+/* Menu */
+
+.menu {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    color: white !important;
+    background-size: cover;
+    justify-content: space-between;
+    transition: background 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.menu.colored {
+    /* background: linear-gradient(to right, #3a3a3a, #2c2c2c, #4d4d4d) */
+    background: #444444
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    flex-direction: column;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    flex-direction: column;
+}
+
+.sticky.menu .avatar {
+    margin: 0px;
+}
+
+.sticky.menu .avatar img {
+    height: 32px;
+    width: 32px;
+}
+
+.logo {
+    max-height: 32px;
+    margin: auto auto;
+}
+
+.menu section {
+    display: flex;
+}
+
+.hamburguer {
+    -webkit-appearance: none;
+    border: none;
+    display: none;
+    color: white;
+    background: transparent;
+    padding: 12px;
+}
+
+.hamburguer .icon {
+    font-size: 25px;
+}
+
+.menu li {
+    list-style-type: none;
+    margin: auto auto;
+}
+
+.menu .content {
+    display: flex;
+    max-width: 960px;
+    width: fit-content;
+    margin: auto auto;
+}
+
+.menu .avatar {
+    margin: auto;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.top.fixed {
+    top: 0;
+}
+
+.floating.menu {
+    position: fixed;
+    top: 0px;
+}
+
+.menu ul {
+    padding: 0px;
+}
+
+.menu .social {
+    float: right;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+.menu section:has(.social) {
+    float: right;
+    right: 0;
+    position: absolute;
+    margin: 9px;
+}
+
+.topics {
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.topics .item {
+    text-decoration: none;
+    margin: 10px 20px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+a:not(.item) {
+    text-decoration: none;
+    color: #1c5cb1;
+}
+
+a:not(.item):hover {
+    text-decoration: underline;
+}
+
+a .icon {
+    color: white;
+    font-size: 1.6rem;
+    margin: auto 3px;
+    padding: 3px;
+}
+
+.menu .social a {
+    display: block;
+}
+
+.menu .item:not(:has(img)):hover {
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu .item:not(:has(img)) {
+    background-color: transparent;
+    text-transform: uppercase;
+    width: fit-content;
+    float: left;
+    padding: 10px;
+}
+
+.menu h1 {
+    font-size: 1.8rem;
+    padding-left: 10px;
+    margin: auto;
+    transition: font-size 0.1s ease-in;
+}
+
+.menu h2 {
+    font-size: 1.2rem;
+    padding-left: 10px;
+    margin: auto;
+    transition: font-size 0.1s ease-in;
+}
+
+@media screen and (max-width: 425px) {
+    .topics {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 0px;
+        margin: 0px;
+        overflow: hidden;
+        transition: height 0.2s ease-in;
+    }
+
+    .menu .hamburguer {
+        display: flex;
+    }
+
+    .menu>.content>.navigation {
+        display: none !important;
+    }
+
+    .menu .social {
+        float: right;
+        right: 0;
+        position: absolute;
+        margin: 10px;
+    }
+
+    .topics.active {
+        margin: 10px auto;
+        height: 160px;
+    }
+
+    .topics li {
+        opacity: 0;
+        transition: opacity 0.1s ease-in;
+    }
+
+    .topics.active li {
+        margin: 10px;
+        opacity: 1;
+        text-align: center;
+    }
+
+    .topics .item {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 426px) {
+    .menu>.navigation {
+        display: none !important;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .menu .content {
+        margin: unset;
+        width: 100%;
+    }
+}
