@@ -4,10 +4,19 @@ import "./style.css";
 import logo from "../../static/img/logo-white.png";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
+import { Menu, Navigation as NavigationStyle } from "./style";
 
-const Navigation = ({ toggle, active }: { toggle: any; active: boolean }) => {
+const Navigation = ({
+  toggle,
+  active,
+  nested,
+}: {
+  toggle: any;
+  active: boolean;
+  nested?: boolean;
+}) => {
   return (
-    <section className="navigation">
+    <NavigationStyle nested={nested}>
       <ul className={`topics ${active ? "active" : ""}`}>
         <li onClick={toggle}>
           <Link className="item" to={"/"}>
@@ -20,11 +29,11 @@ const Navigation = ({ toggle, active }: { toggle: any; active: boolean }) => {
           </Link>
         </li>
       </ul>
-    </section>
+    </NavigationStyle>
   );
 };
 
-export default function Menu(props: any) {
+export default function (props: any) {
   const [colored, setColored] = useState(false);
   const [active, setActive] = useState(false);
   const [scroll, setScroll] = useState(0);
@@ -70,11 +79,7 @@ export default function Menu(props: any) {
 
   const home = history.location.pathname === "/";
   return (
-    <nav
-      className={`${home ? "fixed" : "sticky"} menu ${
-        colored ? "colored" : ""
-      }`}
-    >
+    <Menu position={home ? "fixed" : "sticky"} colored={colored}>
       <section className="content">
         <button className="hamburguer" onClick={toggleMenu}>
           <i className="fas fa-bars icon"></i>
@@ -116,7 +121,7 @@ export default function Menu(props: any) {
           </li>
         </ul>
       </section>
-      <Navigation toggle={toggleMenu} active={active} />
-    </nav>
+      <Navigation toggle={toggleMenu} active={active} nested={true} />
+    </Menu>
   );
 }
