@@ -70,6 +70,7 @@ export const Menu = styled.nav<MenuProps>`
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  height: 63px;
   flex-direction: column;
   width: 100%;
   height: fit-content;
@@ -79,7 +80,6 @@ export const Menu = styled.nav<MenuProps>`
   transition: background 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
   position: ${(props) => props.position};
-
   background: ${({ colored }) => (colored ? "#444444" : "transparent")};
 
   .sticky {
@@ -168,6 +168,7 @@ export const Menu = styled.nav<MenuProps>`
     border: none;
     display: none;
     color: white;
+    position: fixed;
     background: transparent;
     padding: 12px;
   }

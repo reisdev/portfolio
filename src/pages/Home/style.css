@@ -7,17 +7,6 @@
   padding: 20px;
 }
 
-img.profile {
-  vertical-align: middle;
-  padding: 8px;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  vertical-align: middle;
-  margin: 10px;
-}
-
 /* Content */
 
 main {
@@ -61,37 +50,43 @@ main section:nth-child(2n)>section.content>section {
 
 section.merchan {
   color: white;
-  height: 356px;
-  background-color: black;
-  background-image: url(../../static/img/bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  height: 100vh;
+  background-color: #181818;
+  display: block;
   padding: 0px;
   margin: 0px;
 }
 
 section.merchan>div {
   background: rgba(0, 0, 0, 0.5);
+  min-height: 356px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  flex: 1;
 }
 
 section.merchan h1 {
   max-width: 600px;
   text-align: center;
   text-transform: uppercase;
-  margin: auto;
 }
 
 section.merchan h2 {
   font-size: 1.2rem;
   max-width: 600px;
-  margin: auto;
   margin-top: 20px;
   text-align: center;
 }
 
 section.personal {
   margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Texts */
@@ -130,14 +125,6 @@ h2.age {
 
 /* Icons */
 
-.icons i {
-  flex: 1;
-  margin: auto 10px;
-}
-
-.icons i:hover {
-  color: #3D5D85;
-}
 
 .icons {
   color: grey;
@@ -148,7 +135,7 @@ h2.age {
 }
 
 i.pandas {
-  content: url(../../static/img/pandas.svg);
+  content: url(../../img/pandas.svg);
   max-height: 50px;
   fill: grey !important;
   color: grey;

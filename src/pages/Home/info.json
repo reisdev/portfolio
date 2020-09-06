@@ -1,0 +1,77 @@
+{
+    "socialMedias": [{
+            "key": "github",
+            "name": "reisdev",
+            "link": "https://github.com/reisdev",
+            "icon": "devicon-github-plain",
+            "color": "#FFFFFF"
+        },
+        {
+            "key": "gitlab",
+            "name": "reisdev",
+            "link": "https://gitlab.com/reisdev",
+            "icon": "devicon-gitlab-plain",
+            "color": "#E65328"
+        },
+        {
+            "key": "linkedin",
+            "name": "Matheus dos Reis",
+            "link": "https://linkedin.com/in/matheus-dos-reis-de-jesus",
+            "icon": "fab fa-linkedin",
+            "color": "#0077B5"
+        },
+        {
+            "key": "dev.to",
+            "name": "DEV",
+            "link": "https://dev.to/reisdev",
+            "icon": "fab fa-dev",
+            "color": "#F7E018"
+        },
+        {
+            "key": "youtube",
+            "name": "ReisDev",
+            "link": "https://youtube.com/ReisDev",
+            "icon": "fab fa-youtube",
+            "color": "red"
+        },
+        {
+            "key": "twitch",
+            "name": "ReisDev",
+            "link": "https://twitch.tv/reisdev",
+            "icon": "fab fa-twitch",
+            "color": "#9147FF"
+        },
+        {
+            "key": "instagram",
+            "name": "ReisDev",
+            "link": "https://instagram.com/reisdev",
+            "icon": "fab fa-instagram",
+            "color": "#cc2366"
+        }
+    ],
+    "languages": [{
+            "key": "typescript",
+            "name": "Typescript",
+            "icon": "devicon-typescript-plain",
+            "color": "#3D5D85"
+        },
+        {
+            "key": "javascript",
+            "name": "Javascript",
+            "icon": "devicon-javascript-plain",
+            "color": "#F7E018"
+        },
+        {
+            "key": "python",
+            "name": "Python",
+            "icon": "devicon-python-plain",
+            "color": "#3472A3"
+        },
+        {
+            "key": "cplusplus",
+            "name": "C++",
+            "icon": "devicon-cplusplus-plain",
+            "color": "#659BD3"
+        }
+    ]
+}
