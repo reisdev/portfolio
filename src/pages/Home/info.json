@@ -4,13 +4,15 @@
             "name": "reisdev",
             "link": "https://github.com/reisdev",
             "icon": "devicon-github-plain",
-            "color": "#FFFFFF"
+            "alt": "ReisDev's GitHub URL",
+            "color": "#FAFAFA"
         },
         {
             "key": "gitlab",
             "name": "reisdev",
             "link": "https://gitlab.com/reisdev",
             "icon": "devicon-gitlab-plain",
+            "alt": "ReisDev's GitLab URL",
             "color": "#E65328"
         },
         {
@@ -18,13 +20,15 @@
             "name": "Matheus dos Reis",
             "link": "https://linkedin.com/in/matheus-dos-reis-de-jesus",
             "icon": "fab fa-linkedin",
+            "alt": "ReisDev's LinkedIn URL",
             "color": "#0077B5"
         },
         {
             "key": "dev.to",
-            "name": "DEV",
+            "name": "@reisdev",
             "link": "https://dev.to/reisdev",
             "icon": "fab fa-dev",
+            "alt": "ReisDev's DEV.to URL",
             "color": "#F7E018"
         },
         {
@@ -32,6 +36,7 @@
             "name": "ReisDev",
             "link": "https://youtube.com/ReisDev",
             "icon": "fab fa-youtube",
+            "alt": "ReisDev's Youtube URL",
             "color": "red"
         },
         {
@@ -39,6 +44,7 @@
             "name": "ReisDev",
             "link": "https://twitch.tv/reisdev",
             "icon": "fab fa-twitch",
+            "alt": "ReisDev's Twitch URL",
             "color": "#9147FF"
         },
         {
@@ -46,9 +52,20 @@
             "name": "ReisDev",
             "link": "https://instagram.com/reisdev",
             "icon": "fab fa-instagram",
+            "alt": "ReisDev's Instagram URL",
             "color": "#cc2366"
         }
     ],
+    "experiences": [{
+        "company": "Accenture",
+        "initDate": "2020-01",
+        "endDate": "2020-03",
+        "role": "Analista de Software",
+        "description": ["Participei do Summer Job da Accenture por um período de 2 meses.Nesse período, tive a oportunidade de conhecer e entender a regra de negócio do projeto ao qual estive alocado, e cumpri as seguintes atividades:",
+            "- Desenvolvimento de uma ferramenta utilizando Angular 5 para visualização de dados de uma solução fornecida por um otimizador.",
+            "- Utilização da biblioteca Pandas, em Python, para consultas em um dataset contendo a solução proposta por um otimizador."
+        ]
+    }],
     "languages": [{
             "key": "typescript",
             "name": "Typescript",

@@ -5,6 +5,14 @@ body,
     padding: 0;
     font-family: "Libre Franklin", serif;
     scroll-behavior: smooth;
+    color: #fafafa;
+    font-size: 18px;
+}
+
+:root {
+    --primary: #2F4858;
+    --secondary: #395b70;
+    --white: #fafafa;
 }
 
 * {
@@ -25,6 +33,7 @@ h3,
 h4,
 h5 {
     font-family: "Bitter", serif;
+    color: white;
     margin: 0px;
 }
 
@@ -33,7 +42,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 100;
 }
 
