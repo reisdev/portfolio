@@ -2,7 +2,8 @@ on:
   push:
     branches:
       - main
-name: 🚀 Deploy website to Hostoo - via ftp
+name: 🚀 Deploy
+description: Deploy website to Hostoo via ftp
 jobs:
   deploy:
     name: 🛠️ Deploy Process
