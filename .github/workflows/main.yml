@@ -24,3 +24,4 @@ jobs:
           password: ${{ secrets.HOSTOO_FTP_PASSWORD }}
           dangerous-clean-slate: true
           local-dir: ./build/
+          server-dir: ./public_html/
