@@ -1,18 +1,18 @@
-import styles from "../styles/Home.module.css";
+import styles from "./Home.module.css";
 import { useMemo } from "react";
 
-import ProfilePicture from "../assets/img/profile.png";
-import InstagramLogo from "../assets/img/instagram.png";
-import TelegramLogo from "../assets/img/telegram.svg";
-import LinkedInLogo from "../assets/img/linkedin.svg";
-import TwitterLogo from "../assets/img/twitter.svg";
-import YoutubeLogo from "../assets/img/youtube.svg";
-import TwitchLogo from "../assets/img/twitch.svg";
-import GitHubLogo from "../assets/img/github.svg";
-import DevToLogo from "../assets/img/devto.svg";
+import ProfilePicture from "../../assets/img/profile.png";
+import InstagramLogo from "../../assets/img/instagram.png";
+import TelegramLogo from "../../assets/img/telegram.svg";
+import LinkedInLogo from "../../assets/img/linkedin.svg";
+import TwitterLogo from "../../assets/img/twitter.svg";
+import YoutubeLogo from "../../assets/img/youtube.svg";
+import TwitchLogo from "../../assets/img/twitch.svg";
+import GitHubLogo from "../../assets/img/github.svg";
+import DevToLogo from "../../assets/img/devto.svg";
 
 export default function Home() {
-  const social = useMemo(
+  const socialMedia = useMemo(
     () => [
       {
         logo: InstagramLogo,
@@ -27,26 +27,6 @@ export default function Home() {
         title: "Twitter"
       },
       {
-        logo: YoutubeLogo,
-        url: "https://youtube.com/reisdev",
-        title: "YouTube",
-      },
-      {
-        logo: TwitchLogo,
-        url: "https://twitch.tv/reisdev",
-        title: "Twitch",
-      },
-      {
-        logo: GitHubLogo,
-        url: "https://github.com/reisdev",
-        title: "GitHub",
-      },
-      {
-        logo: DevToLogo,
-        url: "https://dev.to/reisdev",
-        title: "DevTo"
-      },
-      {
         logo: TelegramLogo,
         url: "https://t.me/reisdev",
         title: "Telegram"
@@ -55,10 +35,33 @@ export default function Home() {
         logo: LinkedInLogo,
         url: "https://linkedin.com/in/matheus-dos-reis-de-jesus",
         title: "LinkedIn",
-      },
+      }
     ],
     []
   );
+
+  const contentMedia = useMemo(() => [
+    {
+      logo: YoutubeLogo,
+      url: "https://youtube.com/reisdev",
+      title: "YouTube",
+    },
+    {
+      logo: TwitchLogo,
+      url: "https://twitch.tv/reisdev",
+      title: "Twitch",
+    },
+    {
+      logo: GitHubLogo,
+      url: "https://github.com/reisdev",
+      title: "GitHub",
+    },
+    {
+      logo: DevToLogo,
+      url: "https://dev.to/reisdev",
+      title: "Dev.to"
+    }
+  ], [])
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -82,7 +85,7 @@ export default function Home() {
               </section>
             </section>
             <section className={styles.social}>
-              {social.map((network) => (
+              {socialMedia.map((network) => (
                 <div key={network.url}>
                   <a href={network.url} rel="noreferrer" target="blank">
                     <img
@@ -95,6 +98,15 @@ export default function Home() {
                 </div>
               ))}
             </section>
+          </section>
+          <section className={styles.shorcut}>
+            {contentMedia.map((network) => (
+              <a className={styles.item} key={network.title} href={network.url}>
+                <img src={network.logo} alt={`${network.title} logo`}
+                  width={"50"} height={"50"} />
+                <span>{network.title}</span>
+              </a>
+            ))}
           </section>
         </section>
       </main>
