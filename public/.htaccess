@@ -1,8 +1,7 @@
 
 RewriteEngine on
-RewriteCond %{HTTPS} off
+RewriteCond %{HTTPS} on
 RewriteCond %{HTTP:X-Forwarded-SSL} !on
 RewriteCond %{HTTP_HOST} ^reisdev\.com\.br$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.reisdev\.com\.br$
 RewriteRule ^(.*)$ "https\:\/\/www\.reisdev\.com\.br\/$1" [R=301,L]
-

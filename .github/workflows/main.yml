@@ -2,7 +2,7 @@ on: push
 name: 🚀 Deploy website to Hostoo - via ftp
 jobs:
   deploy:
-    name: 🛠️ Build Process
+    name: 🛠️ Deploy Process
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -14,10 +14,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run build --if-present
-        env:
+      - name: 🔨 Install and Build
+        env:  
           REACT_APP_GA_ID: ${{ secrets.REACT_APP_GA_ID }}
+        run: npm ci
+        run: npm run build --if-present
       - name: 📂 Deploy files
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
