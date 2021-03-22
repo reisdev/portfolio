@@ -4,16 +4,13 @@ jobs:
   deploy:
     name: 🛠️ Deploy Process
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ["14.x"]
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2.3.2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "14.x"
       - name: 🔨 Install and Build
         env:
           REACT_APP_GA_ID: ${{ secrets.REACT_APP_GA_ID }}
