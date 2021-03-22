@@ -3,10 +3,9 @@ on:
     branches:
       - main
 name: 🚀 Deploy
-description: Deploy website to Hostoo via ftp
 jobs:
   deploy:
-    name: 🛠️ Deploy Process
+    name: 🛠️ Deploy to Hostoo
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
