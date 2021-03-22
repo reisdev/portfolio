@@ -19,7 +19,10 @@ function App() {
       <Helmet title={"Matheus Reis - ReisDev"} />
       <HashRouter>
         <Switch>
-          {routes.map(((route) => <Route component={route.component} path={route.path} />))}
+          {routes.map(((route) => <Route
+            key={route.path}
+            component={route.component} path={route.path}
+          />))}
         </Switch>
       </HashRouter>
     </div>

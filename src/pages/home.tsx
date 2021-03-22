@@ -1,9 +1,7 @@
 import styles from "../styles/Home.module.css";
 import { useMemo } from "react";
 
-
-import ProfilePicture from "../assets/img/profile.jpg";
-
+import ProfilePicture from "../assets/img/profile.png";
 import InstagramLogo from "../assets/img/instagram.png";
 import TelegramLogo from "../assets/img/telegram.svg";
 import LinkedInLogo from "../assets/img/linkedin.svg";
@@ -47,7 +45,7 @@ export default function Home() {
       },
       {
         logo: TelegramLogo,
-        url: "https://t.me/@reisdev",
+        url: "https://t.me/reisdev",
       },
       {
         logo: LinkedInLogo,
@@ -87,7 +85,7 @@ export default function Home() {
                       src={network.logo}
                       width={network.width || "50"}
                       height={network.height || "50"}
-                      alt={""}
+                      alt={"Fotografia do autor desta página. Matheus é negro, tem barba e está usando um óculos de grau. Ao fundo, um microfone e dois monitores."}
                     />
                   </a>
                 </div>
