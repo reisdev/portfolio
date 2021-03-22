@@ -87,7 +87,7 @@ export default function Home() {
             <section className={styles.social}>
               {socialMedia.map((network) => (
                 <div key={network.url}>
-                  <a href={network.url} rel="noreferrer" target="blank">
+                  <a href={network.url} rel="noreferrer noopener" target="_blank">
                     <img
                       src={network.logo}
                       width={network.width || "50"}
@@ -101,7 +101,13 @@ export default function Home() {
           </section>
           <section className={styles.shorcut}>
             {contentMedia.map((network) => (
-              <a className={styles.item} key={network.title} href={network.url}>
+              <a
+                className={styles.item}
+                key={network.title}
+                href={network.url}
+                rel="noreferrer noopener"
+                target="_blank"
+              >
                 <img src={network.logo} alt={`${network.title} logo`}
                   width={"50"} height={"50"} />
                 <span>{network.title}</span>
