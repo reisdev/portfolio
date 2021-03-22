@@ -13,7 +13,6 @@ function App() {
     component: Home
   }], []);
 
-
   return (
     <div className="App">
       <Helmet title={"Matheus Reis - ReisDev"} />

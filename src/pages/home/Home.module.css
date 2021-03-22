@@ -13,9 +13,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #000624;
+  background-color: var(--primary);
   background-clip: border-box;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -40,12 +40,15 @@
 .data {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  height: 100%;
+  margin-right: 80px;
 }
 
 .info {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .name {
@@ -61,7 +64,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 50px auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .social > * {
@@ -82,10 +86,23 @@
   margin: 5px 0px;
 }
 
-.referal div {
+.shorcut {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   padding: 10px;
-  font-size: 1.5rem;
+  border-radius: 20px;
+}
+
+.item span {
+  font-size: 1.6rem;
   height: fit-content;
+  margin-left: 20px;
 }
 
 .footer {
@@ -117,17 +134,25 @@
 }
 
 @media (max-width: 768px) {
+  .data {
+    margin: 0px;
+  }
   .personal {
     flex-direction: column;
     margin-top: 20px;
+  }
+  .job {
+    padding: 0px 10px;
+  }
+  .social {
+    margin: 20px;
+  }
+  .social > * {
+    flex: 1 0 15%;
   }
 
   .info {
     margin-top: 50px;
     text-align: center;
-  }
-
-  .social > * {
-    flex: 1 0 20%;
   }
 }
