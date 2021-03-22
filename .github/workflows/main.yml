@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - main
-name: 🚀 Deploy
+name: Deploy
 jobs:
   deploy:
     name: 🛠️ Deploy to Hostoo
