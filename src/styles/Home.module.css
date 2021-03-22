@@ -54,7 +54,6 @@
 
 .job {
   font-size: 1.5rem;
-  font-family: initial;
   font-weight: 100;
 }
 
@@ -120,6 +119,7 @@
 @media (max-width: 768px) {
   .personal {
     flex-direction: column;
+    margin-top: 20px;
   }
 
   .info {
