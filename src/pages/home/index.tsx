@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef } from "react";
+import { useMemo } from "react";
 
 import InstagramLogo from "../../assets/img/instagram.png";
 import ProfilePicture from "../../assets/img/profile.png";
