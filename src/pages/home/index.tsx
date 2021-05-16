@@ -109,16 +109,17 @@ export default function Home() {
           </section>
           <ul className={styles.shortcut}>
             {contentMedia.map((network) => (
-              <li><a className={styles.item}
-                key={network.title}
-                href={network.url}
-                rel="noreferrer noopener"
-                target="_blank"
-              >
-                <img src={network.logo} alt={`${network.title} logo`}
-                  width={"50"} height={"50"} />
-                <span>{network.title}</span>
-              </a>
+              <li key={network.title}>
+                <a
+                  className={styles.item}
+                  href={network.url}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  <img src={network.logo} alt={`${network.title} logo`}
+                    width={"50"} height={"50"} />
+                  <span>{network.title}</span>
+                </a>
               </li>
             ))}
           </ul>

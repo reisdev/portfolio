@@ -21,8 +21,13 @@ const Card: React.FC<CardProps> = ({ id, title, url, cover, publishedAt, tags })
         <h3 className={styles.title}>{title}</h3>
         {
             tags?.length && <section className={styles.tags}>
-                {tags.map((tag) =>
-                    <span className={styles.item}>{tag}</span>
+                {tags.map((tag, index) =>
+                    <span
+                        className={styles.item}
+                        key={`${id}-tag-${index}`}
+                    >
+                        {tag}
+                    </span>
                 )}
             </section>
         }
