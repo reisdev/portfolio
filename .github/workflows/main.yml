@@ -23,6 +23,7 @@ jobs:
       - name: 🔨 Install and Build
         env:
           REACT_APP_GA_ID: ${{ secrets.REACT_APP_GA_ID }}
+          REACT_APP_YOUTUBE_API_KEY: ${{ secrets.REACT_APP_YOUTUBE_API_KEY }}
         run: |
           npm ci --ignore-scripts
           npm run build --if-present
