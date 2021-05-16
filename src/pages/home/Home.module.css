@@ -155,13 +155,12 @@
   .shortcut li {
     flex: 0 40%;
   }
+  .social li {
+    flex: 0 30%;
+  }
 }
 
 @media (max-width: 720px) {
-  .shortcut li {
-    justify-content: center;
-  }
-
   .shortcut li a {
     justify-content: center;
   }

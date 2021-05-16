@@ -4,6 +4,8 @@
   flex: 0 30%;
   flex-direction: row;
   margin: 10px;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .card article {
@@ -61,6 +63,8 @@
   height: 300px;
   border-radius: 20px;
   object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .tags {
