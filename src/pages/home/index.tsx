@@ -88,7 +88,7 @@ export default function Home() {
               </section>
               <section className={styles.job}>
                 <span>
-                  <b>Accenture</b> - Analista de Ciência de Dados
+                  <b><a href="https://bancointer.com.br" rel="noreferrer noopener" target="_blank">Banco Inter</a></b> - Desenvolvedor iOS
                 </span>
               </section>
             </section>
