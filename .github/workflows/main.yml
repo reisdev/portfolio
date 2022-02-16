@@ -30,7 +30,7 @@ jobs:
       - name: 📂 Deploy files
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: ftp.reisdev.com.br
+          server: ${{ secrets.HOSTOO_FTP_HOST }}
           username: ${{ secrets.HOSTOO_FTP_USER }}
           password: ${{ secrets.HOSTOO_FTP_PASSWORD }}
           dangerous-clean-slate: true
