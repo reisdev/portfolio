@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
 import styles from "./Card.module.css";
-import useAnalyticsEventTracker from "hooks/useAnalyticsEventTracker";
+import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
 
 interface CardProps {
     id: number | string;
