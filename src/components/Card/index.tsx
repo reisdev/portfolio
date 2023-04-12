@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 
 import styles from "./Card.module.css";
+import useAnalyticsEventTracker from "hooks/useAnalyticsEventTracker";
 
 interface CardProps {
     id: number | string;
@@ -8,30 +9,33 @@ interface CardProps {
     title: string;
     cover: string;
     publishedAt: string;
+    type: string;
     tags?: string[];
 }
 
-const Card: React.FC<CardProps> = ({ id, title, url, cover, publishedAt, tags }) =>
-(<a key={`card-${id}`} href={url} rel="noreferrer noopener" target="_blank" className={styles.card}>
-    <article>
-        <img className={`${styles.cover} cover`} src={cover} alt="Article cover" />
-        <span className={styles.date}>
-            {dayjs(publishedAt).format("MMM DD, YYYY")}
-        </span>
-        <h3 className={styles.title}>{title}</h3>
-        {
-            tags?.length && <section className={styles.tags}>
-                {tags.map((tag, index) =>
-                    <span
-                        className={styles.item}
-                        key={`${id}-tag-${index}`}
-                    >
-                        {tag}
-                    </span>
-                )}
-            </section>
-        }
-    </article>
-</a >)
+const Card: React.FC<CardProps> = ({ id, type, title, url, cover, publishedAt, tags }) => {
+    const trackEvent = useAnalyticsEventTracker("Content")
+    return <a key={`card-${id}`} href={url} rel="noreferrer noopener" target="_blank" className={styles.card} onClick={() => trackEvent(type, title)}>
+        <article>
+            <img className={`${styles.cover} cover`} src={cover} alt="Article cover" />
+            <span className={styles.date}>
+                {dayjs(publishedAt).format("MMM DD, YYYY")}
+            </span>
+            <h3 className={styles.title}>{title}</h3>
+            {
+                tags?.length && <section className={styles.tags}>
+                    {tags.map((tag, index) =>
+                        <span
+                            className={styles.item}
+                            key={`${id}-tag-${index}`}
+                        >
+                            {tag}
+                        </span>
+                    )}
+                </section>
+            }
+        </article>
+    </a >
+}
 
 export default Card;

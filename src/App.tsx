@@ -1,12 +1,16 @@
-import React, { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import ReactGA from "react-ga";
 
 import Home from "./pages/home";
-
 import './styles/App.css';
-import { Helmet } from 'react-helmet';
 
 function App() {
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   const routes = useMemo(() => [{
     path: "/",

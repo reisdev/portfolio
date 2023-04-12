@@ -64,6 +64,7 @@ export default function Youtube() {
                 publishedAt={video.publishedAt}
                 title={video.title}
                 cover={video.cover}
+                type='video'
             />))
         }
     </Carousel>

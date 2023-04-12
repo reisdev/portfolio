@@ -42,6 +42,7 @@ export default function Posts() {
                 publishedAt={post.published_at}
                 url={post.url}
                 tags={post.tag_list}
+                type='post'
             />
         )}
     </Carousel>
