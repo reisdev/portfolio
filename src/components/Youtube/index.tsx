@@ -22,7 +22,7 @@ class YoutubeVideo {
     title!: string;
 
     get cover(): string {
-        return `http://img.youtube.com/vi/${this.videoId}/maxresdefault.jpg`
+        return `https://img.youtube.com/vi/${this.videoId}/maxresdefault.jpg`
     }
     get url(): string { return `https://youtu.be/${this.videoId}` }
 
