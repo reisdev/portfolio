@@ -28,7 +28,7 @@ export default function Posts() {
                 setPosts(data.map((post: Post) => Object.assign(new Post(), post)));
             }).catch(error => trackError("dev.to", error));
         },
-        [])
+        [trackError])
 
     useEffect(() => {
         getArticles()
