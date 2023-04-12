@@ -25,7 +25,7 @@ jobs:
           REACT_APP_GA_ID: ${{ secrets.REACT_APP_GA_ID }}
           REACT_APP_YOUTUBE_API_KEY: ${{ secrets.REACT_APP_YOUTUBE_API_KEY }}
         run: |
-          npm i
+          npm ci --ignore-scripts
           npm run build --if-present
       - name: 📂 Deploy files
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
