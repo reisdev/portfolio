@@ -1,7 +1,7 @@
 .card {
   height: fit-content;
   display: flex;
-  flex: 0 30%;
+  flex: 1 30%;
   flex-direction: row;
   margin: 10px;
   user-select: none;

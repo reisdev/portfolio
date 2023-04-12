@@ -33,17 +33,17 @@ export default function Posts() {
     }, [getArticles]);
 
     return <Carousel title={"Últimos artigos"}>
-        {posts.map((post) =>
-            <Card
+        {posts.map(post =>
+            (<Card
                 id={post.id}
                 key={post.id}
+                url={post.url}
                 title={post.title}
                 cover={post.cover_image}
                 publishedAt={post.published_at}
-                url={post.url}
                 tags={post.tag_list}
                 type='post'
-            />
+            />)
         )}
     </Carousel>
 }

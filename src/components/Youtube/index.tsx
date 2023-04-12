@@ -58,14 +58,14 @@ export default function Youtube() {
     return <Carousel title={"Últimos vídeos"}>
         {videos.map(video => (
             <Card
-                key={video.videoId}
                 id={video.videoId}
+                key={video.videoId}
                 url={video.url}
                 publishedAt={video.publishedAt}
                 title={video.title}
                 cover={video.cover}
                 type='video'
-            />))
-        }
+            />)
+        )}
     </Carousel>
 }
