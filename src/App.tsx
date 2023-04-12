@@ -1,7 +1,7 @@
 import { useMemo, useEffect } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 import Home from "./pages/home";
 import './styles/App.css';
@@ -9,7 +9,7 @@ import './styles/App.css';
 function App() {
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.send({hitType: "pageview", page: `${window.location.pathname}${window.location.search}`});
   }, []);
 
   const routes = useMemo(() => [{
