@@ -51,7 +51,7 @@ export default function Youtube() {
                 setVideos(data.items.map((item: any) => Object.assign(new YoutubeVideo(), item.id, item.snippet)));
             }
         }).catch((error) => trackError("youtube",error));
-    }, [])
+    }, [trackError]);
 
     useEffect(() => {
         getLastVideos()
