@@ -14,8 +14,11 @@ import Posts from "components/Posts";
 
 import styles from "./Home.module.css";
 import Youtube from "components/Youtube";
+import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
 
 export default function Home() {
+  const trackSocial = useAnalyticsEventTracker("Social");
+
   const { contentMedia, socialMedia } = useMemo(() => ({
     socialMedia: [
       {
@@ -94,7 +97,7 @@ export default function Home() {
             </section>
             <ul className={styles.social}>
               {socialMedia.map((network) => (
-                <li key={network.url}>
+                <li key={network.title} onClick={() => trackSocial(network.title)}>
                   <a href={network.url} rel="noreferrer noopener" target="_blank">
                     <img
                       src={network.logo}
@@ -109,7 +112,7 @@ export default function Home() {
           </section>
           <ul className={styles.shortcut}>
             {contentMedia.map((network) => (
-              <li key={network.title}>
+              <li key={network.title} onClick={() => trackSocial(network.title)}>
                 <a
                   className={styles.item}
                   href={network.url}
