@@ -1,4 +1,4 @@
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const useAnalyticsEventTracker = (category: string) => {
     const tracker = (action = "test action", label = "") => {
