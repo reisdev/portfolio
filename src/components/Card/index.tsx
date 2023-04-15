@@ -14,7 +14,8 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ id, type, title, url, cover, publishedAt, tags }) => {
-    const trackEvent = useAnalyticsEventTracker("Content")
+    const trackEvent = useAnalyticsEventTracker("Content");
+    
     return <a key={`card-${id}`} href={url} rel="noreferrer noopener" target="_blank" className={styles.card}>
         <article onClick={() => trackEvent(type, title)}>
             <img className={`${styles.cover} cover`} src={cover} alt="Article cover" />
