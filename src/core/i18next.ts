@@ -5,15 +5,18 @@ import Backend, { HttpBackendOptions } from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 i18n
-  .use(Backend)
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init<HttpBackendOptions>({
-    backend: {
-        allowMultiLoading: true
-    },
-    fallbackLng: 'pt',
-    debug: process.env.NODE_ENV === "development"
-  });
+    .use(Backend)
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init<HttpBackendOptions>({
+        backend: {
+            allowMultiLoading: true
+        },
+        load: "currentOnly",
+        ns: [ "home" ],
+        fallbackLng: "en",
+        supportedLngs: ["pt-BR", "en"],
+        debug: process.env.NODE_ENV === "development"
+    });
 
 export default i18n;

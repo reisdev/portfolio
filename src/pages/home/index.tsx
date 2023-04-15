@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 import InstagramLogo from "../../assets/img/instagram.png";
 import ProfilePicture from "../../assets/img/profile.png";
@@ -18,7 +19,7 @@ import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
 
 export default function Home() {
   const trackSocial = useAnalyticsEventTracker("Social");
-
+  const { t } = useTranslation();
   const { contentMedia, socialMedia } = useMemo(() => ({
     socialMedia: [
       {
@@ -79,7 +80,7 @@ export default function Home() {
         <section className={styles.personal}>
           <img
             className={styles.picture}
-            alt={"Fotografia do autor desta página. Matheus é negro, tem barba e está usando um óculos de grau. Ao fundo, um microfone e dois monitores."}
+            alt={"Fotografia do autor desta página. Matheus é preto, tem barba e está usando um óculos de grau. Ao fundo, um microfone e dois monitores."}
             src={ProfilePicture}
           />
           <section className={styles.data}>
@@ -91,7 +92,7 @@ export default function Home() {
               </section>
               <section className={styles.job}>
                 <span>
-                  <b><a href="https://bancointer.com.br" rel="noreferrer noopener" target="_blank">Banco Inter</a></b> - Desenvolvedor iOS
+                  <b><a href="https://bancointer.com.br" rel="noreferrer noopener" target="_blank">{t("currentCompany")}</a></b> - {t("currentJob")}
                 </span>
               </section>
             </section>
