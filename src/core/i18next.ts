@@ -13,7 +13,7 @@ i18n
         allowMultiLoading: true
     },
     fallbackLng: 'pt',
-    debug: process.env.NODE_ENV == "development"
+    debug: process.env.NODE_ENV === "development"
   });
 
 export default i18n;
