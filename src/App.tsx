@@ -1,36 +1,23 @@
-import { useMemo, useEffect } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { useEffect } from 'react';
+import { I18nextProvider } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import ReactGA from "react-ga4";
 
-import Home from "./pages/home";
+import Router from "core/router";
+import i18n from 'core/i18next';
 import './styles/App.css';
 
-function App() {
-
+export default function App() {
   useEffect(() => {
     ReactGA.send({hitType: "pageview", page: `${window.location.pathname}${window.location.search}`});
   }, []);
 
-  const routes = useMemo(() => [{
-    path: "/",
-    component: Home,
-    exact: true
-  }], []);
-
   return (
     <div className="App">
-      <Helmet title={"Matheus Reis - ReisDev"} />
-      <HashRouter basename="/">
-        <Switch>
-          {routes.map(((route) => <Route
-            key={route.path}
-            {...route}
-          />))}
-        </Switch>
-      </HashRouter>
+      <I18nextProvider i18n={i18n}>
+        <Helmet title={"Matheus Reis - ReisDev"} />
+        <Router />
+      </I18nextProvider>
     </div>
   );
 }
-
-export default App;

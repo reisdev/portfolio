@@ -2,6 +2,8 @@ import Carousel from 'components/Carousel';
 import { useState, useCallback, useEffect } from 'react';
 
 import Card from "../Card";
+import useAnalyticsEventTracker from 'core/hooks/useAnalyticsEventTracker';
+import { useTranslation } from 'react-i18next';
 
 interface Thumbnail {
     url: string;
@@ -30,6 +32,8 @@ class YoutubeVideo {
 
 export default function Youtube() {
     const [videos, setVideos] = useState<YoutubeVideo[]>([]);
+    const trackError = useAnalyticsEventTracker("error");
+    const { t } = useTranslation("home");
 
     const getLastVideos = useCallback(async () => {
         const url = new URL(`https://www.googleapis.com/youtube/v3/search`);
@@ -48,14 +52,14 @@ export default function Youtube() {
                 const data = await res.json();
                 setVideos(data.items.map((item: any) => Object.assign(new YoutubeVideo(), item.id, item.snippet)));
             }
-        });
-    }, [])
+        }).catch((error) => trackError("youtube",error));
+    }, [trackError]);
 
     useEffect(() => {
         getLastVideos()
     }, [getLastVideos]);
 
-    return <Carousel title={"Últimos vídeos"}>
+    return <Carousel title={t("lastVideos")}>
         {videos.map(video => (
             <Card
                 id={video.videoId}
