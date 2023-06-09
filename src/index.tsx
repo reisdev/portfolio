@@ -1,17 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/index.css';
+import { createRoot } from 'react-dom/client';
+
 import App from './App';
+import './styles/index.css';
 import reportWebVitals from './reportWebVitals';
-import ReactGA from "react-ga";
 
-ReactGA.initialize(process.env.REACT_APP_GA_ID || "");
-ReactGA.pageview(window.location.pathname + window.location.search);
+import "core/tracking/google-analytics";
+import "core/tracking/firebase-analytics";
+import "core/i18next";
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+let root = createRoot(document.getElementById('root') as HTMLElement)
+
+root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

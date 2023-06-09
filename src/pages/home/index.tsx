@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 import InstagramLogo from "../../assets/img/instagram.png";
 import ProfilePicture from "../../assets/img/profile.png";
@@ -14,8 +15,11 @@ import Posts from "components/Posts";
 
 import styles from "./Home.module.css";
 import Youtube from "components/Youtube";
+import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
 
 export default function Home() {
+  const trackSocial = useAnalyticsEventTracker("Social");
+  const { t } = useTranslation();
   const { contentMedia, socialMedia } = useMemo(() => ({
     socialMedia: [
       {
@@ -74,7 +78,7 @@ export default function Home() {
         <section className={styles.personal}>
           <img
             className={styles.picture}
-            alt={"Fotografia do autor desta página. Matheus é negro, tem barba e está usando um óculos de grau. Ao fundo, um microfone e dois monitores."}
+            alt={"Fotografia do autor desta página. Matheus é preto, tem barba e está usando um óculos de grau. Ao fundo, um microfone e dois monitores."}
             src={ProfilePicture}
           />
           <section className={styles.data}>
@@ -86,18 +90,14 @@ export default function Home() {
               </section>
               <section className={styles.job}>
                 <span>
-                  <b><a href="https://bancointer.com.br" rel="noreferrer noopener" target="_blank">Banco Inter</a></b> - Desenvolvedor iOS
+                  <b><a href="https://bancointer.com.br" rel="noreferrer noopener" target="_blank">{t("currentCompany")}</a></b> - {t("currentJob")}
                 </span>
               </section>
             </section>
             <ul className={styles.social}>
               {socialMedia.map((network) => (
-                <li key={network.url} className={styles.item}
-                >
-                  <a
-                    href={network.url}
-                    rel="noreferrer noopener" target="_blank"
-                  >
+                <li key={network.title} onClick={() => trackSocial(network.title)}>
+                  <a href={network.url} rel="noreferrer noopener" target="_blank">
                     <img
                       src={network.logo}
                       width={50}
@@ -127,6 +127,22 @@ export default function Home() {
               ))}
             </ul>
           </section>
+          <ul className={styles.shortcut}>
+            {contentMedia.map((network) => (
+              <li key={network.title} onClick={() => trackSocial(network.title)}>
+                <a
+                  className={styles.item}
+                  href={network.url}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  <img src={network.logo} alt={`${network.title} logo`}
+                    width={"50"} height={"50"} />
+                  <span>{network.title}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
       </section>
       <Posts />

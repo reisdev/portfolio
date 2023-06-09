@@ -1,6 +1,8 @@
 import { useEffect, useState, useCallback } from 'react';
 import Carousel from 'components/Carousel';
 import Card from 'components/Card';
+import useAnalyticsEventTracker from 'core/hooks/useAnalyticsEventTracker';
+import { useTranslation } from 'react-i18next';
 
 class Post {
     id!: number;
@@ -18,6 +20,8 @@ class Post {
 
 export default function Posts() {
     const [posts, setPosts] = useState<Post[]>([]);
+    const trackError = useAnalyticsEventTracker("error");
+    const { t } = useTranslation("home");
 
     const getArticles = useCallback(
         async () => {
@@ -26,25 +30,25 @@ export default function Posts() {
                     const data: [Post] = await res.json();
                     setPosts(data);
                 }
-            });
+            }).catch(error => trackError("dev.to", error));
         },
-        [])
+        [trackError, setPosts]);
 
     useEffect(() => {
         getArticles()
-    }, [getArticles]);
+    }, []);
 
     return posts.length > 0 ? <Carousel title={"Últimos artigos"}>
         {posts.map((post) =>
             <Card
                 id={post.id}
                 key={post.id}
+                url={post.url}
                 title={post.title}
                 cover={post.cover_image}
                 publishedAt={post.published_at}
-                url={post.url}
                 tags={post.tag_list}
-            />
-        )}
+                type='post'
+            />)}
     </Carousel> : <></>
 }
