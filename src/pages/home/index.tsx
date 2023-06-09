@@ -21,8 +21,6 @@ export default function Home() {
       {
         logo: InstagramLogo,
         url: "https://instagram.com/reisdev",
-        height: 60,
-        width: 60,
         title: "Instagram"
       },
       {
@@ -94,35 +92,41 @@ export default function Home() {
             </section>
             <ul className={styles.social}>
               {socialMedia.map((network) => (
-                <li key={network.url}>
-                  <a href={network.url} rel="noreferrer noopener" target="_blank">
+                <li key={network.url} className={styles.item}
+                >
+                  <a
+                    href={network.url}
+                    rel="noreferrer noopener" target="_blank"
+                  >
                     <img
                       src={network.logo}
-                      width={network.width || "50"}
-                      height={network.height || "50"}
+                      width={50}
+                      height={50}
                       alt={network.title + " logo"}
                     />
+                    <span>{network.title}</span>
                   </a>
                 </li>
               ))}
             </ul>
           </section>
-          <ul className={styles.shortcut}>
-            {contentMedia.map((network) => (
-              <li key={network.title}>
-                <a
-                  className={styles.item}
-                  href={network.url}
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  <img src={network.logo} alt={`${network.title} logo`}
-                    width={"50"} height={"50"} />
-                  <span>{network.title}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <section>
+            <ul className={styles.shortcut}>
+              {contentMedia.map((network) => (
+                <li key={network.title} className={styles.item}>
+                  <a
+                    href={network.url}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                  >
+                    <img src={network.logo} alt={`${network.title} logo`}
+                      width={"50"} height={"50"} />
+                    <span>{network.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
         </section>
       </section>
       <Posts />

@@ -22,8 +22,10 @@ export default function Posts() {
     const getArticles = useCallback(
         async () => {
             await fetch("https://dev.to/api/articles?username=reisdev&per_page=3").then(async res => {
-                const data = await res.json();
-                setPosts(data.map((post: Post) => Object.assign(new Post(), post)));
+                if (res.status === 200) {
+                    const data: [Post] = await res.json();
+                    setPosts(data);
+                }
             });
         },
         [])
@@ -32,7 +34,7 @@ export default function Posts() {
         getArticles()
     }, [getArticles]);
 
-    return <Carousel title={"Últimos artigos"}>
+    return posts.length > 0 ? <Carousel title={"Últimos artigos"}>
         {posts.map((post) =>
             <Card
                 id={post.id}
@@ -44,5 +46,5 @@ export default function Posts() {
                 tags={post.tag_list}
             />
         )}
-    </Carousel>
+    </Carousel> : <></>
 }

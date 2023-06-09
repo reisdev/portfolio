@@ -55,7 +55,7 @@ export default function Youtube() {
         getLastVideos()
     }, [getLastVideos]);
 
-    return <Carousel title={"Últimos vídeos"}>
+    return videos.length > 0 ? <Carousel title={"Últimos vídeos"}>
         {videos.map(video => (
             <Card
                 key={video.videoId}
@@ -66,5 +66,5 @@ export default function Youtube() {
                 cover={video.cover}
             />))
         }
-    </Carousel>
+    </Carousel> : <></>
 }
