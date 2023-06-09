@@ -23,22 +23,18 @@ export default function Posts() {
     const trackError = useAnalyticsEventTracker("error");
     const { t } = useTranslation("home");
 
-    const getArticles = useCallback(
-        async () => {
-            await fetch("https://dev.to/api/articles?username=reisdev&per_page=3").then(async res => {
-                if (res.status === 200) {
-                    const data: [Post] = await res.json();
-                    setPosts(data);
-                }
-            }).catch(error => trackError("dev.to", error));
-        },
-        [trackError, setPosts]);
+    const getArticles = useCallback(async () => {
+        await fetch("https://dev.to/api/articles?username=reisdev&per_page=3").then(async res => {
+            if (res.status === 200) {
+                const data: [Post] = await res.json();
+                setPosts(data);
+            }
+        }).catch(error => trackError("dev.to", error));
+    }, [setPosts, trackError]);
 
-    useEffect(() => {
-        getArticles()
-    }, []);
+    useEffect(() => { getArticles() }, []);
 
-    return posts.length > 0 ? <Carousel title={"Últimos artigos"}>
+    return posts.length > 0 ? <Carousel title={t("lastArticles")}>
         {posts.map((post) =>
             <Card
                 id={post.id}

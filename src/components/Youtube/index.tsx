@@ -53,13 +53,11 @@ export default function Youtube() {
                 setVideos(data.items.map((item: any) => Object.assign(new YoutubeVideo(), item.id, item.snippet)));
             }
         }).catch((error) => trackError("youtube", error));
-    }, [trackError, setVideos]);
+    }, [setVideos, trackError]);
 
-    useEffect(() => {
-        getLastVideos()
-    }, []);
+    useEffect(() => { getLastVideos() }, []);
 
-    return videos.length > 0 ? <Carousel title={"Últimos vídeos"}>
+    return videos.length > 0 ? <Carousel title={t("lastVideos")}>
         {videos.map(video => (
             <Card
                 id={video.videoId}

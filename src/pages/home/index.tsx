@@ -25,7 +25,9 @@ export default function Home() {
       {
         logo: InstagramLogo,
         url: "https://instagram.com/reisdev",
-        title: "Instagram"
+        title: "Instagram",
+        width: 60,
+        height: 60
       },
       {
         logo: TwitterLogo,
@@ -96,15 +98,14 @@ export default function Home() {
             </section>
             <ul className={styles.social}>
               {socialMedia.map((network) => (
-                <li key={network.title} onClick={() => trackSocial(network.title)}>
+                <li className={styles.item} key={network.title} onClick={() => trackSocial(network.title)}>
                   <a href={network.url} rel="noreferrer noopener" target="_blank">
                     <img
                       src={network.logo}
-                      width={50}
-                      height={50}
+                      width={network.width || 50}
+                      height={network.height || 50}
                       alt={network.title + " logo"}
                     />
-                    <span>{network.title}</span>
                   </a>
                 </li>
               ))}
@@ -113,7 +114,7 @@ export default function Home() {
           <section>
             <ul className={styles.shortcut}>
               {contentMedia.map((network) => (
-                <li key={network.title} className={styles.item}>
+                <li className={styles.item} key={network.title} onClick={() => trackSocial(network.title)}>
                   <a
                     href={network.url}
                     rel="noreferrer noopener"
@@ -127,22 +128,6 @@ export default function Home() {
               ))}
             </ul>
           </section>
-          <ul className={styles.shortcut}>
-            {contentMedia.map((network) => (
-              <li key={network.title} onClick={() => trackSocial(network.title)}>
-                <a
-                  className={styles.item}
-                  href={network.url}
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  <img src={network.logo} alt={`${network.title} logo`}
-                    width={"50"} height={"50"} />
-                  <span>{network.title}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
         </section>
       </section>
       <Posts />
