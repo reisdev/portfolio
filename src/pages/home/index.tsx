@@ -99,8 +99,8 @@ export default function Home() {
                 <li className={styles.item} key={network.title} onClick={() => trackSocial(network.title)}>
                   <a href={network.url} rel="noreferrer noopener" target="_blank">
                     <img
+                      className={styles.logo}
                       src={network.logo}
-                      width={50} height={50}
                       alt={network.title + " logo"}
                     />
                     <span>{network.title}</span>
@@ -118,8 +118,11 @@ export default function Home() {
                     rel="noreferrer noopener"
                     target="_blank"
                   >
-                    <img src={network.logo} alt={`${network.title} logo`}
-                      width={"50"} height={"50"} />
+                    <img
+                      className={styles.logo}
+                      src={network.logo}
+                      alt={`${network.title} logo`}
+                    />
                     <span>{network.title}</span>
                   </a>
                 </li>

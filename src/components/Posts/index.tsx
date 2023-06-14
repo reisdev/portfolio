@@ -4,18 +4,18 @@ import Card from 'components/Card';
 import useAnalyticsEventTracker from 'core/hooks/useAnalyticsEventTracker';
 import { useTranslation } from 'react-i18next';
 
-class Post {
-    id!: number;
-    canonical_url!: string;
-    cover_image!: string;
-    published_at!: string;
-    description!: string;
-    slug!: string;
-    social_image!: string;
-    tag_list!: string[];
-    title!: string;
-    type_of!: string;
-    url!: string;
+interface Post {
+    id: number;
+    canonical_url: string;
+    cover_image: string;
+    published_at: string;
+    description: string;
+    slug: string;
+    social_image: string;
+    tag_list: string[];
+    title: string;
+    type_of: string;
+    url: string;
 }
 
 export default function Posts() {
@@ -26,7 +26,6 @@ export default function Posts() {
     const getArticles = useCallback(async () => {
         try {
             let response = await fetch("https://dev.to/api/articles?username=reisdev&per_page=3")
-
 
             if (response.status === 200) {
                 const data: Post[] = await response.json();
