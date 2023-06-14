@@ -13,7 +13,7 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: "14.x"
+          node-version: "18.x"
       - name: 🔨 Install and Build
         env:
           REACT_APP_GA_ID: ${{ secrets.REACT_APP_GA_ID }}

@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import Carousel from 'components/Carousel';
 import Card from 'components/Card';
 import useAnalyticsEventTracker from 'core/hooks/useAnalyticsEventTracker';
+import { useTranslation } from 'react-i18next';
 
 class Post {
     id!: number;
@@ -20,23 +21,29 @@ class Post {
 export default function Posts() {
     const [posts, setPosts] = useState<Post[]>([]);
     const trackError = useAnalyticsEventTracker("error");
+    const { t } = useTranslation("home");
 
-    const getArticles = useCallback(
-        async () => {
-            await fetch("https://dev.to/api/articles?username=reisdev&per_page=3").then(async res => {
-                const data = await res.json();
-                setPosts(data.map((post: Post) => Object.assign(new Post(), post)));
-            }).catch(error => trackError("dev.to", error));
-        },
-        [trackError])
+    const getArticles = useCallback(async () => {
+        try {
+            let response = await fetch("https://dev.to/api/articles?username=reisdev&per_page=3")
+
+
+            if (response.status === 200) {
+                const data: Post[] = await response.json();
+                setPosts(data);
+            }
+        } catch (e) {
+            trackError("dev.to", (e as Error).message);
+        }
+    }, [setPosts, trackError]);
 
     useEffect(() => {
         getArticles()
     }, [getArticles]);
 
-    return <Carousel title={"Últimos artigos"}>
-        {posts.map(post =>
-            (<Card
+    return posts.length > 0 ? <Carousel title={t("lastArticles")}>
+        {posts.map((post) =>
+            <Card
                 id={post.id}
                 key={post.id}
                 url={post.url}
@@ -45,7 +52,6 @@ export default function Posts() {
                 publishedAt={post.published_at}
                 tags={post.tag_list}
                 type='post'
-            />)
-        )}
-    </Carousel>
+            />)}
+    </Carousel> : <></>
 }

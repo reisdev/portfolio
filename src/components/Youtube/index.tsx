@@ -3,6 +3,7 @@ import { useState, useCallback, useEffect } from 'react';
 
 import Card from "../Card";
 import useAnalyticsEventTracker from 'core/hooks/useAnalyticsEventTracker';
+import { useTranslation } from 'react-i18next';
 
 interface Thumbnail {
     url: string;
@@ -26,12 +27,12 @@ class YoutubeVideo {
         return `https://img.youtube.com/vi/${this.videoId}/maxresdefault.jpg`
     }
     get url(): string { return `https://youtu.be/${this.videoId}` }
-
 }
 
 export default function Youtube() {
     const [videos, setVideos] = useState<YoutubeVideo[]>([]);
     const trackError = useAnalyticsEventTracker("error");
+    const { t } = useTranslation("home");
 
     const getLastVideos = useCallback(async () => {
         const url = new URL(`https://www.googleapis.com/youtube/v3/search`);
@@ -43,21 +44,28 @@ export default function Youtube() {
             maxResults: "3",
             order: "date"
         }
+
         url.search = new URLSearchParams(params).toString();
 
-        await fetch(url.toString()).then(async res => {
-            if (res.status === 200) {
-                const data = await res.json();
-                setVideos(data.items.map((item: any) => Object.assign(new YoutubeVideo(), item.id, item.snippet)));
+        try {
+            let response = await fetch(url.toString());
+
+            if (response.status === 200) {
+                const data = await response.json();
+                const videos: YoutubeVideo[] = data.items.map((item: any) => Object.assign(new YoutubeVideo(), item.id, item.snippet));
+                setVideos(videos);
             }
-        }).catch((error) => trackError("youtube",error));
-    }, [trackError]);
+        } catch (error) {
+            console.log(error);
+            trackError("youtube", (error as Error).message);
+        }
+    }, [setVideos, trackError]);
 
     useEffect(() => {
         getLastVideos()
     }, [getLastVideos]);
 
-    return <Carousel title={"Últimos vídeos"}>
+    return videos.length > 0 ? <Carousel title={t("lastVideos")}>
         {videos.map(video => (
             <Card
                 id={video.videoId}
@@ -67,7 +75,6 @@ export default function Youtube() {
                 title={video.title}
                 cover={video.cover}
                 type='video'
-            />)
-        )}
-    </Carousel>
+            />))}
+    </Carousel> : <></>
 }

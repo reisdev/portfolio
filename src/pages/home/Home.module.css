@@ -24,7 +24,6 @@
   color: white;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   padding: 20px;
 }
@@ -43,8 +42,7 @@
 .data {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
+  justify-content: center;
   margin-right: 80px;
 }
 
@@ -66,29 +64,29 @@
 .social {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-}
-
-.social {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
   margin-top: 20px;
 }
 
-.social > li {
-  padding: 10px;
-  margin-left: 10px;
-  min-width: 70px;
-  align-self: center;
-  transition: transform 0.4s;
-}
-
 .social li:hover {
   transform: scale(1.1);
 }
+
+.social .item {
+  align-self: center;
+  transition: transform 0.4s;
+  padding: 5px;
+  margin: 0px 8px;
+}
+
+.social .item span {
+  display: none;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -107,13 +105,25 @@
 }
 
 .item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   padding: 10px;
   margin: 0px 10px;
   border-radius: 20px;
   transition: transform 0.4s;
+  width: 100%;
+}
+
+.shortcut .item {
+  align-self: center;
+  transition: transform 0.4s;
+  padding: 5px;
+  margin: 0px 8px;
+}
+
+.item > * {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
 }
 
 .item:hover {
@@ -160,26 +170,24 @@
   }
 }
 
-@media (max-width: 720px) {
-  .shortcut li a {
-    justify-content: center;
-  }
-}
-
 @media (max-width: 1080px) {
   .data {
     margin: 0px;
   }
+
   .personal {
     flex-direction: column;
     margin-top: 20px;
   }
+
   .job {
     padding: 0px 10px;
   }
+
   .social {
-    margin: 20px;
+    margin: 10px 20px;
     justify-content: space-evenly;
+    flex-direction: column;
   }
 
   .info {
@@ -189,13 +197,15 @@
 
   .shortcut {
     padding: 0px;
-    margin-top: 20px;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-evenly;
   }
 
-  .shortcut li a span {
-    display: none;
+  .shortcut .item span {
+    display: flex;
+  }
+
+  .social .item span {
+    display: flex;
   }
 }

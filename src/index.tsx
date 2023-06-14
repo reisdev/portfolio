@@ -6,12 +6,11 @@ import reportWebVitals from './reportWebVitals';
 
 import "core/tracking/google-analytics";
 import "core/tracking/firebase-analytics";
+import "core/i18next";
 
 let root = createRoot(document.getElementById('root') as HTMLElement)
 
-root.render(
-  <App />
-);
+root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
