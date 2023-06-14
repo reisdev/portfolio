@@ -24,15 +24,22 @@ export default function Posts() {
     const { t } = useTranslation("home");
 
     const getArticles = useCallback(async () => {
-        await fetch("https://dev.to/api/articles?username=reisdev&per_page=3").then(async res => {
-            if (res.status === 200) {
-                const data: [Post] = await res.json();
+        try {
+            let response = await fetch("https://dev.to/api/articles?username=reisdev&per_page=3")
+
+
+            if (response.status === 200) {
+                const data: Post[] = await response.json();
                 setPosts(data);
             }
-        }).catch(error => trackError("dev.to", error));
+        } catch (e) {
+            trackError("dev.to", (e as Error).message);
+        }
     }, [setPosts, trackError]);
 
-    useEffect(() => { getArticles() }, []);
+    useEffect(() => {
+        getArticles()
+    }, [getArticles]);
 
     return posts.length > 0 ? <Carousel title={t("lastArticles")}>
         {posts.map((post) =>

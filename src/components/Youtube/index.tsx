@@ -27,7 +27,6 @@ class YoutubeVideo {
         return `https://img.youtube.com/vi/${this.videoId}/maxresdefault.jpg`
     }
     get url(): string { return `https://youtu.be/${this.videoId}` }
-
 }
 
 export default function Youtube() {
@@ -45,17 +44,26 @@ export default function Youtube() {
             maxResults: "3",
             order: "date"
         }
+
         url.search = new URLSearchParams(params).toString();
 
-        await fetch(url.toString()).then(async res => {
-            if (res.status === 200) {
-                const data = await res.json();
-                setVideos(data.items.map((item: any) => Object.assign(new YoutubeVideo(), item.id, item.snippet)));
+        try {
+            let response = await fetch(url.toString());
+
+            if (response.status === 200) {
+                const data = await response.json();
+                const videos: YoutubeVideo[] = data.items.map((item: any) => Object.assign(new YoutubeVideo(), item.id, item.snippet));
+                setVideos(videos);
             }
-        }).catch((error) => trackError("youtube", error));
+        } catch (error) {
+            console.log(error);
+            trackError("youtube", (error as Error).message);
+        }
     }, [setVideos, trackError]);
 
-    useEffect(() => { getLastVideos() }, []);
+    useEffect(() => {
+        getLastVideos()
+    }, [getLastVideos]);
 
     return videos.length > 0 ? <Carousel title={t("lastVideos")}>
         {videos.map(video => (
