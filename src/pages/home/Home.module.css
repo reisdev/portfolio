@@ -42,7 +42,7 @@
 .data {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-right: 80px;
 }
 
