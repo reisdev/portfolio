@@ -25,24 +25,32 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
 }
 
 .personal > * {
   margin: 0px 20px;
+  width: fit-content;
 }
 
 .picture {
-  height: 270px;
-  width: 270px;
+  height: 300px;
+  width: 300px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
 }
 
 .data {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-right: 80px;
 }
 
@@ -67,6 +75,7 @@
   justify-content: center;
   align-items: center;
   list-style-type: none;
+  width: fit-content;
   padding: 0px;
   margin: 0px;
   margin-top: 20px;
@@ -77,7 +86,6 @@
 }
 
 .social .item {
-  align-self: center;
   transition: transform 0.4s;
   padding: 5px;
   margin: 0px 8px;
@@ -101,6 +109,7 @@
 .shortcut {
   display: flex;
   flex-direction: column;
+  align-items: baseline;
   list-style-type: none;
 }
 
@@ -109,11 +118,9 @@
   margin: 0px 10px;
   border-radius: 20px;
   transition: transform 0.4s;
-  width: 100%;
 }
 
 .shortcut .item {
-  align-self: center;
   transition: transform 0.4s;
   padding: 5px;
   margin: 0px 8px;
@@ -123,7 +130,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
 }
 
 .item:hover {
@@ -175,6 +181,10 @@
     margin: 0px;
   }
 
+  .picture {
+    align-self: center;
+  }
+
   .personal {
     flex-direction: column;
     margin-top: 20px;
@@ -199,13 +209,19 @@
     padding: 0px;
     flex-direction: column;
     flex-wrap: wrap;
+    width: fit-content;
   }
 
-  .shortcut .item span {
+  .shortcut .item {
     display: flex;
+    align-self: first baseline;
+  }
+
+  .social .item {
+    align-self: first baseline;
   }
 
   .social .item span {
-    display: flex;
+    display: block;
   }
 }

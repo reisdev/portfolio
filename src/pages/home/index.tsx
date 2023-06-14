@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import InstagramLogo from "../../assets/img/instagram.png";
+import InstagramLogo from "../../assets/img/instagram.svg";
 import ProfilePicture from "../../assets/img/profile.png";
-import HashnodeLogo from "../../assets/img/hashnode.png";
+import HashnodeLogo from "../../assets/img/hashnode.svg";
 import TelegramLogo from "../../assets/img/telegram.svg";
 import LinkedInLogo from "../../assets/img/linkedin.svg";
 import TwitterLogo from "../../assets/img/twitter.svg";
@@ -25,9 +25,7 @@ export default function Home() {
       {
         logo: InstagramLogo,
         url: "https://instagram.com/reisdev",
-        title: "Instagram",
-        width: 60,
-        height: 60
+        title: "Instagram"
       },
       {
         logo: TwitterLogo,
@@ -101,9 +99,8 @@ export default function Home() {
                 <li className={styles.item} key={network.title} onClick={() => trackSocial(network.title)}>
                   <a href={network.url} rel="noreferrer noopener" target="_blank">
                     <img
+                      className={styles.logo}
                       src={network.logo}
-                      width={network.width || 50}
-                      height={network.height || 50}
                       alt={network.title + " logo"}
                     />
                     <span>{network.title}</span>
@@ -121,8 +118,11 @@ export default function Home() {
                     rel="noreferrer noopener"
                     target="_blank"
                   >
-                    <img src={network.logo} alt={`${network.title} logo`}
-                      width={"50"} height={"50"} />
+                    <img
+                      className={styles.logo}
+                      src={network.logo}
+                      alt={`${network.title} logo`}
+                    />
                     <span>{network.title}</span>
                   </a>
                 </li>
