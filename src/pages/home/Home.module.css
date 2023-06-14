@@ -24,7 +24,6 @@
   color: white;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   padding: 20px;
 }
@@ -44,7 +43,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 100%;
   margin-right: 80px;
 }
 
@@ -199,7 +197,7 @@
 
   .shortcut {
     padding: 0px;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
   }
 

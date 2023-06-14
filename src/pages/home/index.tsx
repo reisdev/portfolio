@@ -106,6 +106,7 @@ export default function Home() {
                       height={network.height || 50}
                       alt={network.title + " logo"}
                     />
+                    <span>{network.title}</span>
                   </a>
                 </li>
               ))}
