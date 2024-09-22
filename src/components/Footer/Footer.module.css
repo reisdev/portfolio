@@ -1,0 +1,13 @@
+.spacer {
+    flex-grow: 1;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 36px;
+    font-size: 18px;
+    position: relative;
+    bottom: 0px;
+}

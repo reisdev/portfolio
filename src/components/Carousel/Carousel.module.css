@@ -1,13 +1,53 @@
-.carousel {
+.container {
   display: flex;
-  flex-direction: row;
-  flex-basis: 30%;
-  width: 80vw;
-  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin: 20px 0px;
+  margin: 24px 0px;
 }
 
 .title {
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  gap: 12px;
 }
+
+.title img {
+  height: 2.4em;
+  width: auto;
+}
+
+.shortcut {
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 600;
+  gap: 8px;
+}
+
+.shortcut i {
+  transform: translateY(2px);
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .carousel {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel {
+    grid-template-columns: auto auto auto;
+  }
+}
+

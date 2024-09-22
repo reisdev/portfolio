@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { Analytics, getAnalytics } from "firebase/analytics";
 
-const firebaseConfig = {
+const FirebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: `${process.env.REACT_APP_FIREBASE_PROJECT_ID}.firebaseapp.com`,
     projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
@@ -10,6 +10,11 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
-const app = initializeApp(firebaseConfig);
+let analytics: Analytics | null = null;
 
-export default getAnalytics(app);
+if(process.env.NODE_ENV === "production") {
+    const app = initializeApp(FirebaseConfig);
+    analytics = getAnalytics(app);
+}
+
+export default analytics;

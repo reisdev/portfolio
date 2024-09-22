@@ -1,6 +1,6 @@
 :root {
   --primary: #000624;
-  --secondary: #dc9930;
+  --secondary: #fafafa;
 }
 
 html,
@@ -13,6 +13,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 }
 
 h1,
@@ -31,16 +36,6 @@ a {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-::-webkit-scrollbar {
-  background-color: transparent;
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--secondary);
-  border-radius: 10px;
 }
 
 * {

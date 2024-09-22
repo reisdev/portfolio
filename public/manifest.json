@@ -1,6 +1,6 @@
 {
-  "short_name": "ReisDev Portfolio",
-  "name": "ReisDev Portfolio",
+  "short_name": "ReisDev",
+  "name": "ReisDev",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000624",
-  "background_color": "#ffffff"
+  "theme_color": "#121212",
+  "background_color": "#fafafa"
 }

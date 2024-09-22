@@ -1,60 +1,23 @@
-import Carousel from 'components/Carousel';
 import { useState, useCallback, useEffect } from 'react';
-
-import Card from "../Card";
-import useAnalyticsEventTracker from 'core/hooks/useAnalyticsEventTracker';
 import { useTranslation } from 'react-i18next';
 
-interface Thumbnail {
-    url: string;
-    width: number;
-    height: number;
-}
-
-class YoutubeVideo {
-    videoId!: string;
-    channelId!: string;
-    channelTitle!: string;
-    description!: string;
-    liveBroadcastContent!: string;
-    publishTime!: string;
-    publishedAt!: string;
-
-    thumbnails!: { default: Thumbnail; medium: Thumbnail; high: Thumbnail; };
-    title!: string;
-
-    get cover(): string {
-        return `https://img.youtube.com/vi/${this.videoId}/maxresdefault.jpg`
-    }
-    get url(): string { return `https://youtu.be/${this.videoId}` }
-}
+import useAnalyticsEventTracker from 'core/hooks/useAnalyticsEventTracker';
+import { YoutubeVideo } from 'core/models/youtube-video';
+import Carousel from 'components/Carousel';
+import Card from "../Card";
+import YoutubeService from 'core/services/YoutubeService';
+import YoutubeLogo from "../../assets/img/youtube.svg";
 
 export default function Youtube() {
     const [videos, setVideos] = useState<YoutubeVideo[]>([]);
     const trackError = useAnalyticsEventTracker("error");
-    const { t } = useTranslation("home");
+    const { t } = useTranslation("common");
 
     const getLastVideos = useCallback(async () => {
-        const url = new URL(`https://www.googleapis.com/youtube/v3/search`);
-        const params = {
-            key: `${process.env.REACT_APP_YOUTUBE_API_KEY}`,
-            channelId: "UC4sSLAid-EtLsGB25uO0pDw",
-            type: "video",
-            part: "snippet",
-            maxResults: "3",
-            order: "date"
-        }
-
-        url.search = new URLSearchParams(params).toString();
-
         try {
-            let response = await fetch(url.toString());
+            let videos = await YoutubeService.getVideos("UC4sSLAid-EtLsGB25uO0pDw");
 
-            if (response.status === 200) {
-                const data = await response.json();
-                const videos: YoutubeVideo[] = data.items.map((item: any) => Object.assign(new YoutubeVideo(), item.id, item.snippet));
-                setVideos(videos);
-            }
+            setVideos(videos);
         } catch (error) {
             console.log(error);
             trackError("youtube", (error as Error).message);
@@ -65,16 +28,25 @@ export default function Youtube() {
         getLastVideos()
     }, [getLastVideos]);
 
-    return videos.length > 0 ? <Carousel title={t("lastVideos")}>
-        {videos.map(video => (
-            <Card
-                id={video.videoId}
-                key={video.videoId}
-                url={video.url}
-                publishedAt={video.publishedAt}
-                title={video.title}
-                cover={video.cover}
-                type='video'
-            />))}
-    </Carousel> : <></>
+    if (videos.length > 0) {
+        return <Carousel
+            title={t("videosTitle")}
+            icon={YoutubeLogo}
+            redirect='https://youtube.com/reisdev'>
+            {
+                videos.map(video => (
+                    <Card
+                        id={video.videoId}
+                        key={video.videoId}
+                        url={video.url}
+                        publishedAt={video.publishedAt}
+                        title={video.title}
+                        cover={video.cover}
+                        type='video'
+                    />))
+            }
+        </Carousel >
+    } else {
+        return <></>
+    }
 }

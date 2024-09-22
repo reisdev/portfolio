@@ -1,12 +1,9 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.main > section:nth-child(n + 2) {
-  margin-top: 20px;
+  gap: 36px;
+  padding: 0px 24px 48px 24px;
+  padding-top: 0px;
 }
 
 .container {
@@ -16,15 +13,14 @@
   justify-content: center;
   align-items: center;
   background-clip: border-box;
-  min-height: 80vh;
+  min-height: 48vh;
+  max-height: 768px;
   width: 100%;
 }
 
 .personal {
   color: white;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   padding: 20px;
 }
@@ -35,15 +31,16 @@
 }
 
 .picture {
-  height: 300px;
-  width: 300px;
-  border-radius: 50%;
+  height: 240px;
+  width: auto;
   object-fit: cover;
+  border-radius: 16px;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
+  color: white;
 }
 
 .data {
@@ -70,14 +67,10 @@
 }
 
 .social {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: column; 
+  gap: 16px;
   list-style-type: none;
-  width: fit-content;
-  padding: 0px;
-  margin: 0px;
   margin-top: 20px;
 }
 
@@ -87,8 +80,6 @@
 
 .social .item {
   transition: transform 0.4s;
-  padding: 5px;
-  margin: 0px 8px;
 }
 
 .social .item span {
@@ -98,32 +89,14 @@
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.content > * {
-  margin: 5px 0px;
-}
-
-.shortcut {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  list-style-type: none;
+  max-width: 80rem;
+  width: 100%;
+  gap: 36px;
 }
 
 .item {
-  padding: 10px;
-  margin: 0px 10px;
   border-radius: 20px;
   transition: transform 0.4s;
-}
-
-.shortcut .item {
-  transition: transform 0.4s;
-  padding: 5px;
-  margin: 0px 8px;
 }
 
 .item > * {
@@ -143,16 +116,6 @@
   font-weight: 600;
 }
 
-.tabs {
-  display: flex;
-  list-style-type: none;
-  flex-direction: row;
-}
-
-.tabs > * {
-  margin: 0px 10px;
-}
-
 .code {
   background: #fafafa;
   border-radius: 5px;
@@ -162,21 +125,8 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.scrolldown {
-  position: absolute;
-  bottom: 10px;
-}
 
-@media (max-width: 480px) {
-  .shortcut li {
-    flex: 0 40%;
-  }
-  .social li {
-    flex: 0 30%;
-  }
-}
-
-@media (max-width: 1080px) {
+@media (max-width: 992px) {
   .data {
     margin: 0px;
   }
@@ -196,8 +146,8 @@
 
   .social {
     margin: 10px 20px;
-    justify-content: space-evenly;
-    flex-direction: column;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, auto);
   }
 
   .info {
@@ -207,18 +157,12 @@
 
   .shortcut {
     padding: 0px;
-    flex-direction: column;
-    flex-wrap: wrap;
+    grid-auto-flow: row;
     width: fit-content;
   }
 
   .shortcut .item {
     display: flex;
-    align-self: first baseline;
-  }
-
-  .social .item {
-    align-self: first baseline;
   }
 
   .social .item span {

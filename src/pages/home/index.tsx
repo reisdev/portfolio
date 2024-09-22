@@ -3,14 +3,11 @@ import { useTranslation } from "react-i18next";
 
 import InstagramLogo from "../../assets/img/instagram.svg";
 import ProfilePicture from "../../assets/img/profile.png";
-import HashnodeLogo from "../../assets/img/hashnode.svg";
 import TelegramLogo from "../../assets/img/telegram.svg";
 import LinkedInLogo from "../../assets/img/linkedin.svg";
-import TwitterLogo from "../../assets/img/twitter.svg";
-import YoutubeLogo from "../../assets/img/youtube.svg";
+import XLogo from "../../assets/img/x.svg";
 import TwitchLogo from "../../assets/img/twitch.svg";
 import GitHubLogo from "../../assets/img/github.svg";
-import DevToLogo from "../../assets/img/devto.svg";
 import Posts from "components/Posts";
 
 import styles from "./Home.module.css";
@@ -20,57 +17,39 @@ import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
 export default function Home() {
   const trackSocial = useAnalyticsEventTracker("Social");
   const { t } = useTranslation();
-  const { contentMedia, socialMedia } = useMemo(() => ({
-    socialMedia: [
-      {
-        logo: InstagramLogo,
-        url: "https://instagram.com/reisdev",
-        title: "Instagram"
-      },
-      {
-        logo: TwitterLogo,
-        url: "https://twitter.com/reisdev",
-        title: "Twitter"
-      },
-      {
-        logo: TelegramLogo,
-        url: "https://t.me/reisdev",
-        title: "Telegram"
-      },
-      {
-        logo: LinkedInLogo,
-        url: "https://linkedin.com/in/matheus-dos-reis-de-jesus",
-        title: "LinkedIn",
-      },
-      {
-        logo: GitHubLogo,
-        url: "https://github.com/reisdev",
-        title: "GitHub",
-      },
-    ],
-    contentMedia: [
-      {
-        logo: YoutubeLogo,
-        url: "https://youtube.com/reisdev",
-        title: "YouTube",
-      },
-      {
-        logo: TwitchLogo,
-        url: "https://twitch.tv/reisdev",
-        title: "Twitch",
-      },
-      {
-        logo: HashnodeLogo,
-        url: "https://blog.reisdev.com.br",
-        title: "Blog"
-      },
-      {
-        logo: DevToLogo,
-        url: "https://dev.to/reisdev",
-        title: "Dev.to"
-      }
-    ]
-  }), []);
+
+  const shortcuts = useMemo(() => ([
+    {
+      logo: InstagramLogo,
+      url: "https://instagram.com/reisdev",
+      title: "Instagram"
+    },
+    {
+      logo: XLogo,
+      url: "https://x.com/reisdev",
+      title: "X.com"
+    },
+    {
+      logo: TelegramLogo,
+      url: "https://t.me/reisdev",
+      title: "Telegram"
+    },
+    {
+      logo: LinkedInLogo,
+      url: "https://linkedin.com/in/matheus-dos-reis-de-jesus",
+      title: "LinkedIn",
+    },
+    {
+      logo: GitHubLogo,
+      url: "https://github.com/reisdev",
+      title: "GitHub",
+    },
+    {
+      logo: TwitchLogo,
+      url: "https://twitch.tv/reisdev",
+      title: "Twitch",
+    }
+  ]), []);
 
   return (
     <main className={styles.main}>
@@ -90,40 +69,20 @@ export default function Home() {
               </section>
               <section className={styles.job}>
                 <span>
-                  <b><a href="https://bancointer.com.br" rel="noreferrer noopener" target="_blank">{t("currentCompany")}</a></b> - {t("currentJob")}
+                  <b>{t("currentJob")}</b> - <a href="https://kwan.com" rel="noreferrer noopener" target="_blank">{t("currentCompany")}</a>
                 </span>
               </section>
             </section>
             <ul className={styles.social}>
-              {socialMedia.map((network) => (
-                <li className={styles.item} key={network.title} onClick={() => trackSocial(network.title)}>
-                  <a href={network.url} rel="noreferrer noopener" target="_blank">
+              {shortcuts.map((shortcut) => (
+                <li className={styles.item} key={shortcut.title} onClick={() => trackSocial(shortcut.title)}>
+                  <a href={shortcut.url} rel="noreferrer noopener" target="_blank">
                     <img
                       className={styles.logo}
-                      src={network.logo}
-                      alt={network.title + " logo"}
+                      src={shortcut.logo}
+                      alt={shortcut.title + " logo"}
                     />
-                    <span>{network.title}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
-          <section>
-            <ul className={styles.shortcut}>
-              {contentMedia.map((network) => (
-                <li className={styles.item} key={network.title} onClick={() => trackSocial(network.title)}>
-                  <a
-                    href={network.url}
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    <img
-                      className={styles.logo}
-                      src={network.logo}
-                      alt={`${network.title} logo`}
-                    />
-                    <span>{network.title}</span>
+                    <span>{shortcut.title}</span>
                   </a>
                 </li>
               ))}
@@ -131,8 +90,10 @@ export default function Home() {
           </section>
         </section>
       </section>
-      <Posts />
-      <Youtube />
+      <section className={styles.content}>
+        <Posts />
+        <Youtube />
+      </section>
     </main>
   );
 }

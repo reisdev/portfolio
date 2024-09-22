@@ -11,17 +11,25 @@ interface CardProps {
     publishedAt: string;
     type: string;
     tags?: string[];
+    viewCount?: number;
 }
 
-const Card: React.FC<CardProps> = ({ id, type, title, url, cover, publishedAt, tags }) => {
+export default function Card({ id, type, title, url, cover, publishedAt, tags, viewCount }: CardProps) {
     const trackEvent = useAnalyticsEventTracker("Content");
-    
+
     return <a key={`card-${id}`} href={url} rel="noreferrer noopener" target="_blank" className={styles.card}>
         <article onClick={() => trackEvent(type, title)}>
             <img className={`${styles.cover} cover`} src={cover} alt="Article cover" />
-            <span className={styles.date}>
-                {dayjs(publishedAt).format("MMM DD, YYYY")}
-            </span>
+            <div className={styles.info}>
+                {viewCount ?
+                    <span className={styles.view_count}>
+                        <i className="fas fa-heart"></i>
+                        <span>{viewCount}</span>
+                    </span> : <><br></br></>}
+                <span className={styles.date}>
+                    {dayjs(publishedAt).format("MMM DD, YYYY")}
+                </span>
+            </div>
             <h3 className={styles.title}>{title}</h3>
             {
                 tags?.length && <section className={styles.tags}>
@@ -38,5 +46,3 @@ const Card: React.FC<CardProps> = ({ id, type, title, url, cover, publishedAt, t
         </article>
     </a >
 }
-
-export default Card;
