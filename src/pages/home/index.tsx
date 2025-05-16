@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import InstagramLogo from "../../assets/img/instagram.svg";
-import ProfilePicture from "../../assets/img/profile.png";
+import ProfilePicture from "../../assets/img/profile.webp";
 import TelegramLogo from "../../assets/img/telegram.svg";
 import LinkedInLogo from "../../assets/img/linkedin.svg";
 import XLogo from "../../assets/img/x.svg";
@@ -57,19 +57,19 @@ export default function Home() {
         <section className={styles.personal}>
           <img
             className={styles.picture}
-            alt={"Fotografia do autor desta página. Matheus é preto, tem barba e está usando um óculos de grau. Ao fundo, um microfone e dois monitores."}
+            alt={t("common.pictureAlt")}
             src={ProfilePicture}
           />
           <section className={styles.data}>
             <section className={styles.info}>
               <section className={styles.name}>
                 <h1>
-                  Matheus Reis - <i>ReisDev</i>
+                  Matheus Reis <i>ReisDev</i>
                 </h1>
               </section>
               <section className={styles.job}>
                 <span>
-                  <b>{t("currentJob")}</b> - <a href="https://kwan.com" rel="noreferrer noopener" target="_blank">{t("currentCompany")}</a>
+                  <b>{t("currentJob")}</b> at <a href="https://kwan.com" rel="noreferrer noopener" target="_blank">{t("currentCompany")}</a>
                 </span>
               </section>
             </section>
@@ -82,7 +82,6 @@ export default function Home() {
                       src={shortcut.logo}
                       alt={shortcut.title + " logo"}
                     />
-                    <span>{shortcut.title}</span>
                   </a>
                 </li>
               ))}

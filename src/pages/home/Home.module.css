@@ -1,6 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 36px;
   padding: 0px 24px 48px 24px;
   padding-top: 0px;
@@ -31,10 +32,11 @@
 }
 
 .picture {
-  height: 240px;
-  width: auto;
+  max-width: 300px;
+  width: 16rem;
+  height: auto;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 50%;
 }
 
 .logo {
@@ -66,12 +68,17 @@
   font-weight: 100;
 }
 
+.job a:hover {
+  text-decoration: underline;
+}
+
 .social {
   display: grid;
   grid-auto-flow: column; 
   gap: 16px;
   list-style-type: none;
   margin-top: 20px;
+  padding: 0px;
 }
 
 .social li:hover {
@@ -126,9 +133,13 @@
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .data {
     margin: 0px;
+  }
+
+  .name i {
+    padding-left: 16px
   }
 
   .picture {
@@ -142,12 +153,6 @@
 
   .job {
     padding: 0px 10px;
-  }
-
-  .social {
-    margin: 10px 20px;
-    grid-auto-flow: row;
-    grid-template-columns: repeat(2, auto);
   }
 
   .info {
@@ -167,5 +172,20 @@
 
   .social .item span {
     display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .social {
+    padding: 0px;
+    column-gap: 36px;
+    margin: 10px 20px;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
   }
 }

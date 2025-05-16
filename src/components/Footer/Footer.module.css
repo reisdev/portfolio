@@ -1,13 +1,10 @@
-.spacer {
-    flex-grow: 1;
-}
-
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 36px;
-    font-size: 18px;
+    font-size: 1.2em;
     position: relative;
-    bottom: 0px;
+    bottom: 0;
+    padding-bottom: 20px;
 }
