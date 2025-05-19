@@ -1,0 +1,32 @@
+[
+  {
+    "logo": "fa-brands fa-instagram",
+    "url": "https://instagram.com/reisdev",
+    "title": "Instagram"
+  },
+  {
+    "logo": "fa-brands fa-x-twitter",
+    "url": "https://x.com/reisdev",
+    "title": "X.com"
+  },
+  {
+    "logo": "fa-brands fa-telegram",
+    "url": "https://t.me/reisdev",
+    "title": "Telegram"
+  },
+  {
+    "logo": "fa-brands fa-linkedin",
+    "url": "https://linkedin.com/in/matheus-dos-reis-de-jesus",
+    "title": "LinkedIn"
+  },
+  {
+    "logo": "fa-brands fa-github",
+    "url": "https://github.com/reisdev",
+    "title": "GitHub"
+  },
+  {
+    "logo": "fa-brands fa-twitch",
+    "url": "https://twitch.tv/reisdev",
+    "title": "Twitch"
+  }
+]

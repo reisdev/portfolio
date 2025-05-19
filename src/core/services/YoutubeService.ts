@@ -1,12 +1,13 @@
+import { Environment } from "core/environment";
 import { YoutubeVideo } from "core/models/youtube-video";
 
 export default class YoutubeService {
     static baseURL = new URL("https://www.googleapis.com/youtube/v3/");
 
-    static async getVideos(channelId: string, itemsPerPage: number = 6): Promise<YoutubeVideo[]> {
+    static async getVideos(channelId: string, itemsPerPage: number = 8): Promise<YoutubeVideo[]> {
 
         let search = new URLSearchParams({
-            key: `${process.env.REACT_APP_YOUTUBE_API_KEY}`,
+            key: Environment.youtubeAPIKey,
             channelId: channelId,
             type: "video",
             part: "snippet",

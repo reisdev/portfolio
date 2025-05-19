@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 
 import styles from "./Card.module.css";
 import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
+import Tag from "components/Tag";
 
 interface CardProps {
     id: number | string;
@@ -34,12 +35,9 @@ export default function Card({ id, type, title, url, cover, publishedAt, tags, v
             {
                 tags?.length && <section className={styles.tags}>
                     {tags.map((tag, index) =>
-                        <span
-                            className={styles.item}
-                            key={`${id}-tag-${index}`}
-                        >
+                        <Tag key={`${id}-tag-${index}`}>
                             {tag}
-                        </span>
+                        </Tag>
                     )}
                 </section>
             }

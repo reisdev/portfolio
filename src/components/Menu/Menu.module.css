@@ -1,17 +1,22 @@
 .menu {
+    padding: 24px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    max-width: 80rem;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 36px;
-    padding: 24px;
-    font-size: 1.6rem;
+    justify-content: left;
+    gap: 24px;
+    text-transform: uppercase;
 }
 
-.menu > li {
-    list-style-type: none;
-}
-
-.menu > li:after {
+.menu a:after {
     content: "";
     display: block;
     margin: auto;
@@ -20,10 +25,10 @@
     background-color: transparent;
 }
 
-.menu > li:hover:after,
-.menu > li.active:after {
+.menu a:hover:after,
+.menu a.active:after {
     width: 100%;
-    background-color: var(--secondary);
+    background-color: light-dark(var(--light-secondary), var(--dark-secondary));
     opacity: 0.5;
     transition: width .25s ease-in-out, background-color .4s ease-in;
 }

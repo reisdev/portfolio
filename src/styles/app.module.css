@@ -1,0 +1,6 @@
+.container {
+    color: light-dark(var(--light-secondary), var(--dark-secondary));
+    background-color: light-dark(var(--light-primary), var(--dark-primary));
+    min-height: 100vh;
+    transition: color .2s ease-in, background-color .2s ease-in-out;
+}

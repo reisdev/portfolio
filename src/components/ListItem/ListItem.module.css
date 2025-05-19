@@ -1,0 +1,25 @@
+.item { 
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+@media screen and (max-width: 769px) {
+  .item {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+

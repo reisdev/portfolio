@@ -1,55 +1,20 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import InstagramLogo from "../../assets/img/instagram.svg";
-import ProfilePicture from "../../assets/img/profile.webp";
-import TelegramLogo from "../../assets/img/telegram.svg";
-import LinkedInLogo from "../../assets/img/linkedin.svg";
-import XLogo from "../../assets/img/x.svg";
-import TwitchLogo from "../../assets/img/twitch.svg";
-import GitHubLogo from "../../assets/img/github.svg";
+import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
+import Videos from "components/Videos";
 import Posts from "components/Posts";
 
 import styles from "./Home.module.css";
-import Youtube from "components/Youtube";
-import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
+
+import ProfilePicture from "assets/img/profile.webp";
+import socialShortcuts from "./social.json"
 
 export default function Home() {
   const trackSocial = useAnalyticsEventTracker("Social");
   const { t } = useTranslation();
 
-  const shortcuts = useMemo(() => ([
-    {
-      logo: InstagramLogo,
-      url: "https://instagram.com/reisdev",
-      title: "Instagram"
-    },
-    {
-      logo: XLogo,
-      url: "https://x.com/reisdev",
-      title: "X.com"
-    },
-    {
-      logo: TelegramLogo,
-      url: "https://t.me/reisdev",
-      title: "Telegram"
-    },
-    {
-      logo: LinkedInLogo,
-      url: "https://linkedin.com/in/matheus-dos-reis-de-jesus",
-      title: "LinkedIn",
-    },
-    {
-      logo: GitHubLogo,
-      url: "https://github.com/reisdev",
-      title: "GitHub",
-    },
-    {
-      logo: TwitchLogo,
-      url: "https://twitch.tv/reisdev",
-      title: "Twitch",
-    }
-  ]), []);
+  const shortcuts = useMemo(() => (socialShortcuts), []);
 
   return (
     <main className={styles.main}>
@@ -57,7 +22,7 @@ export default function Home() {
         <section className={styles.personal}>
           <img
             className={styles.picture}
-            alt={t("common.pictureAlt")}
+            alt={t("common.pictureAlt") || ""}
             src={ProfilePicture}
           />
           <section className={styles.data}>
@@ -77,11 +42,7 @@ export default function Home() {
               {shortcuts.map((shortcut) => (
                 <li className={styles.item} key={shortcut.title} onClick={() => trackSocial(shortcut.title)}>
                   <a href={shortcut.url} rel="noreferrer noopener" target="_blank">
-                    <img
-                      className={styles.logo}
-                      src={shortcut.logo}
-                      alt={shortcut.title + " logo"}
-                    />
+                    <i className={`${shortcut.logo} ${styles.logo}`}></i>
                   </a>
                 </li>
               ))}
@@ -91,7 +52,7 @@ export default function Home() {
       </section>
       <section className={styles.content}>
         <Posts />
-        <Youtube />
+        <Videos />
       </section>
     </main>
   );

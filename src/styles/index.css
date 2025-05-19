@@ -1,12 +1,13 @@
 :root {
-  --primary: #000624;
-  --secondary: #fafafa;
+  color-scheme: light-dark;
+  --light-primary: #fdfdfd;
+  --dark-primary:  #000624;
+  --light-secondary: #121212;
+  --dark-secondary: #fdfdfd;
 }
 
 html,
 body {
-  color: white;
-  background-color: var(--primary);
   margin: 0;
   padding: 0;
   font-family: "Recursive", sans-serif;
@@ -25,6 +26,10 @@ h5 {
   margin: 0px;
 }
 
+img { 
+  -webkit-user-drag: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -37,4 +42,8 @@ code {
 
 * {
   box-sizing: border-box;
+}
+
+svg {
+  fill: currentColor;
 }

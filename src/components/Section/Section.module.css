@@ -3,17 +3,15 @@
   flex-direction: column;
 }
 
-.carousel {
-  display: grid;
-  grid-template-columns: auto;
-  gap: 24px;
-}
-
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 24px 0px;
+}
+
+.icon {
+  font-size: 1.5rem;
 }
 
 .title {
@@ -37,17 +35,5 @@
 
 .shortcut i {
   transform: translateY(2px);
-}
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .carousel {
-    grid-template-columns: auto auto;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .carousel {
-    grid-template-columns: auto auto auto;
-  }
 }
 

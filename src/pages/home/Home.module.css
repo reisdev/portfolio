@@ -20,7 +20,6 @@
 }
 
 .personal {
-  color: white;
   display: flex;
   align-items: center;
   padding: 20px;
@@ -40,9 +39,7 @@
 }
 
 .logo {
-  width: 36px;
-  height: 36px;
-  color: white;
+  font-size: 2rem;
 }
 
 .data {
@@ -76,9 +73,9 @@
   display: grid;
   grid-auto-flow: column; 
   gap: 16px;
-  list-style-type: none;
   margin-top: 20px;
   padding: 0px;
+  list-style-type: none;
 }
 
 .social li:hover {
@@ -94,8 +91,8 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto auto;
   max-width: 80rem;
   width: 100%;
   gap: 36px;
@@ -132,8 +129,12 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-
 @media (max-width: 991px) {
+  .content {
+    grid-template-columns: none;
+    grid-template-rows: auto;
+  }
+
   .data {
     margin: 0px;
   }
@@ -185,7 +186,6 @@
   }
 
   .logo {
-    width: 48px;
-    height: 48px;
+    font-size: 2.4rem;
   }
 }

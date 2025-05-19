@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { Analytics, getAnalytics } from "firebase/analytics";
+import { Environment } from "core/environment";
 
 const FirebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: `${process.env.REACT_APP_FIREBASE_PROJECT_ID}.firebaseapp.com`,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: `${process.env.REACT_APP_FIREBASE_PROJECT_ID}.appspot.com`,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID
+    apiKey: Environment.firebaseApiKey,
+    authDomain: `${Environment.firebaseProjectId}.firebaseapp.com`,
+    projectId: Environment.firebaseProjectId,
+    storageBucket: `${Environment.firebaseProjectId}.appspot.com`,
+    messagingSenderId: Environment.firebaseMessageSenderId,
+    appId: Environment.firebaseAppId
 };
 
 let analytics: Analytics | null = null;

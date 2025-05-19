@@ -7,6 +7,7 @@
   -webkit-user-drag: none;
   transition: transform 0.5s;
   height: 100%;
+  color: var(--light-primary);
 }
 
 .card article {
@@ -42,12 +43,9 @@
   z-index: 3;
   margin-top: auto;
   position: relative;
-  color: white;
+  color: var(--light-primary);
   font-weight: 800;
-}
-
-.tags + .title {
-  padding-bottom: 0px;
+  font-size: 1rem;
 }
 
 .info {
@@ -86,15 +84,4 @@
   z-index: 3;
   margin: 0px 10px 10px;
   flex-wrap: wrap;
-}
-
-.tags .item {
-  background-color: var(--secondary);
-  color: var(--primary);
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  border-radius: 0.5rem;
-  margin: 5px;
-  font-weight: 600;
 }

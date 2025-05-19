@@ -1,0 +1,9 @@
+.container {
+    display: grid;
+    gap: 24px;
+}
+
+.container > *:after {
+    background-color: red;
+    height: 1px;
+}

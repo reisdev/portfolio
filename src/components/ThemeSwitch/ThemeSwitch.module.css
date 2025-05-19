@@ -1,0 +1,8 @@
+.switch {
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+    appearance: none;
+    margin-left: auto;
+    right: 16px;
+}
