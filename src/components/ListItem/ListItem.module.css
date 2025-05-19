@@ -2,6 +2,12 @@
     display: flex;
     justify-content: space-between;
     gap: 16px;
+    border-radius: 0.5rem;
+    padding: 8px;
+}
+
+.item:hover {
+    background-color: light-dark(var(--light-tertiary), var(--dark-tertiary));
 }
 
 .content {

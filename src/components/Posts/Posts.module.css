@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    gap: 24px;
+    gap: 8px;
 }
 
 .container > *:after {
