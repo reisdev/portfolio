@@ -22,7 +22,7 @@ export default function Home() {
         <section className={styles.personal}>
           <img
             className={styles.picture}
-            alt={t("pictureAlt") || ""}
+            alt={t("picture") || ""}
             src={ProfilePicture}
           />
           <section className={styles.data}>
@@ -31,7 +31,7 @@ export default function Home() {
                   Matheus Reis <i>ReisDev</i>
                 </h1>
                 <span className={styles.job}>
-                  <b>{t("currentJob")}</b> at <a href="https://kwan.com" rel="noreferrer noopener" target="_blank">{t("currentCompany")}</a>
+                  <b>{t("career:jobDescription")}</b> at <a href="https://kwan.com" rel="noreferrer noopener" target="_blank">{t("career:company")}</a>
                 </span>
                 <p className={styles.description}>
                    {t("career:shortDescription")}
