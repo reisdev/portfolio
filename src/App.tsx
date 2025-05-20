@@ -3,9 +3,9 @@ import { I18nextProvider } from "react-i18next";
 import { Helmet } from "react-helmet";
 import ReactGA from "react-ga4";
 
-import Router from "core/router";
-import i18n from "core/i18next";
-import ThemeContext, { Theme } from "core/theme/ThemeContext";
+import Router from "@core/router";
+import i18n from "@core/i18next";
+import ThemeContext, { Theme } from "@core/theme/ThemeContext";
 
 export default function App() {
   let [theme, setTheme] = useState<Theme>(Theme.dark);

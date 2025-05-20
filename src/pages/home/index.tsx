@@ -1,13 +1,12 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
-import Videos from "components/Videos";
-import Posts from "components/Posts";
+import useAnalyticsEventTracker from "@core/hooks/useAnalyticsEventTracker";
+import Videos from "@components/Videos";
+import Posts from "@components/Posts";
 
 import styles from "./Home.module.css";
 
-import ProfilePicture from "assets/img/profile.webp";
 import socialShortcuts from "./social.json"
 
 export default function Home() {
@@ -20,11 +19,7 @@ export default function Home() {
     <main className={styles.main}>
       <section className={styles.container}>
         <section className={styles.personal}>
-          <img
-            className={styles.picture}
-            alt={t("picture") || ""}
-            src={ProfilePicture}
-          />
+          <img className={styles.picture} alt={t("picture") || ""} src="/assets/profile.webp" />
           <section className={styles.data}>
             <section className={styles.info}>
                 <h1 className={styles.name}>

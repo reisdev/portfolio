@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import styles from "./Menu.module.css";
-import ThemeSwitch from "components/ThemeSwitch";
+import ThemeSwitch from "@components/ThemeSwitch";
 
 export default function Menu() {
   const currentRoute = useLocation();

@@ -1,6 +1,6 @@
 import { useCallback, useContext, useMemo } from "react";
 
-import ThemeContext, { Theme } from "core/theme/ThemeContext";
+import ThemeContext, { Theme } from "@core/theme/ThemeContext";
 import styles from "./ThemeSwitch.module.css";
 
 export default function ThemeSwitch() {

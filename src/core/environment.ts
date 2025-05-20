@@ -9,11 +9,11 @@ export interface AppEnvironment {
 }
 
 export const Environment: AppEnvironment = {
-    firebaseApiKey: process.env.REACT_APP_FIREBASE_API_KEY || "",
-    firebaseAppId: process.env.REACT_APP_FIREBASE_APP_ID || "",
-    firebaseMessageSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_SENDER_ID || "",
-    firebaseProjectId: process.env.REACT_APP_FIREBASE_PROJECT_ID || "",
-    googleAnalyticsId: process.env.REACT_APP_GA_ID || "",
-    youtubeChannelId: process.env.REACT_APP_YOUTUBE_CHANNEL_ID || "",
-    youtubeAPIKey: process.env.REACT_APP_YOUTUBE_API_KEY || ""
+    firebaseApiKey: import.meta.env.VITE_FIREBASE_API_KEY || "",
+    firebaseAppId: import.meta.env.VITE_FIREBASE_APP_ID || "",
+    firebaseMessageSenderId: import.meta.env.VITE_FIREBASE_MESSAGE_SENDER_ID || "",
+    firebaseProjectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "",
+    googleAnalyticsId: import.meta.env.VITE_GA_ID || "",
+    youtubeChannelId: import.meta.env.VITE_YOUTUBE_CHANNEL_ID || "",
+    youtubeAPIKey: import.meta.env.VITE_YOUTUBE_API_KEY || ""
 }

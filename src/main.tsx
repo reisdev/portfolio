@@ -4,9 +4,9 @@ import App from './App';
 import './styles/index.css';
 import reportWebVitals from './reportWebVitals';
 
-import "core/tracking/google-analytics";
-import "core/tracking/firebase-analytics";
-import "core/i18next";
+import "@core/tracking/google-analytics";
+import "@core/tracking/firebase-analytics";
+import "@core/i18next";
 
 let root = createRoot(document.getElementById('root') as HTMLElement)
 

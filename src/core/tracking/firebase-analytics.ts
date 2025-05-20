@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { Analytics, getAnalytics } from "firebase/analytics";
-import { Environment } from "core/environment";
+import { Environment } from "@core/environment";
 
 const FirebaseConfig = {
     apiKey: Environment.firebaseApiKey,
@@ -13,7 +13,7 @@ const FirebaseConfig = {
 
 let analytics: Analytics | null = null;
 
-if(process.env.NODE_ENV === "production") {
+if(import.meta.env.NODE_ENV === "production") {
     const app = initializeApp(FirebaseConfig);
     analytics = getAnalytics(app);
 }

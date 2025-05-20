@@ -1,12 +1,12 @@
 import { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
-import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
-import DEVService from "core/services/DEVService";
-import { Post } from "core/models/post";
+import useAnalyticsEventTracker from "@core/hooks/useAnalyticsEventTracker";
+import DEVService from "@core/services/DEVService";
+import { Post } from "@core/models/post";
 
-import ListItem from "components/ListItem";
-import Section from "components/Section";
+import ListItem from "@components/ListItem";
+import Section from "@components/Section";
 
 import styles from "./Posts.module.css";
 

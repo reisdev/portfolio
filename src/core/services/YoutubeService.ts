@@ -1,5 +1,5 @@
-import { Environment } from "core/environment";
-import { YoutubeVideo } from "core/models/youtube-video";
+import { Environment } from "@core/environment";
+import { YoutubeVideo } from "@core/models/youtube-video";
 
 export default class YoutubeService {
     static baseURL = new URL("https://www.googleapis.com/youtube/v3/");

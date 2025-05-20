@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
+import useAnalyticsEventTracker from "@core/hooks/useAnalyticsEventTracker";
 
-import YoutubeService from "core/services/YoutubeService";
-import { YoutubeVideo } from "core/models/youtube-video";
+import YoutubeService from "@core/services/YoutubeService";
+import { YoutubeVideo } from "@core/models/youtube-video";
 
 import styles from "./Videos.module.css";
 import Card from "components/Card";

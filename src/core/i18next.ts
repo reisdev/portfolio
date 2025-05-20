@@ -16,7 +16,7 @@ i18n
         ns: [ "common", "career", "components" ],
         fallbackLng: "en",
         supportedLngs: ["pt-BR", "en"],
-        debug: process.env.NODE_ENV === "development"
+        debug: import.meta.env.NODE_ENV === "development"
     });
 
 export default i18n;

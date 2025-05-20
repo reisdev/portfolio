@@ -1,13 +1,13 @@
 import { useState, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-import useAnalyticsEventTracker from "core/hooks/useAnalyticsEventTracker";
-import YoutubeService from "core/services/YoutubeService";
-import { YoutubeVideo } from "core/models/youtube-video";
-import { Environment } from "core/environment";
+import useAnalyticsEventTracker from "@core/hooks/useAnalyticsEventTracker";
+import YoutubeService from "@core/services/YoutubeService";
+import { YoutubeVideo } from "@core/models/youtube-video";
+import { Environment } from "@core/environment";
 
-import Section from "components/Section";
-import Card from "components/Card";
+import Section from "@components/Section";
+import Card from "@components/Card";
 
 import styles from "./Videos.module.css"
 
