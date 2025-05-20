@@ -5,7 +5,6 @@ export default class YoutubeService {
     static baseURL = new URL("https://www.googleapis.com/youtube/v3/");
 
     static async getVideos(channelId: string, itemsPerPage: number = 8): Promise<YoutubeVideo[]> {
-
         let search = new URLSearchParams({
             key: Environment.youtubeAPIKey,
             channelId: channelId,

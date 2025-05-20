@@ -17,6 +17,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      <title>Matheus Reis - ReisDev</title>
       <section className={styles.container}>
         <section className={styles.personal}>
           <img className={styles.picture} alt={t("picture") || ""} src="/assets/profile.webp" />

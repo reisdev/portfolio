@@ -1,4 +1,4 @@
-import { HashRouter, Outlet, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router';
 
 import Home from "@pages/home";
 import Career from '@pages/career';
@@ -7,7 +7,7 @@ import Menu from '@components/Menu';
 import Footer from '@components/Footer';
 
 export default function Router() {
-  return <HashRouter basename="/">
+  return <BrowserRouter basename="/">
     <Routes>
       <Route element={<>
         <Menu />
@@ -18,5 +18,5 @@ export default function Router() {
         <Route path="career" element={<Career />} />
       </Route>
     </Routes>
-  </HashRouter>
+  </BrowserRouter>
 }

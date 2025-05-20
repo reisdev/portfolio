@@ -24,7 +24,6 @@ export default function App() {
     <Suspense fallback={<></>}>
         <ThemeContext.Provider value={{ theme, setTheme }}>
           <I18nextProvider i18n={i18n}>
-            <Helmet title={"Matheus Reis - ReisDev"} />
             <Router />
           </I18nextProvider>
         </ThemeContext.Provider>
