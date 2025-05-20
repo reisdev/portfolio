@@ -1,5 +1,20 @@
 [
   {
+    "logo": "fa-brands fa-linkedin",
+    "url": "https://linkedin.com/in/matheus-dos-reis-de-jesus",
+    "title": "LinkedIn"
+  },
+  {
+    "logo": "fa-brands fa-github",
+    "url": "https://github.com/reisdev",
+    "title": "GitHub"
+  },
+  {
+    "logo": "fa-brands fa-hashnode",
+    "url": "https://blog.reisdev.com.br",
+    "title": "Hashnode"
+  },
+  {
     "logo": "fa-brands fa-instagram",
     "url": "https://instagram.com/reisdev",
     "title": "Instagram"
@@ -13,16 +28,6 @@
     "logo": "fa-brands fa-telegram",
     "url": "https://t.me/reisdev",
     "title": "Telegram"
-  },
-  {
-    "logo": "fa-brands fa-linkedin",
-    "url": "https://linkedin.com/in/matheus-dos-reis-de-jesus",
-    "title": "LinkedIn"
-  },
-  {
-    "logo": "fa-brands fa-github",
-    "url": "https://github.com/reisdev",
-    "title": "GitHub"
   },
   {
     "logo": "fa-brands fa-twitch",

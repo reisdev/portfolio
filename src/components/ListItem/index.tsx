@@ -30,9 +30,7 @@ export default function ListItem({ id, title, tags, date, url }: ListItemProps) 
                 }
             </div>
         </section>
-        <section>
-            <span>{dayjs(date).format("MMM DD, YYYY")}</span>
-        </section>
+        <span className={styles.date}>{dayjs(date).format("MMM DD, YYYY")}</span>
     </article>
     </a>
 }

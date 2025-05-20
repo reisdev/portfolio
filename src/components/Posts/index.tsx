@@ -14,7 +14,6 @@ export default function Posts() {
   const trackError = useAnalyticsEventTracker("error");
   const { t } = useTranslation("common");
   const [posts, setPosts] = useState<Post[]>([]);
-  const [listingType, setListingType] = useState(1);
 
   const getArticles = useCallback(async () => {
     try {

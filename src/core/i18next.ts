@@ -13,7 +13,7 @@ i18n
             allowMultiLoading: true
         },
         load: "currentOnly",
-        ns: [ "common" ],
+        ns: [ "common", "career", "components" ],
         fallbackLng: "en",
         supportedLngs: ["pt-BR", "en"],
         debug: process.env.NODE_ENV === "development"

@@ -16,6 +16,10 @@
     gap: 8px;
 }
 
+.date {
+  white-space: nowrap;
+}
+
 .tags {
     display: flex;
     flex-direction: row;

@@ -22,21 +22,20 @@ export default function Home() {
         <section className={styles.personal}>
           <img
             className={styles.picture}
-            alt={t("common.pictureAlt") || ""}
+            alt={t("pictureAlt") || ""}
             src={ProfilePicture}
           />
           <section className={styles.data}>
             <section className={styles.info}>
-              <section className={styles.name}>
-                <h1>
+                <h1 className={styles.name}>
                   Matheus Reis <i>ReisDev</i>
                 </h1>
-              </section>
-              <section className={styles.job}>
-                <span>
+                <span className={styles.job}>
                   <b>{t("currentJob")}</b> at <a href="https://kwan.com" rel="noreferrer noopener" target="_blank">{t("currentCompany")}</a>
                 </span>
-              </section>
+                <p className={styles.description}>
+                   {t("career:shortDescription")}
+                </p>
             </section>
             <ul className={styles.social}>
               {shortcuts.map((shortcut) => (

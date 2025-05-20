@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
   gap: 36px;
   padding: 0px 24px 48px 24px;
   padding-top: 0px;
@@ -16,6 +17,7 @@
   background-clip: border-box;
   min-height: 48vh;
   max-height: 768px;
+  max-width: 70rem;
   width: 100%;
 }
 
@@ -38,6 +40,11 @@
   border-radius: 50%;
 }
 
+.description {
+  white-space: pre-line;
+  text-align: justify;
+}
+
 .logo {
   font-size: 2rem;
 }
@@ -53,7 +60,6 @@
 .info {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
 }
 
 .name {
@@ -71,7 +77,8 @@
 
 .social {
   display: grid;
-  grid-auto-flow: column; 
+  grid-auto-flow: column;
+  align-self: first baseline;
   gap: 16px;
   margin-top: 20px;
   padding: 0px;
@@ -92,7 +99,7 @@
 
 .content {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   max-width: 80rem;
   width: 100%;
   gap: 36px;
@@ -171,8 +178,8 @@
     display: flex;
   }
 
-  .social .item span {
-    display: block;
+  .social {
+    align-self: auto;
   }
 }
 
@@ -186,6 +193,6 @@
   }
 
   .logo {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 }

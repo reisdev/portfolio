@@ -9,6 +9,9 @@ export default function Career() {
             <header>
                 <h2>{t("about")}</h2>
             </header>
+            <main>
+                <p>{t("description")}</p>
+            </main>
         </section>
     </main>
 }

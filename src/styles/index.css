@@ -18,6 +18,9 @@ body {
   scroll-behavior: smooth;
   height: 100%;
   font-size: 16px;
+  overflow-x: hidden;
+  color: light-dark(var(--light-secondary), var(--dark-secondary));
+  background-color: light-dark(var(--light-primary), var(--dark-primary));
 }
 
 h1,
@@ -44,8 +47,4 @@ code {
 
 * {
   box-sizing: border-box;
-}
-
-svg {
-  fill: currentColor;
 }
