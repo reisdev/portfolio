@@ -15,9 +15,8 @@
   justify-content: center;
   align-items: center;
   background-clip: border-box;
-  min-height: 48vh;
-  max-height: 768px;
   max-width: 70rem;
+  margin: 36px 0px;
   width: 100%;
 }
 
@@ -27,13 +26,8 @@
   padding: 20px;
 }
 
-.personal > * {
-  margin: 0px 20px;
-  width: fit-content;
-}
-
 .picture {
-  max-width: 300px;
+  max-width: 256px;
   width: 16rem;
   height: auto;
   object-fit: cover;
@@ -43,6 +37,7 @@
 .description {
   white-space: pre-line;
   text-align: justify;
+  font-size: 1.2rem;
 }
 
 .logo {
@@ -54,7 +49,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 80px;
+  margin: 0px 24px;
 }
 
 .info {
@@ -63,11 +58,11 @@
 }
 
 .name {
-  font-size: 3rem;
+  font-size: 2.4em;
 }
 
 .job {
-  font-size: 1.5rem;
+  font-size: 1.6em;
   font-weight: 100;
 }
 
@@ -78,7 +73,6 @@
 .social {
   display: grid;
   grid-auto-flow: column;
-  align-self: first baseline;
   gap: 16px;
   margin-top: 20px;
   padding: 0px;
@@ -137,6 +131,10 @@
 }
 
 @media (max-width: 991px) {
+  .container {
+    margin: 0px;
+  }
+
   .content {
     grid-template-columns: none;
     grid-template-rows: auto;
@@ -156,16 +154,17 @@
 
   .personal {
     flex-direction: column;
-    margin-top: 20px;
   }
 
   .job {
-    padding: 0px 10px;
+    padding: 0px 20px;
   }
 
   .info {
-    margin-top: 50px;
+    margin-top: 36px;
+    gap: 8px;
     text-align: center;
+    font-size: 0.8rem;
   }
 
   .shortcut {
@@ -177,10 +176,6 @@
   .shortcut .item {
     display: flex;
   }
-
-  .social {
-    align-self: auto;
-  }
 }
 
 @media (max-width: 600px) {
@@ -189,7 +184,7 @@
     column-gap: 36px;
     margin: 10px 20px;
     grid-auto-flow: row;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
   }
 
   .logo {

@@ -17,7 +17,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    document.body.style.colorScheme = theme === Theme.dark ? "dark" : "light"
+    document.documentElement.style.colorScheme = theme === Theme.dark ? "dark" : "light"
   }, [theme]);
 
   return (

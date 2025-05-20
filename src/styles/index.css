@@ -8,7 +8,11 @@
   --dark-tertiary: #121212;
 }
 
-html,
+html {
+  background: light-dark(var(--light-primary), var(--dark-primary));
+  color: light-dark(var(--light-secondary), var(--dark-secondary));
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -19,8 +23,6 @@ body {
   height: 100%;
   font-size: 16px;
   overflow-x: hidden;
-  color: light-dark(var(--light-secondary), var(--dark-secondary));
-  background-color: light-dark(var(--light-primary), var(--dark-primary));
 }
 
 h1,

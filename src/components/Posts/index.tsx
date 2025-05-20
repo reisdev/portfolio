@@ -31,8 +31,7 @@ export default function Posts() {
   if (posts.length > 0) {
     return (
       <Section
-        title={t("articlesTitle")}
-        icon={"fa-brands fa-dev"}
+        title={t("posts")}
         redirect="https://dev.to/@reisdev"
       >
         <div className={styles.container}>

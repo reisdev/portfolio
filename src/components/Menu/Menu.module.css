@@ -10,10 +10,16 @@
     max-width: 80rem;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: left;
+    align-items: baseline;
     gap: 24px;
     text-transform: uppercase;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 24px;
 }
 
 .menu a:after {
@@ -25,10 +31,43 @@
     background-color: transparent;
 }
 
+.icon {
+    display: none;
+    appearance: none;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+}
+
+.collapsible {
+    display: flex;
+    transition: max-height .5s ease-in-out;
+    flex-direction: row;
+    overflow: visible;
+    gap: 24px;
+}
+
+.collapsible.opened {
+    max-height: 240px;
+}
+
 .menu a:hover:after,
 .menu a.active:after {
     width: 100%;
     background-color: light-dark(var(--light-secondary), var(--dark-secondary));
     opacity: 0.5;
     transition: width .25s ease-in-out, background-color .4s ease-in;
+}
+
+@media (max-width: 767px) {
+    .collapsible {
+        flex-direction: column;
+        gap: 16px;
+        max-height: 0px;
+        overflow: hidden;
+    }
+
+    .icon {
+        display: block;
+    }
 }

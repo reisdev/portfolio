@@ -32,8 +32,7 @@ export default function Videos() {
   if (videos.length > 0) {
     return (
       <Section
-        title={t("videosTitle")}
-        icon="fa-brands fa-youtube"
+        title={t("videos")}
         redirect="https://youtube.com/reisdev"
       >
         <div className={styles.container}>

@@ -1,13 +1,11 @@
 {
-  "videosTitle": "Vídeos",
-  "articlesTitle": "Artigos",
-  "pictureAlt": "Uma foto de Matheus, que é pardo e tem cabelos curtos. Está usando óculos escuros e um casaco beje claro. Ao fundo, a Ponte D. Luis I na cidade Porto, Portugal.",
+  "picture": "Uma foto de Matheus, que é pardo e tem cabelos curtos. Está usando óculos escuros e um casaco beje claro. Ao fundo, a Ponte D. Luis I na cidade Porto, Portugal.",
   "currentJob": "Desenvolvedor iOS Sênior",
   "currentCompany": "KWAN",
   "home": "Início",
   "career": "Carreira",
-  "posts": "Posts",
-  "videos": "Vídeos",
+  "posts": "✍🏼 Posts",
+  "videos": "🎬 Vídeos",
   "blog": "Blog",
   "footer": "Confeccionado com ♥️ por ReisDev @ 2025"
 }

@@ -4,7 +4,7 @@ import styles from "./Section.module.css";
 
 interface SectionProps {
     title: string;
-    icon: string | undefined;
+    icon?: string;
     redirect: string;
     children: any;
 }

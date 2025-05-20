@@ -10,9 +10,9 @@
     "title": "GitHub"
   },
   {
-    "logo": "fa-brands fa-hashnode",
-    "url": "https://blog.reisdev.com.br",
-    "title": "Hashnode"
+    "logo": "fa-brands fa-dev",
+    "url": "https://dev.to/@reisdev",
+    "title": "DEV"
   },
   {
     "logo": "fa-brands fa-instagram",
@@ -33,5 +33,10 @@
     "logo": "fa-brands fa-twitch",
     "url": "https://twitch.tv/reisdev",
     "title": "Twitch"
+  },
+    {
+    "logo": "fa-brands fa-youtube",
+    "url": "https://youtube.com/ReisDev",
+    "title": "YouTube"
   }
 ]
