@@ -33,6 +33,7 @@ export default function Videos() {
     return (
       <Section
         title={t("videos")}
+        redirectTitle={t("components:moreVideos")}
         redirect="https://youtube.com/reisdev"
       >
         <div className={styles.container}>

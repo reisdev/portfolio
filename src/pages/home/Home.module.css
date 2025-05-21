@@ -27,9 +27,7 @@
 }
 
 .picture {
-  max-width: 256px;
   width: 16rem;
-  height: auto;
   object-fit: cover;
   border-radius: 50%;
 }

@@ -32,6 +32,7 @@ export default function Posts() {
     return (
       <Section
         title={t("posts")}
+        redirectTitle={t("components:morePosts")}
         redirect="https://dev.to/@reisdev"
       >
         <div className={styles.container}>

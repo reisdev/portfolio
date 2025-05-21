@@ -24,13 +24,14 @@
       name="description"
       content="Desenvolvedor de Software com mais de 6 anos de experiência no mercado. Já trabalhou com gestão de projetos, desenvolvimento web e ciência de dados. Atualmente trabalha como Desenvolvedor iOS no Banco Inter."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" defer/>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" defer>
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;600;800&display=swap">
     </noscript>
-    <script src="https://kit.fontawesome.com/1386cf16bd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://kit.fontaswesome.com" />
+    <script src="https://kit.fontawesome.com/1386cf16bd.js" defer async crossorigin="anonymous"></script>
     <script type="module" src="/src/main.tsx"></script>
     <!-- 
       <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> 
@@ -39,7 +40,7 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials"/>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.

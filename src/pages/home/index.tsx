@@ -20,7 +20,7 @@ export default function Home() {
       <title>Matheus Reis - ReisDev</title>
       <section className={styles.container}>
         <section className={styles.personal}>
-          <img className={styles.picture} alt={t("picture") || ""} src="/assets/profile.webp" />
+          <img className={styles.picture} alt={t("picture") || ""} src="/assets/profile.webp" width={256} />
           <section className={styles.data}>
             <section className={styles.info}>
                 <h1 className={styles.name}>
