@@ -91,9 +91,8 @@
 
 .content {
   display: grid;
-  grid-template-columns: 1fr minmax(1fr, auto);
+  grid-template-columns: auto minmax(0, auto);
   max-width: 80rem;
-  width: minmax(100%, fit-content);
   gap: 36px;
 }
 

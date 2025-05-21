@@ -1,4 +1,4 @@
-import { Post } from "@core/models/post";
+import Post from "@core/models/post";
 
 export default class DEVService {
     static baseURL = new URL("https://dev.to/api/");

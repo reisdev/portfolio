@@ -4,13 +4,12 @@
   "private": true,
   "type": "module",
   "homepage": "https://reisdev.com.br",
-  "author": "Matheus Reis(ReisDev) <matheusdrdj@gmail.com>",
+  "author": "ReisDev <matheusdrdj@gmail.com>",
   "keywords": [
-    "nextjs",
+    "react",
     "portfolio"
   ],
   "dependencies": {
-    "@vitejs/plugin-react": "^4.4.1",
     "dayjs": "^1.10.4",
     "firebase": "^9.19.1",
     "i18next": "^22.4.14",
@@ -22,7 +21,6 @@
     "react-i18next": "^12.2.0",
     "react-router": "7.6.0",
     "typescript": "^4.1.2",
-    "vite": "^6.3.5",
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
@@ -31,9 +29,10 @@
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
-    "@types/react-helmet": "^6.1.6",
     "@types/react-router": "^5.1.20",
     "@vercel/react-router": "^1.1.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "vite": "^6.3.5",
     "isbot": "5"
   },
   "scripts": {

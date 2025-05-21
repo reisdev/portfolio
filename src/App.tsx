@@ -1,6 +1,5 @@
 import { Suspense, useState, useEffect } from "react";
 import { I18nextProvider } from "react-i18next";
-import { Helmet } from "react-helmet";
 import ReactGA from "react-ga4";
 
 import Router from "@core/router";

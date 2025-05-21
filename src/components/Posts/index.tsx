@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import useAnalyticsEventTracker from "@core/hooks/useAnalyticsEventTracker";
 import DEVService from "@core/services/DEVService";
-import { Post } from "@core/models/post";
+import Post from "@core/models/post";
 
 import ListItem from "@components/ListItem";
 import Section from "@components/Section";
@@ -38,7 +38,6 @@ export default function Posts() {
         <div className={styles.container}>
         {posts.map((post) => (
           <ListItem
-            id={post.id}
             key={post.id}
             title={post.title}
             tags={post.tag_list}

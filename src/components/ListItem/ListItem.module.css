@@ -4,10 +4,12 @@
     gap: 16px;
     border-radius: 0.5rem;
     padding: 8px;
+    transition: transform 0.5s;
 }
 
 .item:hover {
     background-color: light-dark(var(--light-tertiary), var(--dark-tertiary));
+    transform: translateY(-2px);
 }
 
 .content {
