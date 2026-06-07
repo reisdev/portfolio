@@ -1,9 +1,15 @@
 {
   "picture": "A photo of Matheus, who has brown skin and short hair. He is wearing sunglasses and a light beige jacket. In the background, the D. Luis I Bridge in Porto, Portugal.",
+  "menu": "Menu",
+  "colorScheme": "Toggle dark mode",
   "home": "Home",
-  "career": "Career",
+  "career": {
+    "title": "Career"
+  },
   "posts": "✍🏼 Posts",
   "videos": "🎬 Videos",
   "blog": "Blog",
-  "footer": "Taylored with ♥️ by ReisDev @ 2025"
+  "footer": "Taylored with ♥️ by ReisDev @ 2025",
+  "today": "Today",
+  "about": "About me"
 }

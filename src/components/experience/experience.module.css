@@ -1,0 +1,153 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+}
+
+.header h3 {
+    font-size: 1.2rem;
+}
+
+.header i {
+    font-size: 1.1rem;
+}
+
+.control {
+    cursor: pointer;
+    transition: transform .25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    background: none;
+    outline: none;
+    color: inherit;
+}
+
+.control.controlActive {
+    transition: transform .25s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(90deg);
+}
+
+.date {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+.job {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.responsibilities {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.responsibilities.responsibilitiesExpanded {
+    max-height: 1000px; /* Arbitrary large value to allow expansion */
+    transition: max-height .5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0px;
+}
+
+.content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.timelineMarker {
+    position: relative;
+    left: -34px;
+    top: 36px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+.timelineContent {
+    background: light-dark(var(--light-secondary), var(--dark-secondary));
+    color: light-dark(var(--light-tertiary), var(--dark-tertiary));
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.position {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.25rem 0;
+}
+
+.company {
+    font-weight: 500;
+}
+
+.companyLogo {
+    height: 20px;
+    width: 20px;
+}
+
+.highlights {
+    margin: 0.5rem 0;
+    padding-left: 1.25rem;
+    list-style: disc;
+    color: #333;
+}
+
+.callToAction {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.ctaButton:hover {
+    background: #333;
+}
+
+@media (max-width: 766px) {
+    .stack {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .header {
+        flex-direction: column-reverse;
+        align-items: start;
+        gap: 8px
+    }
+
+    .date {
+        margin-left: 0;
+    }
+}

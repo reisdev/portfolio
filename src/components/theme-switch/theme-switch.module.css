@@ -6,3 +6,7 @@
     margin-left: auto;
     right: 16px;
 }
+
+.switch span {
+    display: none;
+}

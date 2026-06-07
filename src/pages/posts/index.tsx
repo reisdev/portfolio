@@ -2,9 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import useAnalyticsEventTracker from "@core/hooks/useAnalyticsEventTracker";
 
-import { Post } from "@core/models/post";
-import Card from "components/Card";
-import styles from "./Posts.module.css";
+import Post from "@core/models/post";
+import Card from "@components/card";
+import styles from "./posts.module.css";
 import DEVService from "@core/services/DEVService";
 
 export default function Posts() {

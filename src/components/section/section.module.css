@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 24px 0px;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  gap: 12px;
+}
+
+.title img {
+  height: 2.4em;
+  width: auto;
+}
+
+.shortcut {
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 600;
+  gap: 8px;
+}
+
+.shortcut i {
+  transform: translateY(2px);
+}
+

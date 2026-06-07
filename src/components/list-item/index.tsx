@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
-import styles from "./ListItem.module.css";
-import Tag from "@components/Tag";
+import Tag from "@components/tag";
+import styles from "./list-item.module.css";
 
 interface ListItemProps {
   title: string;

@@ -5,8 +5,8 @@ import useAnalyticsEventTracker from "@core/hooks/useAnalyticsEventTracker";
 import YoutubeService from "@core/services/YoutubeService";
 import { YoutubeVideo } from "@core/models/youtube-video";
 
-import styles from "./Videos.module.css";
-import Card from "components/Card";
+import styles from "./videos.module.css";
+import Card from "@components/card";
 
 export default function Videos() {
     const { t } = useTranslation("common");

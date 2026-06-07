@@ -10,13 +10,13 @@
     "portfolio"
   ],
   "dependencies": {
-    "dayjs": "^1.10.4",
+    "dayjs": "^1.11.13",
     "firebase": "^9.19.1",
     "i18next": "^22.4.14",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.2.0",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "react": "19.1",
+    "react-dom": "19.1",
     "react-ga4": "^2.1.0",
     "react-i18next": "^12.2.0",
     "react-router": "7.6.0",
@@ -27,13 +27,14 @@
     "@react-router/dev": "^7.6.0",
     "@react-router/node": "7",
     "@types/node": "^18.15.11",
-    "@types/react": "^18.0.35",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "19.1",
+    "@types/react-dom": "19.1",
     "@types/react-router": "^5.1.20",
     "@vercel/react-router": "^1.1.0",
     "@vitejs/plugin-react": "^4.4.1",
+    "isbot": "5",
     "vite": "^6.3.5",
-    "isbot": "5"
+    "vite-plugin-i18next-loader": "^3.1.2"
   },
   "scripts": {
     "dev": "vite",

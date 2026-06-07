@@ -1,0 +1,134 @@
+[
+    {
+        "role": "Engenheiro iOS Sênior",
+        "company": "KWAN",
+        "location": "Remoto",
+        "start_date": "2024-03",
+        "end_date": null,
+        "company_url": "https://kwan.com/",
+        "responsibilities": [
+            "Planejei e analisei a reformulação de apps com milhões de usuários",
+            "Construí pacotes de injeção de dependência e navegação confiáveis",
+            "Escrevi testes unitários e de snapshot com mais de 80% de cobertura",
+            "Criei UI fluida com SwiftUI, Combine e TCA"
+        ],
+        "tech_stack": ["iOS", "Swift", "SwiftUI", "SPM", "Combine", "TCA", "Unit Tests"]
+    },
+    {
+        "role": "Engenheiro iOS Sênior",
+        "company": "Zup Innovation",
+        "location": "Remoto",
+        "start_date": "2024-01",
+        "end_date": "2024-03",
+        "company_url": "https://zupinnovation.com/",
+        "responsibilities": [
+            "Desenvolvi módulos centrais para análise e interface",
+            "Integrei o Firebase Performance para monitoramento de UX",
+            "Apoiei equipes com documentação e sessões de live coding"
+        ],
+        "tech_stack": ["iOS", "Swift", "Firebase", "Documentation", "CI/CD"]
+    },
+    {
+        "role": "Engenheiro iOS Sênior",
+        "company": "Boost IT",
+        "location": "Remoto",
+        "start_date": "2023-08",
+        "end_date": "2023-12",
+        "company_url": "https://boost-it.pt/pt/",
+        "responsibilities": [
+            "Reformulei o sistema de rastreamento para publicidade segmentada",
+            "Implementei funcionalidades com arquitetura MVVM",
+            "Realizei análise e documentação de funcionalidades",
+            "Escrevi testes unitários e de snapshot para UI"
+        ],
+        "tech_stack": ["iOS", "Swift", "MVVM", "Snapshot Tests", "UI/UX"]
+    },
+    {
+        "role": "Desenvolvedor iOS",
+        "company": "Inter",
+        "location": "Remoto",
+        "start_date": "2021-11",
+        "end_date": "2023-08",
+        "company_url": "https://inter.co/",
+        "responsibilities": [
+            "Desenvolvi UIs com ViewCode, MVVM e RxSwift",
+            "Integrei SDKs de videoconferência e APIs REST",
+            "Corrigi ciclos de retenção e otimizei uso de memória"
+        ],
+        "tech_stack": ["iOS", "Swift", "RxSwift", "MVVM", "REST API", "View Code"]
+    },
+    {
+        "role": "Desenvolvedor iOS",
+        "company": "Dimensa",
+        "location": "Remoto",
+        "start_date": "2021-06",
+        "end_date": "2021-10",
+        "company_url": "https://www.linkedin.com/company/dimensatecnologia/",
+        "responsibilities": [
+            "Mantive 4 aplicativos bancários digitais",
+            "Implementei UIs reativas com RxSwift e RxCocoa",
+            "Configurei pipelines de CI/CD com Bitrise",
+            "Aumentei a segurança com prevenção contra jailbreak"
+        ],
+        "tech_stack": ["iOS", "Swift", "RxSwift", "RxCocoa", "Bitrise", "Security"]
+    },
+    {
+        "role": "Analista de Ciência de Dados",
+        "company": "Accenture",
+        "location": "Remoto",
+        "start_date": "2020-09",
+        "end_date": "2021-05",
+        "company_url": "https://accenture.com/",
+        "responsibilities": [
+            "Criei algoritmos de predição e otimização",
+            "Desenvolvi app web para visualização de dados",
+            "Documentei componentes com Storybook",
+            "Melhorei performance de banco de dados em 10x com paralelismo"
+        ],
+        "tech_stack": ["Python", "React", "Storybook", "SQL", "Paralelismo"]
+    },
+    {
+        "role": "Estágio de Verão",
+        "company": "Accenture",
+        "location": "Belo Horizonte - MG, Brasil",
+        "start_date": "2020-01",
+        "end_date": "2020-03",
+        "company_url": "https://accenture.com/",
+        "responsibilities": [
+            "Desenvolvi ferramenta de visualização para dados de otimização",
+            "Criei scripts eficientes para análise e gráficos"
+        ],
+        "tech_stack": ["Python", "Matplotlib", "Scripting"]
+    },
+    {
+        "role": "Desenvolvedor Front-end",
+        "company": "TacticUP",
+        "location": "Remoto",
+        "start_date": "2020-03",
+        "end_date": "2020-09",
+        "company_url": "https://tacticup.com.br/",
+        "responsibilities": [
+            "Migrei 3 aplicações de JavaScript para TypeScript",
+            "Integrei gateways de pagamento",
+            "Reduzi tempo de carregamento em mais de 50% com cache e service workers",
+            "Reduzi o bundle em 70% com boas práticas",
+            "Otimizei containers com estratégias de cache"
+        ],
+        "tech_stack": ["React", "TypeScript", "JavaScript", "Service Workers", "Docker"]
+    },
+    {
+        "role": "Estagiário",
+        "company": "TacticUP",
+        "location": "Viçosa - MG, Brasil",
+        "start_date": "2019-02",
+        "end_date": "2020-02",
+        "company_url": "",
+        "responsibilities": [
+            "Desenvolvi 3 aplicações web em React do zero",
+            "Colaborei com designers UI/UX",
+            "Documentei componentes com Storybook",
+            "Implementei CI/CD com GitLab e AWS"
+        ],
+        "tech_stack": ["React", "Storybook", "GitLab CI", "AWS", "CI/CD"]
+    }
+]

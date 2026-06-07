@@ -1,0 +1,134 @@
+[
+    {
+        "role": "iOS Engineer",
+        "company": "KWAN",
+        "location": "Remote",
+        "start_date": "2024-03",
+        "end_date": null,
+        "company_url": "https://kwan.com/",
+        "responsibilities": [
+            "Re-platform of million-user apps",
+            "Built robust dependency injection and navigation packages",
+            "Wrote unit and snapshot tests with over 80% code coverage",
+            "Created seamless UI using SwiftUI, Combine, and TCA"
+        ],
+        "tech_stack": ["iOS", "Swift", "SwiftUI", "SPM", "Combine", "TCA", "Unit Tests"]
+    },
+    {
+        "role": "iOS Engineer",
+        "company": "Zup Innovation",
+        "location": "Remote",
+        "start_date": "2024-01",
+        "end_date": "2024-03",
+        "company_url": "https://zupinnovation.com/",
+        "responsibilities": [
+            "Developed core modules for analytics and UI",
+            "Integrated Firebase Performance for UX monitoring",
+            "Supported teams through documentation and live coding"
+        ],
+        "tech_stack": ["iOS", "Swift", "Firebase", "CI/CD"]
+    },
+    {
+        "role": "iOS Engineer",
+        "company": "Boost IT",
+        "location": "Remote",
+        "start_date": "2023-08",
+        "end_date": "2023-12",
+        "company_url": "https://boost-it.pt/pt/",
+        "responsibilities": [
+            "Revamped tracking system for better ad targeting and revenue",
+            "Developed UI features using MVVM architecture",
+            "Conducted feature analysis and documentation",
+            "Wrote unit and snapshot UI tests"
+        ],
+        "tech_stack": ["iOS", "Swift", "MVVM", "Snapshot Tests", "UI/UX"]
+    },
+    {
+        "role": "iOS Engineer",
+        "company": "Inter",
+        "location": "Remote",
+        "start_date": "2021-11",
+        "end_date": "2023-08",
+        "company_url": "https://inter.co/",
+        "responsibilities": [
+            "Built pixel-perfect UIs using ViewCode, MVVM, and RxSwift",
+            "Integrated third-party video SDKs and REST APIs",
+            "Resolved memory issues and optimized retain cycles"
+        ],
+        "tech_stack": ["iOS", "Swift", "RxSwift", "MVVM", "REST API", "View Code"]
+    },
+    {
+        "role": "iOS Developer",
+        "company": "Dimensa",
+        "location": "Remote",
+        "start_date": "2021-06",
+        "end_date": "2021-10",
+        "company_url": "https://www.linkedin.com/company/dimensatecnologia/",
+        "responsibilities": [
+            "Maintained 4 digital banking apps",
+            "Developed reactive UIs using RxSwift and RxCocoa",
+            "Built CI/CD pipelines using Bitrise",
+            "Enhanced security with jailbreak detection"
+        ],
+        "tech_stack": ["iOS", "Swift", "RxSwift", "RxCocoa", "Bitrise", "Security"]
+    },
+    {
+        "role": "Data Science Analyst",
+        "company": "Accenture",
+        "location": "Remote",
+        "start_date": "2020-09",
+        "end_date": "2021-05",
+        "company_url": "https://accenture.com/",
+        "responsibilities": [
+            "Created predictive and optimization algorithms",
+            "Developed a data visualization web app",
+            "Documented UI components using Storybook",
+            "Improved database performance 10x with concurrency"
+        ],
+        "tech_stack": ["Python", "React", "Storybook", "SQL", "Parallelism"]
+    },
+    {
+        "role": "Summer Job",
+        "company": "Accenture",
+        "location": "Belo Horizonte - MG, Brazil",
+        "start_date": "2020-01",
+        "end_date": "2020-03",
+        "company_url": "",
+        "responsibilities": [
+            "Built a data visualization tool for optimization outputs",
+            "Wrote efficient data processing scripts"
+        ],
+        "tech_stack": ["Python", "Matplotlib", "Scripting"]
+    },
+    {
+        "role": "Front-end Developer",
+        "company": "TacticUP",
+        "location": "Viçosa - MG, Brazil",
+        "start_date": "2020-03",
+        "end_date": "2020-09",
+        "company_url": "https://tacticup.com.br/",
+        "responsibilities": [
+            "Migrated 3 apps from JavaScript to TypeScript",
+            "Integrated payment gateways",
+            "Reduced loading time by over 50% using caching and service workers",
+            "Reduced app bundle size by 70%",
+            "Optimized app containers with advanced caching"
+        ],
+        "tech_stack": ["React", "TypeScript", "JavaScript", "Service Workers", "Docker"]
+    },
+    {
+        "role": "Intern",
+        "company": "TacticUP",
+        "location": "Brazil",
+        "start_date": "2019-02",
+        "end_date": "2020-02",
+        "company_url": "",
+        "responsibilities": [
+            "Built 3 React-based web apps from scratch",
+            "Collaborated with UI/UX designers",
+            "Documented components with Storybook",
+            "Configured CI/CD with GitLab and AWS"
+        ],
+        "tech_stack": ["React", "Storybook", "GitLab", "AWS", "CI/CD"]
+    }
+]

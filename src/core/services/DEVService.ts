@@ -1,7 +1,7 @@
 import Post from "@core/models/post";
 
 export default class DEVService {
-    static baseURL = new URL("https://dev.to/api/");
+    static readonly baseURL = new URL("https://dev.to/api/");
 
     static async getArticles(username: string, itemsPerPage: number = 8): Promise<Post[]> {
         let search = new URLSearchParams({ username, per_page: itemsPerPage.toString()});

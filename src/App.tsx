@@ -1,4 +1,4 @@
-import { Suspense, useState, useEffect } from "react";
+import { Suspense, useState, useEffect, useMemo } from "react";
 import { I18nextProvider } from "react-i18next";
 import ReactGA from "react-ga4";
 
@@ -8,10 +8,12 @@ import ThemeContext, { Theme } from "@core/theme/ThemeContext";
 
 export default function App() {
   let [theme, setTheme] = useState<Theme>(Theme.dark);
+  let themeProviderValue = useMemo(() => ({ theme, setTheme }), [theme, setTheme]);
+
   useEffect(() => {
     ReactGA.send({
       hitType: "pageview",
-      page: `${window.location.pathname}${window.location.search}`,
+      page: `${globalThis.location.pathname}${globalThis.location.search}`,
     });
   }, []);
 
@@ -21,7 +23,7 @@ export default function App() {
 
   return (
     <Suspense fallback={<></>}>
-        <ThemeContext.Provider value={{ theme, setTheme }}>
+        <ThemeContext.Provider value={themeProviderValue}>
           <I18nextProvider i18n={i18n}>
             <Router />
           </I18nextProvider>
