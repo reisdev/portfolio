@@ -6,15 +6,21 @@
 }
 
 .content {
-  max-width: 80rem;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
   text-transform: uppercase;
-  flex-wrap: nowrap;
+}
+
+.inner {
+  width: 100%;
+  max-width: 80rem;
+  padding: 0 24px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .headerRow {
@@ -134,8 +140,6 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    /* push the expanded menu below the header/button to avoid overlap */
-    margin-top: 12px;
     /* Keep collapsible within layout flow under headerRow; no positioning hacks */
     background: light-dark(var(--light-tertiary), var(--dark-tertiary));
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);

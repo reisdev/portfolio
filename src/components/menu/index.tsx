@@ -28,52 +28,54 @@ export default function Menu() {
   return (
     <nav className={styles.menu}>
       <div className={styles.content}>
-        <div className={styles.headerRow}>
-          <div className={styles.left}> 
-            <button
-              className={styles.icon}
-              onClick={toggleMenu}
-              aria-expanded={isOpen}
-              aria-controls="main-navigation"
-              aria-label={t("menu")}
-            >
-              <i className="fa-solid fa-bars" aria-hidden="true"></i>
-              <span className={styles.iconLabel}>{t("menu")}</span>
-            </button>
+        <div className={styles.inner}>
+          <div className={styles.headerRow}>
+            <div className={styles.left}> 
+              <button
+                className={styles.icon}
+                onClick={toggleMenu}
+                aria-expanded={isOpen}
+                aria-controls="main-navigation"
+                aria-label={t("menu")}
+              >
+                <i className="fa-solid fa-bars" aria-hidden="true"></i>
+                <span className={styles.iconLabel}>{t("menu")}</span>
+              </button>
+            </div>
+
+            <div className={styles.controls}>
+              <LanguageSwitch />
+              <ThemeSwitch />
+            </div>
           </div>
 
-          <div className={styles.controls}>
-            <LanguageSwitch />
-            <ThemeSwitch />
-          </div>
-        </div>
-
-        <div
-          id="main-navigation"
-          className={styles.collapsible}
-          data-open={isOpen}
-          role="menu"
-        >
-          {routes.map((route, index) => (
-            <Link
+          <div
+            id="main-navigation"
+            className={styles.collapsible}
+            data-open={isOpen}
+            role="menu"
+          >
+            {routes.map((route, index) => (
+              <Link
+                role="menuitem"
+                aria-current={route.path === currentRoute.pathname}
+                to={route.path}
+                key={index}
+                onClick={() => setIsOpen(false)}
+              >
+                {route.text}
+              </Link>
+            ))}
+            <a
               role="menuitem"
-              aria-current={route.path === currentRoute.pathname}
-              to={route.path}
-              key={index}
+              href={"https://blog.reisdev.com.br"}
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setIsOpen(false)}
             >
-              {route.text}
-            </Link>
-          ))}
-          <a
-            role="menuitem"
-            href={"https://blog.reisdev.com.br"}
-            target="_blank"
-            rel="noreferrer"
-            onClick={() => setIsOpen(false)}
-          >
-            {t("blog")}
-          </a>
+              {t("blog")}
+            </a>
+          </div>
         </div>
       </div>
     </nav>
