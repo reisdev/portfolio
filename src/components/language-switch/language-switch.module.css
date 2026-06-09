@@ -1,0 +1,28 @@
+.switch {
+  font-size: 1rem;
+  border: none;
+  background: transparent;
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: light-dark(var(--light-secondary), var(--dark-secondary));
+}
+
+.switch:hover {
+  color: var(--accent);
+}
+
+.label {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  display: inline-block;
+}
+
+.switch:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent);
+  border-radius: 6px;
+}

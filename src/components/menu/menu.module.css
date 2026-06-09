@@ -14,12 +14,20 @@
   justify-content: space-between;
   gap: 24px;
   text-transform: uppercase;
+  flex-wrap: nowrap;
 }
 
 .section {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
 }
 
 /* Navigation links */
@@ -87,15 +95,30 @@
 
 /* Mobile: stack nav items and show toggle */
 @media (max-width: 767px) {
-  /* Stack header vertically and left-align nav */
+  /* Keep header in a single row: left = menu button, right = controls; collapsible items flow below and are left-aligned */
   .content {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-left: 12px;
     padding-right: 12px;
   }
 
+  .section {
+    order: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .controls {
+    order: 1;
+    margin-left: auto;
+  }
+
   .collapsible {
+    order: 2;
+    flex-basis: 100%;
     display: block;
     width: 100%;
     max-height: 0;
@@ -122,7 +145,6 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    align-self: flex-end;
   }
 
   .iconLabel {

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
 
 import ThemeSwitch from "@components/theme-switch";
+import LanguageSwitch from "@components/language-switch";
 import styles from "./menu.module.css";
 
 export default function Menu() {
@@ -67,7 +68,10 @@ export default function Menu() {
             </a>
           </div>
         </div>
-        <ThemeSwitch />
+        <div className={styles.controls}>
+          <LanguageSwitch />
+          <ThemeSwitch />
+        </div>
       </div>
     </nav>
   );
