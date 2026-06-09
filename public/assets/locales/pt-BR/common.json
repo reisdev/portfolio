@@ -11,5 +11,10 @@
   "blog": "Blog",
   "footer": "Confeccionado com ♥️ por ReisDev @ 2025",
   "today": "Hoje",
-  "about": "Sobre mim"
+  "about": "Sobre mim",
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "A página requisitada não existe ou foi movida.",
+    "home": "Voltar para início"
+  }
 }

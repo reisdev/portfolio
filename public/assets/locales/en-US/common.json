@@ -11,5 +11,10 @@
   "blog": "Blog",
   "footer": "Taylored with ♥️ by ReisDev @ 2025",
   "today": "Today",
-  "about": "About me"
+  "about": "About me",
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you requested doesn't exist or has been moved.",
+    "home": "Go back home"
+  }
 }
