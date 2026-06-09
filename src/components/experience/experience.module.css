@@ -4,10 +4,18 @@
   gap: 20px;
   align-items: flex-start;
   margin-bottom: 20px;
+  width: 100%; /* ensure item spans container width so card sizing is consistent */
 }
 
 /* Marker column (overlaying the timeline border) */
 .item { position: relative; }
+
+/* constrain card width to a standard readable measure */
+.card {
+  max-width: 640px;
+  width: 100%;
+}
+
 
 .marker {
   position: absolute;
@@ -52,6 +60,25 @@
   gap: 12px;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+.leftHead {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(11,116,222,0.12), rgba(11,116,222,0.06));
+  color: light-dark(#0b1220, #cde6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .titleWrap {
