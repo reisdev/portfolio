@@ -1,11 +1,17 @@
 :root {
   color-scheme: light-dark;
-  --light-primary: #fdfdfd;
-  --dark-primary: #121212;
-  --light-secondary: #121212;
-  --dark-secondary: #fdfdfd;
-  --light-tertiary: #f2f2f2;
-  --dark-tertiary: #121212;
+  /* Semantic palette (light / dark) */
+  --light-primary: #ffffff; /* page background - light mode */
+  --dark-primary: #071322;  /* page background - dark mode (deep navy) */
+
+  --light-secondary: #0b1220; /* primary text - light mode (near-black blue) */
+  --dark-secondary: #e6f0ff;  /* primary text - dark mode (pale blue) */
+
+  --light-tertiary: #f2f6fb; /* surface / muted bg - light mode */
+  --dark-tertiary: #122235;  /* surface / muted bg - dark mode */
+
+  --accent: #0b74de; /* brand accent */
+  --accent-contrast: #ffffff; /* accent text color */
 }
 
 html {

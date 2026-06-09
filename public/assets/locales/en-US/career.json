@@ -2,6 +2,15 @@
     "about": "About me",
     "jobDescription": "Senior iOS Engineer",
     "company": "KWAN",
-    "shortDescription": "Behind every seamless interaction lies architecture, engineering, and countless invisible decisions. I specialize in building <i>mobile applications</i> where technical excellence and user experience are equally important.",
-    "description": "I’m a passionate and results-driven Software Engineer with over 6 years of experience across web, data science, and mobile development — currently specializing in iOS engineering. Throughout my career, I’ve contributed to high-impact projects in companies of various sizes, from fintech to consultancy firms, helping revamp applications for millions of users and building robust, scalable mobile solutions using Swift, SwiftUI, Combine, and TCA.\n\nMy background includes designing and implementing core system modules, optimizing user experience through analytics and performance tracking, and leading development with modern architectures such as MVVM, CLEAN and TCA. I also bring cross-functional expertise from earlier roles in front-end development and data science, which gives me a holistic understanding of software systems.\n\nBeyond coding, I’m active in the tech community through content creation on Twitch, YouTube, DEV.to, and my personal blog — where I share insights, tutorials, and development tips.\n\nI thrive in dynamic environments that value clean architecture, test coverage, and performance, and I’m always looking for opportunities to create meaningful impact through technology."
+    "description": "I’m a passionate and results-driven Software Engineer with over 6 years of experience across web, data science, and mobile development — currently specializing in iOS engineering. Throughout my career, I’ve contributed to high-impact projects in companies of various sizes, from fintech to consultancy firms, helping revamp applications for millions of users and building robust, scalable mobile solutions using Swift, SwiftUI, Combine, and TCA.\n\nMy background includes designing and implementing core system modules, optimizing user experience through analytics and performance tracking, and leading development with modern architectures such as MVVM, CLEAN and TCA. I also bring cross-functional expertise from earlier roles in front-end development and data science, which gives me a holistic understanding of software systems.\n\nBeyond coding, I’m active in the tech community through content creation on Twitch, YouTube, DEV.to, and my personal blog — where I share insights, tutorials, and development tips.\n\nI thrive in dynamic environments that value clean architecture, test coverage, and performance, and I’m always looking for opportunities to create meaningful impact through technology.",
+    "title": "Experience",
+    "downloadCV": "Download CV",
+    "contact": "Contact",
+    "filterAria": "Filter experiences by technology",
+    "clearFilters": "Clear filters",
+    "noMatches": "No experiences match the selected filters.",
+    "shortDescription": "I build scalable mobile products with great UX. I specialize in iOS using Swift, SwiftUI and modern architectures.",
+    "readMore": "Read more",
+    "readLess": "Show less",
+    "more": "More"
 }

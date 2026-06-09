@@ -99,8 +99,8 @@ main {
   position: absolute;
   top: 36px;
   left: 0;
-  background: light-dark(#ffffff, #071322);
-  color: light-dark(#0b1220, #e6f0ff);
+  background: light-dark(var(--light-primary), var(--dark-primary));
+  color: light-dark(var(--light-secondary), var(--dark-secondary));
   padding: 8px;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
@@ -139,7 +139,7 @@ main {
 .timeline {
     align-items: center;
     gap: 8px;
-    border-left: 2px solid light-dark(#e6e6e6, rgba(255,255,255,0.06));
+    border-left: 2px solid light-dark(var(--light-tertiary), var(--dark-tertiary));
     padding-left: 1.5rem;
     max-width: 720px;
     margin: 0 auto 0 auto; /* center the timeline */

@@ -42,8 +42,8 @@
 /* Card */
 .card {
   flex: 1;
-  background: light-dark(#ffffff, #071322);
-  color: light-dark(#0b1220, #e6f0ff);
+  background: light-dark(var(--light-primary), var(--dark-primary));
+  color: light-dark(var(--light-secondary), var(--dark-secondary));
   padding: 18px;
   border-radius: 12px;
   box-shadow: 0 10px 30px light-dark(rgba(2,6,23,0.06), rgba(0,0,0,0.28));
@@ -73,7 +73,7 @@
   height: 48px;
   border-radius: 10px;
   background: linear-gradient(135deg, rgba(11,116,222,0.12), rgba(11,116,222,0.06));
-  color: light-dark(#0b1220, #cde6ff);
+  color: light-dark(var(--light-secondary), var(--dark-secondary));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +95,7 @@
 
 .company {
   font-weight: 600;
-  color: light-dark(var(--accent, #0b74de), var(--accent, #8fc3ff));
+  color: light-dark(var(--accent), var(--accent-contrast));
   text-decoration: none;
 }
 
