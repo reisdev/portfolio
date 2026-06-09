@@ -1,9 +1,13 @@
 .tag {
-  background-color: light-dark(var(--light-primary), var(--light-secondary));
-  color: light-dark(var(--dark-primary), var(--dark-secondary));
-  padding: 5px;
-  font-size: 0.6rem;
-  border-radius: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: light-dark(rgba(11,116,222,0.08), rgba(255,255,255,0.06));
+  color: light-dark(#0b1220, #cde6ff);
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 999px;
   font-weight: 600;
   white-space: nowrap;
+  border: 1px solid light-dark(rgba(11,116,222,0.12), rgba(255,255,255,0.06));
 }

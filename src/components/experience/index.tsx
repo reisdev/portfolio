@@ -14,24 +14,51 @@ export default function ExperienceItem({ experience }: Readonly<ExperienceItemPr
   const [isExpanded, setIsExpanded] = useState(false);
   const { t } = useTranslation();
 
+  const start = dayjs(experience.start_date).format("MMM YYYY");
+  const end = experience.end_date ? dayjs(experience.end_date).format("MMM YYYY") : t("common:today");
+
   return (
-    <li className={styles.container}>
-      <div className={styles.timelineMarker} />
-      <div className={styles.timelineContent}>
-        <div className={styles.header}>
-          <button className={`fa fa-chevron-right ${styles.control} ${isExpanded ? styles.controlActive : ""}`} onClick={() => setIsExpanded(!isExpanded)}/>
-          <h2 className={styles.position}>{experience.role} at <span className={styles.company}>{experience.company}</span></h2>
-          <span className={styles.date}>{dayjs(experience.start_date).format("YYYY MMM")} - {experience.end_date ? dayjs(experience.end_date).format("YYYY MMM") : t("common:today")}</span>
-        </div>
-        <div className={`${styles.responsibilities} ${isExpanded ? styles.responsibilitiesExpanded : ""}`}>
-          {experience.responsibilities && (
-              <ul className={styles.highlights}>
-                {experience.responsibilities.map((responsibility: string, index: number) => (
-                  <li key={index}>{responsibility}</li>
-                ))}
-              </ul>
-          )}
-        </div>
+    <li className={styles.item}>
+      <div className={styles.marker} aria-hidden>
+        <span className={styles.dot} />
+        <span className={styles.line} />
+      </div>
+
+      <article className={styles.card}>
+        <header className={styles.cardHeader}>
+          <div className={styles.titleWrap}>
+            <h3 className={styles.position}>{experience.role}</h3>
+            {experience.company_url ? (
+              <a className={styles.company} href={experience.company_url} target="_blank" rel="noreferrer">{experience.company}</a>
+            ) : (
+              <span className={styles.company}>{experience.company}</span>
+            )}
+            {experience.location && <span className={styles.location}>{experience.location}</span>}
+          </div>
+
+          <div className={styles.meta}>
+            <time className={styles.date}>{start} — {end}</time>
+            <button
+              aria-expanded={isExpanded}
+              aria-label={isExpanded ? t("Hide details") : t("Show details")}
+              className={`${styles.toggle} ${isExpanded ? styles.toggleActive : ""}`}
+              onClick={() => setIsExpanded(!isExpanded)}
+            >
+              <i className={`fa ${isExpanded ? "fa-minus" : "fa-plus"}`} />
+            </button>
+          </div>
+        </header>
+
+        {experience.responsibilities && (
+          <div className={`${styles.responsibilities} ${isExpanded ? styles.open : ""}`}>
+            <ul className={styles.highlights}>
+              {experience.responsibilities.map((r: string, i: number) => (
+                <li key={i}>{r}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {experience.tech_stack && (
           <div className={styles.tags}>
             {experience.tech_stack.map((tag: string) => (
@@ -39,7 +66,7 @@ export default function ExperienceItem({ experience }: Readonly<ExperienceItemPr
             ))}
           </div>
         )}
-      </div>
+      </article>
     </li>
   );
 }

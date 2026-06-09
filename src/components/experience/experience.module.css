@@ -1,153 +1,171 @@
-.container {
-    display: flex;
-    flex-direction: column;
+/* Container for each timeline item */
+.item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 20px;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-align: left;
+/* Marker column (overlaying the timeline border) */
+.item { position: relative; }
+
+.marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
 }
 
-.header h3 {
-    font-size: 1.2rem;
+.dot {
+  position: absolute;
+  left: calc(-1.5rem - 7px); /* center dot over .timeline's left border */
+  top: 18px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent, #0b74de);
+  box-shadow: 0 2px 6px light-dark(rgba(11,116,222,0.18), rgba(11,116,222,0.08));
 }
 
-.header i {
-    font-size: 1.1rem;
+/* rely on .timeline's border-left for the vertical line; hide per-item line */
+.line { display: none; }
+
+/* Card */
+.card {
+  flex: 1;
+  background: light-dark(#ffffff, #071322);
+  color: light-dark(#0b1220, #e6f0ff);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px light-dark(rgba(2,6,23,0.06), rgba(0,0,0,0.28));
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
-.control {
-    cursor: pointer;
-    transition: transform .25s cubic-bezier(0.4, 0, 0.2, 1);
-    border: none;
-    background: none;
-    outline: none;
-    color: inherit;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px light-dark(rgba(2,6,23,0.09), rgba(0,0,0,0.36));
 }
 
-.control.controlActive {
-    transition: transform .25s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: rotate(90deg);
+.cardHeader {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-.date {
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-left: auto;
-}
-
-.job {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.responsibilities {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.responsibilities.responsibilitiesExpanded {
-    max-height: 1000px; /* Arbitrary large value to allow expansion */
-    transition: max-height .5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    list-style: none;
-    padding: 0px;
-}
-
-.content {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height .25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 0.5rem;
-}
-
-.subtitle {
-    font-size: 1.125rem;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.timelineMarker {
-    position: relative;
-    left: -34px;
-    top: 36px;
-    width: 18px;
-    height: 18px;
-    background: #fff;
-    border: 2px solid #000;
-    border-radius: 50%;
-}
-
-.timelineContent {
-    background: light-dark(var(--light-secondary), var(--dark-secondary));
-    color: light-dark(var(--light-tertiary), var(--dark-tertiary));
-    padding: 1rem;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .position {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 0.25rem 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0;
 }
 
 .company {
-    font-weight: 500;
+  font-weight: 600;
+  color: light-dark(var(--accent, #0b74de), var(--accent, #8fc3ff));
+  text-decoration: none;
 }
 
-.companyLogo {
-    height: 20px;
-    width: 20px;
+.company:hover {
+  text-decoration: underline;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: light-dark(rgba(0,0,0,0.6), rgba(255,255,255,0.6));
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.date {
+  background: light-dark(rgba(0,0,0,0.06), rgba(255,255,255,0.06));
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.toggle {
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  color: inherit;
+}
+
+.toggle i {
+  font-size: 0.9rem;
+}
+
+.toggle:hover {
+  background: light-dark(rgba(0,0,0,0.03), rgba(255,255,255,0.03));
+}
+
+.toggleActive {
+  transform: rotate(180deg);
+}
+
+.responsibilities {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s cubic-bezier(0.2, 0, 0, 1), opacity .3s ease;
+  opacity: 0;
+  margin-top: 12px;
+}
+
+.responsibilities.open {
+  max-height: 1000px;
+  opacity: 1;
 }
 
 .highlights {
-    margin: 0.5rem 0;
-    padding-left: 1.25rem;
-    list-style: disc;
-    color: #333;
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+  list-style: disc;
+  color: light-dark(rgba(0,0,0,0.85), rgba(255,255,255,0.95));
 }
 
-.callToAction {
-    text-align: center;
-    margin-top: 4rem;
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
 }
 
-.ctaButton:hover {
-    background: #333;
-}
-
+/* Responsive tweaks */
 @media (max-width: 766px) {
-    .stack {
-        flex-direction: column;
-        align-items: start;
-    }
+  .item {
+    gap: 12px;
+  }
 
-    .header {
-        flex-direction: column-reverse;
-        align-items: start;
-        gap: 8px
-    }
+  .marker {
+    width: 32px;
+  }
 
-    .date {
-        margin-left: 0;
-    }
+  .card {
+    padding: 14px;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .meta {
+    align-self: stretch;
+    justify-content: space-between;
+  }
 }
