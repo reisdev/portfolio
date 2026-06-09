@@ -102,6 +102,8 @@
     flex-wrap: wrap;
     padding-left: 12px;
     padding-right: 12px;
+    max-width: none;
+    margin: 0;
   }
 
   .section {
