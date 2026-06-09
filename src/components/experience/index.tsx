@@ -26,14 +26,21 @@ export default function ExperienceItem({ experience }: Readonly<ExperienceItemPr
 
       <article className={styles.card}>
         <header className={styles.cardHeader}>
-          <div className={styles.titleWrap}>
-            <h3 className={styles.position}>{experience.role}</h3>
-            {experience.company_url ? (
-              <a className={styles.company} href={experience.company_url} target="_blank" rel="noreferrer">{experience.company}</a>
-            ) : (
-              <span className={styles.company}>{experience.company}</span>
-            )}
-            {experience.location && <span className={styles.location}>{experience.location}</span>}
+          <div className={styles.leftHead}>
+            <div className={styles.avatar} aria-hidden>
+              {/* initials fallback when no logo available */}
+              {experience.company ? experience.company.split(" ").slice(0,2).map(s=>s[0]).join("") : ""}
+            </div>
+
+            <div className={styles.titleWrap}>
+              <h3 className={styles.position}>{experience.role}</h3>
+              {experience.company_url ? (
+                <a className={styles.company} href={experience.company_url} target="_blank" rel="noreferrer">{experience.company}</a>
+              ) : (
+                <span className={styles.company}>{experience.company}</span>
+              )}
+              {experience.location && <span className={styles.location}>{experience.location}</span>}
+            </div>
           </div>
 
           <div className={styles.meta}>

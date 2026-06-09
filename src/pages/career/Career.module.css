@@ -13,26 +13,173 @@ main {
     gap: 8px;
 }
 
+.inner {
+  width: 100%;
+  max-width: 80rem;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 8px 0 4px;
+}
+
+.intro {
+  max-width: 100%;
+  margin: 0 0 12px 0;
+  color: light-dark(rgba(15,15,20,0.75), rgba(220,230,255,0.8));
+  line-height: 1.5;
+}
+
+.readMore {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: light-dark(rgba(11,116,222,0.9), rgba(140,195,255,0.9));
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0 0 8px 0;
+}
+
+.ctas {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0 8px 0;
+}
+
+.cta {
+  background: var(--accent, #0b74de);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.ctaSecondary {
+  background: transparent;
+  border: 1px solid light-dark(rgba(0,0,0,0.08), rgba(255,255,255,0.06));
+  color: light-dark(rgba(11,116,222,0.9), rgba(140,195,255,0.9));
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.filterList {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: calc(720px - 48px);
+}
+
+.moreWrapper {
+  position: relative;
+}
+
+.moreButton {
+  background: light-dark(rgba(0,0,0,0.02), rgba(255,255,255,0.02));
+  border: 1px solid transparent;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.moreMenu {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  background: light-dark(var(--light-primary), var(--dark-primary));
+  color: light-dark(var(--light-secondary), var(--dark-secondary));
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  z-index: 30;
+  min-width: 160px;
+}
+
+.filterChip {
+  background: light-dark(rgba(0,0,0,0.04), rgba(255,255,255,0.03));
+  color: light-dark(rgba(0,0,0,0.8), rgba(255,255,255,0.9));
+  border: 1px solid transparent;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filterChip:focus {
+  outline: 3px solid light-dark(rgba(11,116,222,0.12), rgba(11,116,222,0.24));
+}
+
+.filterChipActive {
+  background: light-dark(rgba(11,116,222,0.12), rgba(11,116,222,0.18));
+  border-color: light-dark(rgba(11,116,222,0.18), rgba(11,116,222,0.28));
+}
+
+.clearFilters {
+  background: transparent;
+  border: none;
+  color: light-dark(rgba(0,0,0,0.6), rgba(255,255,255,0.9));
+  cursor: pointer;
+}
+
 .timeline {
     align-items: center;
     gap: 8px;
-    border-left: 2px solid #e0e0e0;
+    border-left: 2px solid light-dark(var(--light-tertiary), var(--dark-tertiary));
     padding-left: 1.5rem;
+    max-width: 720px;
+    margin: 0 auto 0 auto; /* center the timeline */
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 48px 0;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center cards so each card has consistent width */
+}
+
+.empty {
+  padding: 24px;
+  text-align: center;
 }
 
 .about header {
-    text-align: center;
+    text-align: left;
 }
 
 .about {
-    max-width: 80rem;
+    max-width: 720px;
     white-space: pre-line;
-    text-align: justify;
-    margin: 0px 24px;
+    text-align: left;
+    margin: 0 auto 0 auto;
+    padding-left: 1.5rem; /* align header content with timeline content */
 }
 
 @media (max-width: 767px) {
     .timeline {
         margin: 0px 24px;
+    }
+
+    .filterBar {
+      flex-direction: column;
+      align-items: flex-start;
     }
 }
