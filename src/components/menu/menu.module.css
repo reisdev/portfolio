@@ -3,7 +3,6 @@
   font-size: 1rem;
   background: transparent;
   display: block;
-  border-bottom: 1px solid color-mix(in srgb, var(--light-tertiary) 60%, transparent);
 }
 
 .content {
