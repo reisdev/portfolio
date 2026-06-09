@@ -128,7 +128,8 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    margin-top: 8px;
+    /* push the expanded menu below the header/button to avoid overlap */
+    margin-top: 12px;
     padding-left: 0;
     /* Make the collapsible full-bleed and aligned to viewport edges */
     position: relative;
@@ -139,6 +140,7 @@
     width: 100vw;
     background: light-dark(var(--light-tertiary), var(--dark-tertiary));
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    z-index: 10;
   }
 
   .collapsible[data-open="true"] {
@@ -160,6 +162,9 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    position: relative;
+    z-index: 60; /* keep toggle above expanded menu */
+    background: transparent;
   }
 
   .iconLabel {
