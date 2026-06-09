@@ -41,40 +41,40 @@ export default function Menu() {
                 <i className="fa-solid fa-bars" aria-hidden="true"></i>
                 <span className={styles.iconLabel}>{t("menu")}</span>
               </button>
+
+              <div
+                id="main-navigation"
+                className={styles.collapsible}
+                data-open={isOpen}
+                role="menu"
+              >
+                {routes.map((route, index) => (
+                  <Link
+                    role="menuitem"
+                    aria-current={route.path === currentRoute.pathname}
+                    to={route.path}
+                    key={index}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {route.text}
+                  </Link>
+                ))}
+                <a
+                  role="menuitem"
+                  href={"https://blog.reisdev.com.br"}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {t("blog")}
+                </a>
+              </div>
             </div>
 
             <div className={styles.controls}>
               <LanguageSwitch />
               <ThemeSwitch />
             </div>
-          </div>
-
-          <div
-            id="main-navigation"
-            className={styles.collapsible}
-            data-open={isOpen}
-            role="menu"
-          >
-            {routes.map((route, index) => (
-              <Link
-                role="menuitem"
-                aria-current={route.path === currentRoute.pathname}
-                to={route.path}
-                key={index}
-                onClick={() => setIsOpen(false)}
-              >
-                {route.text}
-              </Link>
-            ))}
-            <a
-              role="menuitem"
-              href={"https://blog.reisdev.com.br"}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setIsOpen(false)}
-            >
-              {t("blog")}
-            </a>
           </div>
         </div>
       </div>

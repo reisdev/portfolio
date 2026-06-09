@@ -50,6 +50,10 @@
   transition: max-height 320ms ease-in-out, opacity 220ms ease-in-out;
 }
 
+/* Ensure nav sits inline on desktop and doesn't create vertical step */
+.headerRow, .collapsible {
+  align-items: center;
+}
 .collapsible a,
 .collapsible a:link,
 .collapsible a:visited,
