@@ -1,82 +1,195 @@
 .menu {
-    padding: 24px;
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding: 16px 24px;
+  font-size: 1rem;
+  background: transparent;
+  display: block;
 }
 
 .content {
-    max-width: 80rem;
-    width: 100%;
-    display: flex;
-    align-items: baseline;
-    gap: 24px;
-    text-transform: uppercase;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-transform: uppercase;
 }
 
-.section {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    gap: 24px;
+.inner {
+  width: 100%;
+  max-width: 80rem;
+  padding: 0 24px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.menu a:hover {
-    text-decoration: none;
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.menu a:after {
-    content: "";
-    display: block;
-    margin: auto;
-    width: 0px;
-    height: 2px;
-    background-color: transparent;
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Navigation links */
+.collapsible {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: max-height 320ms ease-in-out, opacity 220ms ease-in-out;
+}
+
+.collapsible a,
+.collapsible a:link,
+.collapsible a:visited,
+.collapsible a:active,
+.collapsible a[role="menuitem"] {
+  color: light-dark(var(--light-secondary), var(--dark-secondary));
+  text-decoration: none;
+  padding: 6px 4px;
+  position: relative;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.collapsible a:focus,
+.collapsible a:hover {
+  outline: none;
+  color: var(--accent);
+}
+
+/* Underline animation */
+.collapsible a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 100%;
+  background: var(--accent);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 180ms ease-in-out, opacity 180ms;
+  opacity: 0.0;
+}
+
+.collapsible a:hover::after,
+.collapsible a[aria-current="true"]::after {
+  transform: scaleX(1);
+  opacity: 0.9;
 }
 
 .icon {
-    display: none;
-    appearance: none;
-    border: none;
-    background: none;
-    font-size: 1.5rem;
+  display: none;
+  appearance: none;
+  border: none;
+  background: none;
+  font-size: 1.25rem;
+  cursor: pointer;
 }
 
-.icon span {
-    display: none;
+.iconLabel {
+  margin-left: 8px;
+  display: inline-block;
 }
 
-.collapsible {
-    display: flex;
-    transition: max-height .5s ease-in-out;
-    flex-direction: row;
-    overflow: visible;
-    gap: 24px;
-}
-
-.section[aria-expanded="true"] .collapsible {
-    max-height: 240px;
-}
-
-.menu a:hover:after,
-.menu a[aria-current="true"]:after {
-    width: 100%;
-    background-color: light-dark(var(--light-secondary), var(--dark-secondary));
-    opacity: 0.5;
-    transition: width .25s ease-in-out, background-color .4s ease-in;
-}
-
+/* Mobile: stack nav items and show toggle */
 @media (max-width: 767px) {
-    .collapsible {
-        flex-direction: column;
-        align-items: baseline;
-        gap: 16px;
-        max-height: 0px;
-        overflow: hidden;
-    }
+  /* Keep header in a single row: left = menu button, right = controls; collapsible items flow below and are left-aligned */
+  .content {
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    margin: 0;
+    justify-content: space-between;
+  }
 
-    .icon {
-        display: block;
-    }
+  /* Make .inner fluid on mobile so nav menu uses full available width */
+  .inner {
+    max-width: none;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin: 0;
+  }
+
+  /* Stack left column and align header start */
+  .headerRow {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .controls {
+    order: 3;
+  }
+
+  .collapsible {
+    order: 2;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .collapsible[data-open="true"] {
+    max-height: 400px;
+    opacity: 1;
+  }
+
+  .collapsible a,
+  .collapsible a[role="menuitem"] {
+    display: block;
+    padding: 12px 12px;
+    border-radius: 0;
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+  }
+
+  .iconLabel {
+    display: inline-block;
+  }
+}
+
+/* Accessibility focus ring */
+.collapsible a:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent);
+  border-radius: 6px;
 }

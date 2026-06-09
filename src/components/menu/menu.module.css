@@ -25,7 +25,8 @@
 
 .headerRow {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -39,7 +40,6 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: auto;
 }
 
 /* Navigation links */
@@ -50,10 +50,6 @@
   transition: max-height 320ms ease-in-out, opacity 220ms ease-in-out;
 }
 
-/* Ensure nav sits inline on desktop and doesn't create vertical step */
-.headerRow, .collapsible {
-  align-items: center;
-}
 .collapsible a,
 .collapsible a:link,
 .collapsible a:visited,
@@ -133,7 +129,6 @@
 
   /* Stack left column and align header start */
   .headerRow {
-    flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
@@ -148,8 +143,6 @@
 
   .controls {
     order: 3;
-    margin-left: 0;
-    align-self: flex-end;
   }
 
   .collapsible {
@@ -162,7 +155,6 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    margin-top: 8px; /* small gap under headerRow */
     padding-left: 0;
     padding-right: 0;
     background: transparent;

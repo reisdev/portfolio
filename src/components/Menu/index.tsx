@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
 
 import ThemeSwitch from "@components/theme-switch";
+import LanguageSwitch from "@components/language-switch";
 import styles from "./menu.module.css";
 
 export default function Menu() {
@@ -20,38 +21,62 @@ export default function Menu() {
   );
 
   const toggleMenu = useCallback(() => {
-    setIsOpen(!isOpen);
-  }, [isOpen]);
+    setIsOpen((prev) => !prev);
+  }, []);
+
 
   return (
     <nav className={styles.menu}>
       <div className={styles.content}>
-        <div className={styles.section} aria-expanded={isOpen}>
-          <button className={styles.icon} onClick={toggleMenu}>
-            <i className="fa-solid fa-bars"></i>
-            <span>{t("menu")}</span>
-          </button>
-          <div className={styles.collapsible}>
-            {routes.map((route, index) => (
-              <Link
-                aria-current={route.path === currentRoute.pathname}
-                to={route.path}
-                key={index}
+        <div className={styles.inner}>
+          <div className={styles.headerRow}>
+            <div className={styles.left}> 
+              <button
+                className={styles.icon}
                 onClick={toggleMenu}
+                aria-expanded={isOpen}
+                aria-controls="main-navigation"
+                aria-label={t("menu")}
               >
-                {route.text}
-              </Link>
-            ))}
-            <a
-              href={"https://blog.reisdev.com.br"}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t("blog")}
-            </a>
+                <i className="fa-solid fa-bars" aria-hidden="true"></i>
+                <span className={styles.iconLabel}>{t("menu")}</span>
+              </button>
+
+              <div
+                id="main-navigation"
+                className={styles.collapsible}
+                data-open={isOpen}
+                role="menu"
+              >
+                {routes.map((route, index) => (
+                  <Link
+                    role="menuitem"
+                    aria-current={route.path === currentRoute.pathname}
+                    to={route.path}
+                    key={index}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {route.text}
+                  </Link>
+                ))}
+                <a
+                  role="menuitem"
+                  href={"https://blog.reisdev.com.br"}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {t("blog")}
+                </a>
+              </div>
+            </div>
+
+            <div className={styles.controls}>
+              <LanguageSwitch />
+              <ThemeSwitch />
+            </div>
           </div>
         </div>
-        <ThemeSwitch />
       </div>
     </nav>
   );
