@@ -17,10 +17,16 @@
   flex-wrap: nowrap;
 }
 
-.section {
+.headerRow {
   display: flex;
   align-items: center;
-  gap: 24px;
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .controls {
@@ -130,17 +136,12 @@
     opacity: 0;
     /* push the expanded menu below the header/button to avoid overlap */
     margin-top: 12px;
-    padding-left: 0;
-    /* Make the collapsible full-bleed and aligned to viewport edges */
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    width: 100vw;
+    /* Keep collapsible within layout flow under headerRow; no positioning hacks */
     background: light-dark(var(--light-tertiary), var(--dark-tertiary));
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    z-index: 10;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 8px;
   }
 
   .collapsible[data-open="true"] {
@@ -162,8 +163,6 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    position: relative;
-    z-index: 60; /* keep toggle above expanded menu */
     background: transparent;
   }
 
