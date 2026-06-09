@@ -15,7 +15,6 @@ export default function Menu() {
     () => [
       { path: "/", text: t("home") },
       { path: "/career", text: t("career.title") },
-      { path: "/about", text: t("about") },
     ],
     [t]
   );

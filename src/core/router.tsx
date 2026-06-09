@@ -5,7 +5,6 @@ import Career from '@pages/career';
 
 import Menu from '@components/menu';
 import Footer from '@components/footer';
-import AboutMe from '@pages/about';
 import Posts from '@components/posts';
 
 export default function Router() {
@@ -19,7 +18,6 @@ export default function Router() {
         <Route path="" element={<Home />} />
         <Route path="posts" element={<Posts />} />
         <Route path="career" element={<Career />} />
-        <Route path='about' element={<AboutMe />} />
       </Route>
     </Routes>
   </BrowserRouter>
